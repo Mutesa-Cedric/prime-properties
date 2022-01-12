@@ -105,7 +105,7 @@ export interface Service {
     name: string;
     description: string;
     banner: string;
-    slug: string;
+    slug: string;   
 }
 
 export interface Testimonial {

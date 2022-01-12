@@ -1,68 +1,64 @@
 import Image from 'next/image'
 import React from 'react'
-import { ServiceAd } from '../../@types/types'
 
 
-const serviceAds: ServiceAd[] = [
+const serviceAds= [
     {
         icon: "/icons/buy_sell_icon.svg",
-        title: "Buy & Sell Properties",
-        description: "There are many variations of passages of Lorem Ipsum available but the majority suffered."
-    },
-    {
-        icon: "/icons/location_icon.svg",
-        title: "Perfect Location",
-        description: "There are many variations of passages of Lorem Ipsum available but the majority suffered."
+        title: "43+",
+        description: "Properties Sold"
     },
     {
         icon: "/icons/faster_service_icon.svg",
-        title: "Faster Service",
-        description: "There are many variations of passages of Lorem Ipsum available but the majority suffered."
+        title: "20K+",
+        description: "Happy Clients"
     }
 
 ]
+
 function HomeAdsSection() {
     return (
-        <div className='flex justify-between lg:px-60 px-12 py-16 flex-col w-full'>
-            <div className="flex pb-16 border-b border-[#D3DEE8]  w-full justify-between">
-                <div className='relative bg-cover bg-center bg-no-repeat w-2/5'
-                    style={{ backgroundImage: `url(/images/family.png)` }}>
-                    <div className='absolute flex justify-end w-full h-full left-6 top-6 border-4 border-primary-light'>
-                        <div className='w-32 h-32 bg-primary-light flex text-center items-center text-white self-end'>
-                            38+ years of experience
-                        </div>
-                    </div>
+        <div className='w-full py-16 flex  flex-col md:flex-row md:space-x-4 space-x-0 md:space-y-0 space-y-6  justify-between lg:px-60 lg:h-[90vh]'>
+            <div className="relative">
+                <div className='relative h-[450px] w-[350px]'>
+                    <Image src='/images/home/giant-building-with-sun.png' layout='fill' objectFit='cover' />
                 </div>
-                <div className='flex flex-col space-y-3 w-[46%]'>
-                    <p className='text-2xl font-semibold max-w-sm'>Are You Looking Best Property Near You? Contact Us</p>
-                    <div className='flex flex-col'>
-                        <h3 className='text-base text-primary-light font-semibold'>Who are we?</h3>
-                        <div className='text-gray-primary space-y-2 text-base'>
-                            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has normal distribution.</p>
-                            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-                        </div>
-                    </div>
-                    <div>
-
-                    </div>
+                <div className="absolute top-44 left-32 h-[350px] w-[340px]">
+                    <Image src='/images/home/family.png' layout='fill' objectFit='cover' />
                 </div>
             </div>
-            <div className='w-full flex space-x-8 pt-12 items-center'>
+            <div className="flex flex-col space-y-6 w-2/4 pl-4">
+                <div className='flex space-x-3'>
+                    <div className='relative'>
+                        <div className='bg-[#D3DEE8] h-6 w-6'></div>
+                        <div className='bg-primary-light h-6 w-6 top-1 left-1 absolute'></div>
+                    </div>
+                    <p className="text-heading-1 text-lg">Know more about us</p>
+                </div>
+                <h3 className='text-heading-1 text-3xl font-semibold'>Are You Looking Best Property Near You? Contact Us</h3>
+                <p className="text-gray-primary/75 text-lg">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum.</p>
+                <div className="bg-[#EEF7FF] w-[90%] py-8 flex items-center justify-center self-center border-l-[10px] border-primary-light space-x-4">
+                    <span className="font-semibold text-[38px] text-primary-light">20+</span>
+                    <span className="text-2xl text-gray-primary/75">Years of experience</span>
+                </div>
+                <p className="text-gray-primary/75 text-lg">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                <div className='w-full flex justify-between items-center'>
                 {
                     serviceAds.map(service => (
-                        <div key={service.title} className="flex space-x-2">
-                            <div className='bg-[#EEF7FF] flex items-center justify-center p-3 h-12 w-12'>
-                                <div className="w-8 h-8 relative">
+                        <div key={service.title} className="flex space-x-4">
+                            <div className='bg-[#EEF7FF] flex items-center justify-center p-3 h-16 w-16'>
+                                <div className="w-8 h-full relative bg-[#EEF7FF]">
                                     <Image src={service.icon} layout="fill" objectFit='cover' />
                                 </div>
                             </div>
-                            <div className='flex flex-col space-y-3'>
-                                <p className='text-lg font-semibold'>{service.title}</p>
-                                <p className='text-[#333333] text-base'>{service.description}</p>
+                            <div className='flex flex-col space-y-1'>
+                                <p className='text-xl text-heading-1 font-semibold'>{service.title}</p>
+                                <p className='text-gray-primary/75 text-base'>{service.description}</p>
                             </div>
                         </div>
                     ))
                 }
+            </div>
             </div>
         </div>
     )

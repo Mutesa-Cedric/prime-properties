@@ -1,3 +1,4 @@
+
 const defaultTheme = require('tailwindcss/defaultTheme');
 module.exports = {
   content: [
@@ -13,7 +14,8 @@ module.exports = {
       colors:{
         "primary-light":"#0984E3",
         "primary-dark":"#25517A",
-        "gray-primary":"#333333"
+        "gray-primary":"#333333",
+        "heading-1":"#263048"
       }
     },
   },
