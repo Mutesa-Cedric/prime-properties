@@ -3,7 +3,6 @@ import Image from "next/image"
 import { City } from "../../@types/types";
 import { useNextSanityImage } from "next-sanity-image";
 import sanityClient from "../../lib/sanity";
-import Fade from "react-reveal/fade";
 
 interface CitiesProps {
     cities: City[]
@@ -25,12 +24,12 @@ const City = ({ city, i }: CityProps) => {
                 width: i === 3 ? `32vw` : `${imageProps.width - 20}px`,
             }}
         >
-            <Fade>
+            {/* <Fade> */}
                 <div className="hidden group-hover:flex flex-col space-y-2 items-center justify-center p-4  bg-white  w-2/3 h-2/3">
                     <h2 className=" text-2xl font-semibold text-primary-light">{city.name}</h2>
                     <p className="text-gray-primary text-base">10 Properties</p>
                 </div>
-            </Fade>
+            {/* </Fade> */}
         </div>
     )
 }

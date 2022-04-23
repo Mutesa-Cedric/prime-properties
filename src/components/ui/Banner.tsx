@@ -1,7 +1,7 @@
 import React from 'react'
 import { useRouter } from "next/router"
 import Link from 'next/link';
-import Fade from "react-reveal/fade"
+// import Fade from "react-reveal/fade"
 
 
 interface BannerProps {
@@ -13,7 +13,7 @@ const Banner: React.FC<BannerProps> = ({ title, bgImage }) => {
   const pathName = router.pathname;
   const pageName = pathName.slice(1);
   return (
-    <Fade>
+    // <Fade>
       <div className='w-full'>
         <div className='bg-center bg-cover bg-no-repeat w-full h-[40vh] flex  flex-col items-center justify-center'
           style={{ backgroundImage: `linear-gradient(rgba(51, 72, 92,.75),rgba(51, 72, 92,.75)),url(/images/banner.png)` }}>
@@ -29,7 +29,7 @@ const Banner: React.FC<BannerProps> = ({ title, bgImage }) => {
           </div>
         </div>
       </div>
-    </Fade>
+    // </Fade>
   )
 }
 

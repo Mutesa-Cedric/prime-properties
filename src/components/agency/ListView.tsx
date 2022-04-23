@@ -1,7 +1,7 @@
 import React from 'react'
 import { Agency } from '../../@types/types'
 import AgencyComponent from './Agency'
-import Fade from "react-reveal/fade";
+// import Fade from "react-reveal/fade";
 
 
 interface AgencyProps {
@@ -9,7 +9,7 @@ interface AgencyProps {
 }
 const ListView = ({ agencies }: AgencyProps) => {
     return (
-        <Fade duration={2000}>
+        // <Fade duration={2000}>
             <>
                 <div className='flex flex-col w-full space-y-4'>
                     {agencies?.map((agency, i) => (
@@ -23,7 +23,7 @@ const ListView = ({ agencies }: AgencyProps) => {
                 }
             </>
 
-        </Fade>
+        // </Fade>
     )
 }
 

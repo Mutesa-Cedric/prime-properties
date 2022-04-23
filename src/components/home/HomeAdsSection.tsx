@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import React from 'react'
-import Zoom from "react-reveal/zoom"
 
 
 const serviceAds = [

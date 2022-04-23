@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import { navLinks } from "../../constants/sitemap";
-import Fade from "react-reveal/fade";
+// import Fade from "react-reveal/fade";
 import Router from "next/router";
 import { useRecoilState } from "recoil";
 import { showDropDownMenu } from "../../atoms/states";
@@ -23,7 +23,7 @@ const MenuDropDown = () => {
         }
     }, [])
     return (
-        <Fade duration={1300}>
+        // <Fade duration={1300}>
             <div onClick={() => console.log("clicked")} className="absolute xl:right-60 lg:right-40 md:right-12 top-32 flex flex-col bg-white p-8 pr-24 shadow-xl rounded z-20 space-y-2 ">
                 {navLinks.map((link) => (
                     <Link href={link.href} key={link.title}>
@@ -32,7 +32,7 @@ const MenuDropDown = () => {
                 ))
                 }
             </div>
-        </Fade>
+        // </Fade>
     )
 }
 

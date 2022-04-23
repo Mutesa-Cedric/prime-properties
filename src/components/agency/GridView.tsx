@@ -1,7 +1,7 @@
 import React from 'react'
 import { Agency } from '../../@types/types'
 import AgencyComponent from './Agency'
-import Fade from "react-reveal/fade";
+// import Fade from "react-reveal/fade";
 
 interface AgencyProps {
     agencies: Agency[] | null
@@ -10,7 +10,7 @@ interface AgencyProps {
 const GridView = ({ agencies }: AgencyProps) => {
 
     return (
-        <Fade duration={2000}>
+        // <Fade duration={2000}>
             <>
                 <div className="w-full grid  md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {
@@ -27,7 +27,7 @@ const GridView = ({ agencies }: AgencyProps) => {
 
             </>
 
-        </Fade>
+        // </Fade>
     )
 }
 

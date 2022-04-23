@@ -21,7 +21,6 @@
     "react-dom": "18.1.0",
     "react-hook-form": "^7.38.0",
     "react-icons": "^4.4.0",
-    "react-reveal": "^1.2.2",
     "react-toastify": "^9.0.8",
     "recoil": "^0.7.5",
     "tailwind-scrollbar-hide": "^1.1.7"
@@ -31,6 +30,8 @@
     "@types/react": "18.0.9",
     "@types/react-dom": "18.0.5",
     "autoprefixer": "^10.4.7",
+    "eslint": "8.26.0",
+    "eslint-config-next": "12.3.1",
     "postcss": "^8.4.14",
     "tailwindcss": "^3.0.24",
     "typescript": "4.7.2"

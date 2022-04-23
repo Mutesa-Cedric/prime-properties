@@ -2,7 +2,7 @@ import React from 'react'
 import { Property } from '../../@types/types'
 import Image from "next/image";
 import { PropertyFeature } from '../properties/PropertyCard';
-import Fade from "react-reveal/fade";
+// import Fade from "react-reveal/fade";
 import Link from 'next/link';
 interface PropertyProps {
     properties: Property[]
@@ -13,7 +13,7 @@ const PropertyForSale: React.FC<Property> = ({ features, overview, price, banner
         <Link href={`/${slug}`}>
             <div className='w-[500px] relative h-[350px] bg-cover bg-no-repeat bg-center group flex items-center justify-center cursor-pointer'>
                 <Image src={bannerImage} layout="fill" objectFit='cover' />
-                <Fade>
+                {/* <Fade> */}
                     <div className=' bg-white hidden group-hover:flex p-6 flex-col space-y-2 max-w-md'>
                         <h2 className='text-lg font-semibold text-heading-2'>{name}</h2>
                         <h3 className='text-lg font-semibold text-primary-light'>${price}</h3>
@@ -26,7 +26,7 @@ const PropertyForSale: React.FC<Property> = ({ features, overview, price, banner
                             }
                         </div>
                     </div>
-                </Fade>
+                {/* </Fade> */}
             </div>
         </Link>
     )

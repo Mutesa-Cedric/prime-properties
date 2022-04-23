@@ -2,7 +2,6 @@ import Link from "next/link";
 import React, { useRef, useState } from "react";
 import { Property } from "../../@types/types";
 import PropertyCardWide from "./PropertyCardWide";
-import Fade from "react-reveal/fade"
 
 
 export interface PropertiesProps {
@@ -25,7 +24,7 @@ const FeaturedProperties = ({ properties }: PropertiesProps) => {
         }
     }
     return (
-        <Fade>
+        // <Fade>
             <div className="bg-[#FAF8FB] py-10 flex justify-between md:h-auto space-y-12 flex-col  overflow-hidden">
 
                 {/* header */}
@@ -79,7 +78,7 @@ const FeaturedProperties = ({ properties }: PropertiesProps) => {
                 </div>
 
             </div>
-        </Fade>
+        // </Fade>
 
     )
 
