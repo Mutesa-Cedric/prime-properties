@@ -4,6 +4,6 @@ export interface property{
     location: string,
     image: string,
     description: string,
-    onSales: boolean,
+    onSale: boolean,
 }
 
