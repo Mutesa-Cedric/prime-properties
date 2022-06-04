@@ -11,7 +11,7 @@ function Navbar() {
                 objectFit='cover'
                 height={'100px'}
                 width={'100px'}
-                src={'/logo-small.png'} alt="logo"
+                src={'/logo.png'} alt="logo"
               />
             </div>
             <div className='flex space-x-12'>
