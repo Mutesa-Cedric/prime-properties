@@ -6,7 +6,7 @@ import { property } from '../typings'
 
 function Property({ name, price, location, description, image, onSale }: property) {
   return (
-    <div className='shadow-lg md:my-10 md:mx-0 w-[290px] rounded-md m-auto'>
+    <div className='shadow-lg md:my-14 md:mx-0 w-[290px] rounded-md m-auto'>
       <div className='relative'>
         <Image src={image} objectFit="cover" width={290} height={190} className="rounded-t-md" />
         {/* {onSale && <p
