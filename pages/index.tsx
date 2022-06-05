@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Banner from '../components/landing/Banner'
+import HouseBanner from '../components/landing/HouseBanner'
 import ImageSlider from '../components/landing/imageSlider'
 import Navbar from '../components/landing/Navbar'
 import Property from '../components/property'
@@ -24,17 +25,29 @@ const Home: NextPage = () => {
         {/* first window */}
 
         {/* second window */}
-        <div className='w-full h-auto px-16 pt-16 ' id='second-landing'>
+        <div className='w-full h-auto px-16 pt-16 my-10' id='second-landing'>
           <div className='w-full text-center py-4 '>
             <h1 className='font-medium text-2xl text-gray-700 '>Some properties on sale</h1>
           </div>
-          <div className='flex flex-wrap mt-8 items-center justify-between'>
-          {properties.map(property=>{
-            return property.onSale ? <Property key={property.id} {...property} /> : null
-          })}
+          <div className='flex flex-wrap mt-12 items-center justify-between'>
+            {properties.map(property => {
+              return property.onSale ? <Property key={property.id} {...property} /> : null
+            })}
           </div>
         </div>
         {/* second window */}
+
+        {/* third window*/}
+        <div className='w-full h-screen' id='third-landing'>
+          <HouseBanner />
+        </div>
+        {/* third window*/}
+        
+        {/* fourth window */}
+        <div className='w-full h-screen' id='fourth-landing'>
+          </div>
+        {/* fourth window */}
+
       </main>
     </div>
   )
