@@ -4,9 +4,25 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap');
 
-@layer base{
-    body{
-        font-family:'Nunito sans',sans-serif;
+@layer base {
+    nav {
+        @apply bg-gradient-to-r from-green-100 to-green-50
+    }
+
+    body {
+        @apply font-['Nunito-sans',sans-serif] box-border m-0 p-0 ;
     }
 }
 
+@layer components {
+    button {
+        @apply hover:cursor-pointer transition duration-300 hover:scale-105 focus:border-green-900 focus:border focus:text-green-900
+    }
+
+    #first-landing{
+        @apply bg-gradient-to-r from-green-50 to-green-100;
+    }
+    #fourth-landing{
+        @apply bg-gradient-to-r mt-10 from-green-50 to-green-100;
+    }
+}
