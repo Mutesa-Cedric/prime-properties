@@ -2,6 +2,19 @@ export default {
     name:"feature",
     title:"Property Feature",
     type:"object",
+    preview:{
+       select:{
+        title:"name",
+        subtitle:"value"
+       },
+       prepare(selection){
+           const {title,subtitle}=selection;
+           return{
+            title:title,
+            subtitle:`${subtitle} ${title}`
+           }
+       }
+    },
     fields:[
         {
             name:"name",
