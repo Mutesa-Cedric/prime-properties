@@ -3,7 +3,18 @@ export default {
     title: "Blog",
     type: "document",
     preview: {
-
+        select: {
+            subtitle: "title",
+            media: "banner"
+        },
+        prepare(selection){
+            const { subtitle, media } = selection;
+            return {
+                title: "Blog",
+                subtitle: subtitle,
+                media: media
+            }
+        }
     },
     fields: [
         {

@@ -7,12 +7,16 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 // document imports
 import property from "./documents/property"
 import agent from "./documents/agent"
-import admin from "./documents/admin"
+import admin from "./documents/admin";
+import blog from "./documents/blog";
+import faq from "./documents/faq";
+import service from "./documents/service";
 
 // object imports
 import feature from "./objects/feature";
 import video from "./objects/video";
-import socialMedia from "./objects/socialMedia"
+import socialMedia from "./objects/socialMedia";
+
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -21,6 +25,9 @@ export default createSchema({
     admin,
     agent,
     property,
+    blog,
+    service,
+    faq,
     feature,
     socialMedia,
     video,
