@@ -1,6 +1,6 @@
-## prime-properties frontend
+## prime-properties
 
-This repository contains all frontend codes for **prime-Properties**
+Real Estate site
 
 ## tech stack
 
@@ -8,3 +8,6 @@ This repository contains all frontend codes for **prime-Properties**
  * React js
  * Tailwind css
  * TypeScript 
+ * sanity CMS
+
+ 
