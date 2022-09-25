@@ -44,6 +44,16 @@ export default {
             )
         },
         {
+            name: "address",
+            title: "Address",
+            type: "string",
+            description: "address of the property",
+            validation: Rule => Rule.required().min(3).max(200).warning(
+                "you must provide the address of the property"
+            )
+        },
+
+        {
             name: "features",
             title: "Property Features",
             description: "features of your property",
@@ -77,6 +87,22 @@ export default {
             of: [{ type: "video" }]
         },
         {
+            name: "status",
+            title: "Status",
+            type: "string",
+            options: {
+                list: [
+                    { title: "For Sale", value: "forSale" },
+                    { title: "For Rent", value: "forRent" },
+                    { title: "Sold", value: "sold" },
+                    { title: "Rented", value: "rented" }
+                ]
+            },
+            validation: Rule => Rule.required().warning(
+                "please provide the status of the property"
+            )
+        },
+        {
             name: "slug",
             title: "Slug",
             type: "slug",
@@ -90,6 +116,7 @@ export default {
             validation: Rule => Rule.required().warning(
                 "please provide a slug"
             )
-        }
+        },
+
     ]
 }

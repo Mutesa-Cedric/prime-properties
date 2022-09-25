@@ -11,6 +11,8 @@ import admin from "./documents/admin";
 import blog from "./documents/blog";
 import faq from "./documents/faq";
 import service from "./documents/service";
+import collection from "./documents/collection";
+import testimonial from "./documents/testimonial";
 
 // object imports
 import feature from "./objects/feature";
@@ -26,7 +28,9 @@ export default createSchema({
     agent,
     property,
     blog,
+    collection,
     service,
+    testimonial,
     faq,
     feature,
     socialMedia,
