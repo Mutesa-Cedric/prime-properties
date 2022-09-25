@@ -7,6 +7,8 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 // document imports
 import property from "./documents/property"
 import agent from "./documents/agent"
+import admin from "./documents/admin"
+
 // object imports
 import feature from "./objects/feature";
 import video from "./objects/video";
@@ -16,8 +18,9 @@ import socialMedia from "./objects/socialMedia"
 export default createSchema({
   name: 'default',
   types: schemaTypes.concat([
-    property,
+    admin,
     agent,
+    property,
     feature,
     socialMedia,
     video,
