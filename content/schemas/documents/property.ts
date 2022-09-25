@@ -46,7 +46,7 @@ export default {
         {
             name: "address",
             title: "Address",
-            type: "string",
+            type: "geopoint",
             description: "address of the property",
             validation: Rule => Rule.required().min(3).max(200).warning(
                 "you must provide the address of the property"
@@ -58,7 +58,7 @@ export default {
             title: "Property Features",
             description: "features of your property",
             type: "array",
-            of: [{ type: "feature" }],
+            of: [{ type: "propertyFeature" }],
             validation: Rule => Rule.required()
         },
         {
@@ -68,7 +68,6 @@ export default {
             validation: Rule => Rule.required().warning(
                 "please provide a banner image"
             )
-
         },
         {
             name: "gallery",

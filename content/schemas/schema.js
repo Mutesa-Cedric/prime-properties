@@ -13,12 +13,13 @@ import faq from "./documents/faq";
 import service from "./documents/service";
 import collection from "./documents/collection";
 import testimonial from "./documents/testimonial";
+import plan from "./documents/plan"
 
 // object imports
-import feature from "./objects/feature";
+import propertyFeature from "./objects/propertyFeature";
 import video from "./objects/video";
 import socialMedia from "./objects/socialMedia";
-
+import planFeature from "./objects/planFeature"
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -31,8 +32,10 @@ export default createSchema({
     collection,
     service,
     testimonial,
+    plan,
     faq,
-    feature,
+    propertyFeature,
+    planFeature,
     socialMedia,
     video,
   ]),

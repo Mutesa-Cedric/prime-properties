@@ -1,5 +1,5 @@
 export default {
-    name:"feature",
+    name:"propertyFeature",
     title:"Property Feature",
     type:"object",
     preview:{

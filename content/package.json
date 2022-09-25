@@ -20,6 +20,7 @@
     "@sanity/default-login": "^2.33.3",
     "@sanity/desk-tool": "^2.33.3",
     "@sanity/eslint-config-studio": "^2.0.0",
+    "@sanity/google-maps-input": "^2.33.3",
     "@sanity/vision": "^2.33.3",
     "eslint": "^8.6.0",
     "prop-types": "^15.7",
