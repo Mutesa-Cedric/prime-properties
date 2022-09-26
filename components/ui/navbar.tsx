@@ -4,12 +4,11 @@ function Navbar() {
     return (
         <div className="flex flex-col">
             <div className='flex items-center justify-between'>
-
+                topbar
             </div>
-            <div>
-                
+            <div className='flex items-center justify-between'>
+                navbar
             </div>
-            Navbar
         </div>
     )
 }

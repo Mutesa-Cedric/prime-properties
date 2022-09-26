@@ -27,6 +27,13 @@ export default {
             )
         },
         {
+          name:"category",
+          title:"Category",
+          type:"reference",
+          to:[{type:"blogCategory"}],
+          validation:Rule=>Rule.required()
+        },
+        {
             name: 'banner',
             title: "Banner",
             description: "banner image for a blog",

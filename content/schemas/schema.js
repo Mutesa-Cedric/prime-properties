@@ -13,7 +13,8 @@ import faq from "./documents/faq";
 import service from "./documents/service";
 import collection from "./documents/collection";
 import testimonial from "./documents/testimonial";
-import plan from "./documents/plan"
+import plan from "./documents/plan";
+import blogCategory from "./documents/blogCategory";
 
 // object imports
 import propertyFeature from "./objects/propertyFeature";
@@ -29,6 +30,7 @@ export default createSchema({
     agent,
     property,
     blog,
+    blogCategory,
     collection,
     service,
     testimonial,
