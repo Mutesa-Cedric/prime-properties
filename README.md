@@ -9,7 +9,5 @@ Real Estate site
  * Tailwind css
  * TypeScript 
  * sanity CMS
- * firebase/firestore
- * firebase/auth
-
+ * firebase
  
