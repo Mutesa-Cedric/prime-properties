@@ -5,13 +5,13 @@ const Home: NextPage = () => {
   const { user } = useAuth();
   // console.log(user);
   return (
-    <div className="font-bold flex items-center justify-center h-full w-full">
+    <div className="text-xl flex items-center justify-center h-full w-full">
       <Head>
         <title>Prime Properties | welcome</title>
         <link rel="shortcut icon" href="/icons/logo.svg" type="image/x-icon" />
       </Head>
       <main>
-        hello prime properties
+        Home page
       </main>
     </div>
   )

@@ -7,5 +7,7 @@
 }
 
 @layer components{
-    
+    .footer-section{
+        @apply flex flex-col space-y-4; 
+    }
 }
