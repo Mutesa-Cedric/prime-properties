@@ -3,7 +3,7 @@ import Head from 'next/head'
 import useAuth from '../hooks/useAuth'
 const Home: NextPage = () => {
   const { user } = useAuth();
-  console.log(user);
+  // console.log(user);
   return (
     <div className="font-bold flex items-center justify-center h-full w-full">
       <Head>
