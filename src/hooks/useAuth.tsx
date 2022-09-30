@@ -98,10 +98,8 @@ export function AuthProvider({ children }: AuthProviderProps) {
       }
     });
     return unsubscribe;
-  }, []);
+  }, [auth]);
 
-
-  // }, [auth])
   const memoedValue = useMemo(() => ({
     user, signupWithEmail, loginWithEmail, error, logout, loading
   }), [user,loading,error])

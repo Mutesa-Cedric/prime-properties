@@ -1,5 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import HomeBanner from '../components/home/HomeBanner';
 import useAuth from '../hooks/useAuth'
 const Home: NextPage = () => {
   const { user } = useAuth();
@@ -10,8 +11,8 @@ const Home: NextPage = () => {
         <title>Prime Properties | welcome</title>
         <link rel="shortcut icon" href="/icons/logo.svg" type="image/x-icon" />
       </Head>
-      <main>
-        Home page
+      <main className='flex flex-col space-y-8 w-full'>
+         <HomeBanner/>
       </main>
     </div>
   )

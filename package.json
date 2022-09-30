@@ -6,12 +6,14 @@
     "start": "next start"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.2",
+    "@heroicons/react": "^2.0.11",
     "firebase": "^9.10.0",
     "next": "latest",
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "react-icons": "^4.4.0"
-  },  
+  },
   "devDependencies": {
     "@types/node": "17.0.35",
     "@types/react": "18.0.9",

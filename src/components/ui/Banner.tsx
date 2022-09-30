@@ -1,6 +1,10 @@
 import React from 'react'
 
-function Banner() {
+interface BannerProps{
+    title:string,
+    bgImage?:string,
+}
+const  Banner:React.FC<BannerProps>=({title,bgImage})=> {
   return (
     <div>
       Banner
