@@ -9,3 +9,9 @@ export interface FilterProperty{
     options?:FilterPropertyOption[]
     type?:string
 }
+
+export interface ServiceAd{
+    icon:string,
+    title:string,
+    description:string
+}

@@ -1,5 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import HomeAdsSection from '../components/home/HomeAdsSection';
 import HomeBanner from '../components/home/HomeBanner';
 import useAuth from '../hooks/useAuth'
 const Home: NextPage = () => {
@@ -13,6 +14,7 @@ const Home: NextPage = () => {
       </Head>
       <main className='flex flex-col space-y-8 w-full'>
          <HomeBanner/>
+         <HomeAdsSection/>
       </main>
     </div>
   )
