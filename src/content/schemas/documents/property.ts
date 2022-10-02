@@ -39,7 +39,7 @@ export default {
             title: "Overview",
             description: "describe your property",
             type: "text",
-            validation: Rule => Rule.required().min(3).max(300).warning(
+            validation: Rule => Rule.required().min(3).max(1000).warning(
                 "you must describe your property in not less than 3 characters and not more than 300 characters"
             )
         },
@@ -48,7 +48,7 @@ export default {
             title: "Address",
             type: "geopoint",
             description: "address of the property",
-            validation: Rule => Rule.required().min(3).max(200).warning(
+            validation: Rule => Rule.required().warning(
                 "you must provide the address of the property"
             )
         },

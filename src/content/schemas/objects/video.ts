@@ -4,8 +4,14 @@ export default {
     type: "object",
     preview: {
         select: {
-            title: "Video",
             media: "banner"
+        },
+        prepare(selection){
+            const {media}=selection;
+            return{
+                media:media,
+                title:"Video"
+            }
         }
     },
     fields: [
