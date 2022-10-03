@@ -102,6 +102,24 @@ export default {
             )
         },
         {
+            name: "category",
+            title: "Category",
+            type: "string",
+            options: {
+                list: [
+                    { title: "House", value: "house" },
+                    { title: "Apartment", value: "apartment" },
+                    { title: "Condo", value: "condo" },
+                    { title: "Villa", value: "villa" },
+                    { title: "Land", value: "land" },
+                    { title: "Commercial", value: "commercial" }
+                ]
+            },
+            validation: Rule => Rule.required().warning(
+                "please provide the category of the property"
+            )
+        },
+        {
             name: "slug",
             title: "Slug",
             type: "slug",

@@ -7,7 +7,7 @@ import {
   onAuthStateChanged,
   signOut
 } from "firebase/auth";
-import { auth } from "../config/firebase";
+import { auth } from "../lib/firebase";
 import { useRouter } from "next/router"
 
 // types
