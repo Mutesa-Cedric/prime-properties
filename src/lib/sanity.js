@@ -1,6 +1,6 @@
 import sanityClient from '@sanity/client';
 
-const sanityClient = sanityClient({
+const client = sanityClient({
     projectId: process.env.SANITY_PROJECT_ID,
     dataset: 'production',
     token: 'api-token', // or leave blank to be anonymous user
@@ -8,4 +8,4 @@ const sanityClient = sanityClient({
     ignoreBrowserTokenWarning: true,
 });
 
-export default sanityClient;
+export default client;

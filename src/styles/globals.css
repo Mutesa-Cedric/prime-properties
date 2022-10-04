@@ -2,12 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base{
-
+@layer base {
 }
 
-@layer components{
-    .footer-section{
-        @apply flex flex-col space-y-4; 
-    }
+@layer components {
+  .footer-section {
+    @apply flex flex-col space-y-4;
+  }
+  .input-wrapper {
+    @apply flex flex-col space-y-1 w-full;
+  }
+
+  .input-wrapper input {
+    @apply outline-none border border-[#D3DEE8] rounded-[2px] p-2 w-full;
+  }
+  .input-wrapper label {
+    @apply text-lg text-gray-primary;
+  }
+  .input-wrapper input::placeholder {
+    @apply text-[#7B7B7B] text-lg;
+  }
+  .login-with-button {
+    @apply text-white py-3 px-12;
+  }
+  .auth-form {
+    box-shadow: 0px 10px 30px rgba(0, 115, 225, 0.06);
+  }
 }

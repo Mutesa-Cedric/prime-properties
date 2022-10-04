@@ -24,7 +24,7 @@ const navigation = {
 
 }
 
-export default function Example() {
+export default function Footer() {
   return (
     <footer className="bg-primary-dark w-full lg:px-60" aria-labelledby="footer-heading">
       <h2 id="footer-heading" className="sr-only">
@@ -51,10 +51,10 @@ export default function Example() {
               <div className="grid grid-cols-2 gap-x-4">
                 <ul role="list" className="mt-4 space-y-4">
                   {navigation.importantLinks.slice(0, 5).map((item) => (
-                    <Link key={item.name} href={item.href}>
-                      <li className="text-base cursor-pointer text-gray-300 hover:text-white flex space-x-2 items-center cursor-pointer">
+                    <Link href={item.href}>
+                      <li key={item.name} className="text-base cursor-pointer text-gray-300 hover:text-white flex space-x-2 items-center cursor-pointer">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-4 h-4">
-                          <path stroke-linecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                         </svg>
                         {item.name}
                       </li>
@@ -63,10 +63,10 @@ export default function Example() {
                 </ul>
                 <ul role="list" className="mt-4 space-y-4">
                   {navigation.importantLinks.slice(5).map((item) => (
-                    <Link key={item.name} href={item.href}>
-                      <li className="text-base cursor-pointer text-gray-300 hover:text-white flex space-x-2 items-center">
+                    <Link href={item.href}>
+                      <li key={item.name} className="text-base cursor-pointer text-gray-300 hover:text-white flex space-x-2 items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-4 h-4">
-                          <path stroke-linecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                         </svg>
                         {item.name}
                       </li>
@@ -79,7 +79,7 @@ export default function Example() {
               <h3 className="text-base font-medium text-white">Follow Instagram</h3>
               <ul role="list" className="mt-4 grid grid-cols-3 gap-2">
                 {navigation.followInstagram.map((item, i) => (
-                  <div className="w-24 h-24 relative">
+                  <div className="w-24 h-24 relative" key={i}>
                     <Image objectFit="cover" key={i} src={item} layout="fill" />
                   </div>
                 ))}
