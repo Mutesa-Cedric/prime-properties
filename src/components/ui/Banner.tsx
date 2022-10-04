@@ -20,7 +20,7 @@ const Banner: React.FC<BannerProps> = ({ title, bgImage }) => {
           </Link>
           <span className='text-white text-lg'>|</span>
           <Link href={pathName}>
-            <span className='text-primary-light capitalize text-lg'>{pageName}</span>
+            <span className='cursor-pointer text-primary-light capitalize text-lg'>{pageName}</span>
           </Link>
         </div>
       </div>

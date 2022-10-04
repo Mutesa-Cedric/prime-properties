@@ -20,10 +20,13 @@
     @apply text-lg text-gray-primary;
   }
   .input-wrapper input::placeholder {
-    @apply text-[#7B7B7B] text-lg;
+    @apply text-[#7B7B7B] text-base;
   }
   .login-with-button {
-    @apply text-white py-3 px-12;
+    @apply text-white py-3 rounded-[2px] px-12;
+  }
+  .submit-button {
+    @apply text-center w-full py-2 text-white bg-primary-light text-lg rounded-[2px];
   }
   .auth-form {
     box-shadow: 0px 10px 30px rgba(0, 115, 225, 0.06);
