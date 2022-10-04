@@ -54,7 +54,7 @@ export default function Example() {
                     <Link key={item.name} href={item.href}>
                       <li className="text-base cursor-pointer text-gray-300 hover:text-white flex space-x-2 items-center cursor-pointer">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-4 h-4">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                          <path stroke-linecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                         </svg>
                         {item.name}
                       </li>
@@ -66,7 +66,7 @@ export default function Example() {
                     <Link key={item.name} href={item.href}>
                       <li className="text-base cursor-pointer text-gray-300 hover:text-white flex space-x-2 items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-4 h-4">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                          <path stroke-linecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                         </svg>
                         {item.name}
                       </li>

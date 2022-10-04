@@ -21,4 +21,4 @@ function MyApp({ Component, pageProps }: { Component: any, pageProps: AppProps }
   )
 }
 
-export default MyApp
+export default MyApp;
