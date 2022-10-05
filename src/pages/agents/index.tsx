@@ -24,7 +24,11 @@ const Agents=({agents}:AgentsProps)=> {
     )
 }
 
-const agentsQuery = `*[_type=="agent"]`;
+const agentsQuery = `*[_type=="agent"]{
+    ...,
+    "slug":slug.current,
+    
+}`;
 
 export async function getStaticProps() {
     const agents =await sanityClient.fetch(agentsQuery);
@@ -34,7 +38,6 @@ export async function getStaticProps() {
         }
     }
 }
-
 
 Agents.innerPage=true;
 Agents.title="Our talented Agents"
