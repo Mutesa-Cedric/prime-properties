@@ -51,7 +51,7 @@ export default function Footer() {
               <div className="grid grid-cols-2 gap-x-4">
                 <ul role="list" className="mt-4 space-y-4">
                   {navigation.importantLinks.slice(0, 5).map((item) => (
-                    <Link href={item.href}>
+                    <Link key={item.name} href={item.href}>
                       <li key={item.name} className="text-base cursor-pointer text-gray-300 hover:text-white flex space-x-2 items-center cursor-pointer">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-4 h-4">
                           <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
@@ -63,7 +63,7 @@ export default function Footer() {
                 </ul>
                 <ul role="list" className="mt-4 space-y-4">
                   {navigation.importantLinks.slice(5).map((item) => (
-                    <Link href={item.href}>
+                    <Link key={item.name} href={item.href}>
                       <li key={item.name} className="text-base cursor-pointer text-gray-300 hover:text-white flex space-x-2 items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-4 h-4">
                           <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
