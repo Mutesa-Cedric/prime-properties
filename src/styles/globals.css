@@ -13,7 +13,7 @@
     @apply flex flex-col space-y-1 w-full;
   }
 
-  .input-wrapper input {
+  .input-wrapper input,textarea {
     @apply outline-none border border-[#D3DEE8] rounded-[2px] p-2 w-full;
   }
   .input-wrapper label {

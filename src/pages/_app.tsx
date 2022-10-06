@@ -3,20 +3,25 @@ import type { AppProps } from 'next/app'
 import MainLayout from '../layouts/MainLayout'
 import { AuthProvider } from '../hooks/useAuth'
 import InnerPageLayout from '../layouts/InnerPageLayout'
+import { RecoilRoot } from "recoil";
 
 function MyApp({ Component, pageProps }: { Component: any, pageProps: AppProps }) {
   return (
-    <AuthProvider>
-      <MainLayout>
-        {
-          Component.innerPage ?
-            <InnerPageLayout pageTitle={Component.title}>
+
+    <RecoilRoot>
+      <AuthProvider>
+        <MainLayout>
+          {
+            Component.innerPage ?
+              <InnerPageLayout pageTitle={Component.title}>
+                <Component {...pageProps} />
+              </InnerPageLayout> :
               <Component {...pageProps} />
-            </InnerPageLayout> :
-            <Component {...pageProps} />
-        }
-      </MainLayout>
-    </AuthProvider>
+          }
+        </MainLayout>
+      </AuthProvider>
+    </RecoilRoot>
+
 
   )
 }
