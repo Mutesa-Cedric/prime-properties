@@ -20,7 +20,16 @@
     @apply text-lg text-gray-primary;
   }
   .input-wrapper input::placeholder {
-    @apply text-[#7B7B7B] text-base;
+    @apply text-[#7B7B7B]/75 text-base;
+  }
+  .input-wrapper.contact-form input,textarea {
+    @apply outline-none border border-[#D3DEE8] rounded-[2px] p-2 w-full;
+  }
+  .input-wrapper.contact-form label {
+    @apply text-base text-gray-primary;
+  }
+  .input-wrapper.contact-form input::placeholder {
+    @apply text-[#7B7B7B]/75 text-sm;
   }
   .login-with-button {
     @apply text-white py-3 rounded-[2px] px-12;

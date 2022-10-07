@@ -41,6 +41,17 @@ export type Slug = {
 
 }
 
+export interface Achievement {
+    icon: string;
+    description: string;
+    title: string;
+}
+
+export interface Partener {
+    logo:string
+    name:string
+}
+
 export interface Property {
     name: string;
     price: number;

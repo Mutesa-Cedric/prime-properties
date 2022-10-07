@@ -1,11 +1,9 @@
-import React from 'react'
-import { useRouter } from "next/router";
+import React,{useState} from 'react'
 import sanityClient from "../../lib/sanity";
 import { Agent } from '../../@types/types';
-import { useRecoilValue } from "recoil";
-import { storedAgents } from '../../atoms/data';
 import Head from 'next/head';
 import Image from 'next/image';
+import FooterBanner from '../../components/ui/FooterBanner';
 
 
 
@@ -29,14 +27,15 @@ export async function getServerSideProps({ params }: any) {
 
 
 const ViewAgent = ({ agent }: AgentProps) => {
+  const [isLiked,setIsLiked]=useState(false);
   return (
-    <div className='w-full flex items-center justify-center'>
+    <div className='w-full flex items-center justify-center flex-col'>
       <Head>
         <title>Prime Properties | {agent.name}</title>
         <link rel="shortcut icon" href="/icons/logo.svg" type="image/x-icon" />
       </Head>
-      <main className='w-[55%] flex space-x-6  py-20'>
-        <section className='flex flex-col space-y-5 border-[1px] p-4 border-[#D3DEE8] w-[60%]'>
+      <main className='w-full px-60 flex space-x-20  py-20'>
+        <section className='flex flex-col space-y-5 border-[1px] p-4 border-[#D3DEE8] w-2/3'>
           <div className='flex space-x-8 relative'>
             <div className='w-52 h-52 relative'>
               <Image src={agent.profileImage} layout="fill" objectFit='cover' />
@@ -58,7 +57,7 @@ const ViewAgent = ({ agent }: AgentProps) => {
                 <p className='text-gray-primary text-base'>{agent.whatsappNumber}</p>
               </div>
             </div>
-            <div className='absolute top-2 right-2 p-2 bg-[#EEF7FF] rounded-full flex items-center justify-center'>
+            <div className='absolute top-2 right-2 p-2 bg-[#EEF7FF] rounded-full flex items-center justify-center cursor-pointer'>
               <Image src={'/icons/heart_icon.svg'} width={20} height={20} />
             </div>
           </div>
@@ -67,7 +66,7 @@ const ViewAgent = ({ agent }: AgentProps) => {
               <h2 className='text-lg font-semibold'>About {agent.name}</h2>
               <div className='bg-primary-light w-16 h-[5px] border-2 border-primary-light rounded-lg'></div>
             </div>
-            <p className='text-gray-primary text-base'>
+            <p className='text-gray-primary/50 text-base'>
               {agent.about}
             </p>
             <form className='flex flex-col p-6 border-[#D3DEE8] border space-y-4'>
@@ -77,21 +76,21 @@ const ViewAgent = ({ agent }: AgentProps) => {
               </div>
               <div className='flex flex-col space-y-3'>
                 <div className='flex items-center w-full space-x-5'>
-                  <div className='input-wrapper'>
+                  <div className='input-wrapper contact-form'>
                     <label htmlFor="fullname">Full Name</label>
                     <input type="text" name="fullname" id="fullname" placeholder="Type Full Name" />
                   </div>
-                  <div className='input-wrapper'>
+                  <div className='input-wrapper contact-form'>
                     <label htmlFor="email">Email</label>
                     <input type="text" name="email" id="email" placeholder="Your email" />
                   </div>
                 </div>
 
-                <div className='input-wrapper'>
+                <div className='input-wrapper contact-form'>
                   <label htmlFor="subject">Subject</label>
                   <input type="text" name="subject" id="subject" placeholder="Type subject" />
                 </div>
-                <div className='input-wrapper'>
+                <div className='input-wrapper contact-form'>
                   <label htmlFor="message">Message</label>
                   <textarea name="message" id="message" rows={4} placeholder="Type Message" />
                 </div>
@@ -105,25 +104,26 @@ const ViewAgent = ({ agent }: AgentProps) => {
         </section>
 
         <section className='w-[30%] flex flex-col space-y-8'>
-          <div className='w-full bg-[#EEF7FF] p-4 flex flex-col space-y-3'>
-            <div className='border-b-2 border-[#D3DEE8] pb-2'>
+          <div className='w-full bg-[#EEF7FF] px-4 py-6 flex flex-col space-y-5'>
+            <div className='border-b-2 border-[#D3DEE8] pb-4'>
               <h2 className='font-medium text-lg'>Search Property</h2>
             </div>
             <div className='relative'>
-              <input type='text' placeholder='Search' className="w-full bg-white py-1 outline-none placeholder:text-[#7B7B7B] placeholder:text-sm pl-6 text-gray-500" />
-              <div className='h-4 w-4 absolute top-2 left-1'>
-                <Image src={'/icons/search_icon.svg'} className="absolute" layout='fill' />
+              <input type='text' placeholder='Search' className="w-full bg-white py-2 outline-none placeholder:text-[#7B7B7B] placeholder:text-sm pl-6 text-gray-500" />
+              <div className='h-4 w-4 absolute top-3 left-1'>
+                <Image src={'/icons/search_icon.svg'}  layout='fill' />
               </div>
             </div>
           </div>
-          <div className='w-full bg-primary-light py-8 px-4 space-y-4 flex flex-col items-center'>
-            <p className='text-white text-2xl text-center tracking-wide'>Find The Best Property For Rent Or Buy</p>
+          <div className='w-full bg-primary-light py-8 px-4 space-y-4 flex flex-col items-center h-auto'>
+            <p className='text-white text-2xl text-center tracking-wide px-3 leading-20'>Find The Best Property For Rent Or Buy</p>
             <div className='bg-white w-16 border-2 border-wihte rounded-xl mt-3'></div>
             <p className='text-xs text-white/75'>Call Us Now</p>
             <p className='text-white text-lg'>+00 123 456 789</p>
           </div>
         </section>
       </main>
+      <FooterBanner />
     </div>
   )
 }
