@@ -28,11 +28,7 @@ export type Feature = {
     icon: string
 }
 export type Image = {
-    _type: "image"
-    asset: {
-        _ref: string;
-        _type: "reference"
-    }
+    image:string
 }
 
 export type Slug = {
@@ -64,6 +60,11 @@ export interface Plan {
     features: PlanFeature[];
 }
 
+type Video={
+    banner:string;
+    url:string;
+}
+
 export interface Property {
     name: string;
     price: number;
@@ -71,9 +72,10 @@ export interface Property {
     bannerImage: string;
     address: Address;
     features: Feature[];
-    geallery: Image[];
+    gallery: Image[];
     slug: string;
     status: string;
+    videos:Video[];
 }
 
 export interface Agent {

@@ -40,7 +40,10 @@ export async function getStaticProps({ params }: any) {
 
 
 const ViewAgent = ({ agent }: AgentProps) => {
-  const [isLiked, setIsLiked] = useState(false);
+  const [isLiked, setIsLiked] = useState<boolean>(false);
+  const toggleIsLiked = () => {
+    setIsLiked(prevState => !prevState);
+  }
   return (
     <div className='w-full flex items-center justify-center flex-col'>
       <Head>
@@ -70,7 +73,7 @@ const ViewAgent = ({ agent }: AgentProps) => {
                 <p className='text-gray-primary text-base'>{agent.whatsappNumber}</p>
               </div>
             </div>
-            <div className='absolute top-2 right-2 p-2 bg-[#EEF7FF] rounded-full flex items-center justify-center cursor-pointer'>
+            <div className='absolute top-2 right-2 p-2 bg-[#EEF7FF] rounded-full flex items-center justify-center cursor-pointer' onClick={toggleIsLiked}>
               <Image src={'/icons/heart_icon.svg'} width={20} height={20} />
             </div>
           </div>
