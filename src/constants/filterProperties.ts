@@ -9,16 +9,16 @@ export const filterProperties: FilterProperty[] = [
                 value: "appartment"
             },
             {
-                label:"Family House",
-                value:"familyHouse"
+                label: "Family House",
+                value: "familyHouse"
             },
             {
-                label:"Town House",
-                value:"townHouse"
+                label: "Town House",
+                value: "townHouse"
             },
             {
-                label:"Modern Villa",
-                value:"modernVilla"
+                label: "Modern Villa",
+                value: "modernVilla"
             }
         ]
     },
@@ -30,20 +30,20 @@ export const filterProperties: FilterProperty[] = [
                 value: "appartment"
             },
             {
-                label:"Family House",
-                value:"familyHouse"
+                label: "Family House",
+                value: "familyHouse"
             },
             {
-                label:"Town House",
-                value:"townHouse"
+                label: "Town House",
+                value: "townHouse"
             },
             {
-                label:"Modern Villa",
-                value:"modernVilla"
+                label: "Modern Villa",
+                value: "modernVilla"
             }
         ]
     },
-   
+
     {
         title: "Looking For",
         options: [
@@ -52,18 +52,81 @@ export const filterProperties: FilterProperty[] = [
                 value: "appartment"
             },
             {
-                label:"Family House",
-                value:"familyHouse"
+                label: "Family House",
+                value: "familyHouse"
             },
             {
-                label:"Town House",
-                value:"townHouse"
+                label: "Town House",
+                value: "townHouse"
             },
             {
-                label:"Modern Villa",
-                value:"modernVilla"
+                label: "Modern Villa",
+                value: "modernVilla"
             }
         ]
     },
-   
+    {
+        title: "Looking For",
+        options: [
+            {
+                label: "Appartment",
+                value: "appartment"
+            },
+            {
+                label: "Family House",
+                value: "familyHouse"
+            },
+            {
+                label: "Town House",
+                value: "townHouse"
+            },
+            {
+                label: "Modern Villa",
+                value: "modernVilla"
+            }
+        ]
+    },
+    {
+        title: "Looking For",
+        options: [
+            {
+                label: "Appartment",
+                value: "appartment"
+            },
+            {
+                label: "Family House",
+                value: "familyHouse"
+            },
+            {
+                label: "Town House",
+                value: "townHouse"
+            },
+            {
+                label: "Modern Villa",
+                value: "modernVilla"
+            }
+        ]
+    },
+
+    {
+        title: "Looking For",
+        options: [
+            {
+                label: "Appartment",
+                value: "appartment"
+            },
+            {
+                label: "Family House",
+                value: "familyHouse"
+            },
+            {
+                label: "Town House",
+                value: "townHouse"
+            },
+            {
+                label: "Modern Villa",
+                value: "modernVilla"
+            }
+        ]
+    },
 ]

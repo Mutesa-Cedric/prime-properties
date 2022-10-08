@@ -48,30 +48,32 @@ export interface Achievement {
 }
 
 export interface Partener {
-    logo:string
-    name:string
+    logo: string
+    name: string
 }
 
-export type PlanFeature={
-    title:string;
-    isAvailable:boolean;
+export type PlanFeature = {
+    title: string;
+    isAvailable: boolean;
 }
 
-export interface Plan{
-    title:string;
-    price:number;
-    description:string;
-    features:PlanFeature[];
+export interface Plan {
+    title: string;
+    price: number;
+    description: string;
+    features: PlanFeature[];
 }
 
 export interface Property {
     name: string;
     price: number;
     overview: string;
-    bannerImage: Image;
+    bannerImage: string;
     address: Address;
     features: Feature[];
-    geallery: Image[]
+    geallery: Image[];
+    slug: string;
+    status: string;
 }
 
 export interface Agent {

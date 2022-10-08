@@ -11,12 +11,25 @@ interface AgentProps {
   agent: Agent;
 }
 
+export async function getStaticPaths() {
+  const agents = await sanityClient.fetch(`*[_type=="agent"]{
+    slug
+  }`);
+  const paths = agents.map((agent: any) => ({
+    params: { agent: agent.slug.current.slice(7) }
+  }));
+  return {
+    paths,
+    fallback: false
+  }
+
+}
+
 export async function getStaticProps({ params }: any) {
   const agent = await sanityClient.fetch(`*[_type == "agent" && slug.current == "agents/${params.agent}"][0]{
     ...,
   "profileImage":profileImage.asset->url
   }`);
-
 
   return {
     props: {
