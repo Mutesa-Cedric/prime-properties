@@ -48,6 +48,7 @@ function PropertyDetails({ property }: PropertyProps) {
     <div className="w-full lg:px-60">
       <Head>
         <title>Prime Properties | {property.name}</title>
+        <link rel="shortcut icon" href="/icons/logo.svg" type="image/x-icon" />
       </Head>
       <main className="w-full flex flex-col space-y-10 py-28">
         <div className="flex flex-col space-y-4 border-b-2 pb-4 relative">
@@ -88,17 +89,23 @@ function PropertyDetails({ property }: PropertyProps) {
           </div>
         </div>
         <div className="flex flex-col space-y-5">
-            <h2 className="text-xl font-medium">Property Videos</h2>
-            <div className="flex justify-between items-center space-x-16">
-               {
-                property.videos.map((video,i)=>(
-                  <div key={i} className="w-full relative h-72"
-                  style={{backgroundImage:`linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5))`}}>
-                    <Image src={video.banner} layout="fill" objectFit="cover" />
-                  </div>
-                ))
-               }
-            </div>
+          <h2 className="text-xl font-medium">Property Videos</h2>
+          <div className="flex justify-between items-center space-x-16">
+            {
+              property.videos.map((video, i) => (
+                <div key={i} className="w-full relative h-72 bg-cover bg-center bg-no-repeat bg-blend-multiply flex items-center justify-center"
+                  style={{ backgroundImage: `linear-gradient(#51789D,#51789D),url(${video.banner})` }}>
+                  <Image src={'/icons/play_button.svg'} width={110} height={110} className="cursor-pointer"/>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+        <div className="flex flex-col space-y-5">
+          <h2 className="text-xl font-medium">Property Location</h2>
+          <div className="w-full h-96 relative">
+            <Image src={'/images/map.png'} layout="fill" objectFit="cover" />
+          </div>
         </div>
       </main>
     </div>

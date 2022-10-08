@@ -89,7 +89,7 @@ export interface Agent {
     about: string;
     socialMedia: {
         name: string;
-        url: string
+        url: string;
     }[];
     slug: string;
 }
