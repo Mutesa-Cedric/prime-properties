@@ -52,6 +52,18 @@ export interface Partener {
     name:string
 }
 
+export type PlanFeature={
+    title:string;
+    isAvailable:boolean;
+}
+
+export interface Plan{
+    title:string;
+    price:number;
+    description:string;
+    features:PlanFeature[];
+}
+
 export interface Property {
     name: string;
     price: number;

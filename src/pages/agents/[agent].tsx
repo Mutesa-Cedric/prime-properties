@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 import sanityClient from "../../lib/sanity";
 import { Agent } from '../../@types/types';
 import Head from 'next/head';
@@ -11,7 +11,7 @@ interface AgentProps {
   agent: Agent;
 }
 
-export async function getServerSideProps({ params }: any) {
+export async function getStaticProps({ params }: any) {
   const agent = await sanityClient.fetch(`*[_type == "agent" && slug.current == "agents/${params.agent}"][0]{
     ...,
   "profileImage":profileImage.asset->url
@@ -27,7 +27,7 @@ export async function getServerSideProps({ params }: any) {
 
 
 const ViewAgent = ({ agent }: AgentProps) => {
-  const [isLiked,setIsLiked]=useState(false);
+  const [isLiked, setIsLiked] = useState(false);
   return (
     <div className='w-full flex items-center justify-center flex-col'>
       <Head>
@@ -111,7 +111,7 @@ const ViewAgent = ({ agent }: AgentProps) => {
             <div className='relative'>
               <input type='text' placeholder='Search' className="w-full bg-white py-2 outline-none placeholder:text-[#7B7B7B] placeholder:text-sm pl-6 text-gray-500" />
               <div className='h-4 w-4 absolute top-3 left-1'>
-                <Image src={'/icons/search_icon.svg'}  layout='fill' />
+                <Image src={'/icons/search_icon.svg'} layout='fill' />
               </div>
             </div>
           </div>

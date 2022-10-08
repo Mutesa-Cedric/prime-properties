@@ -40,4 +40,7 @@
   .auth-form {
     box-shadow: 0px 10px 30px rgba(0, 115, 225, 0.06);
   }
+  .card{
+    box-shadow: 0px 10px 30px rgba(0, 115, 225, 0.06);
+  }
 }

@@ -11,7 +11,6 @@ interface HomePageProps{
 }
 
 const Home: NextPage<HomePageProps> = ({properties}) => {
-  console.log(properties);
   const { user } = useAuth();
   // console.log(user);
   return (
