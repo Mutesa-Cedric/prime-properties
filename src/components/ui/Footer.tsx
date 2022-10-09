@@ -11,7 +11,10 @@ const navigation = {
     { name: "Meet Our Team", href: "/team" },
     { name: "FAQ", href: "/faq" },
     { name: "Our partners", href: "/agencies" },
-    { name: "Our agents", href: "/agents" }
+    { name: "Our agents", href: "/agents" },
+    { name: "Testimonials", href: "/testimonials" },
+    { name: "Pricing", href: "/pricing" },
+
   ],
   followInstagram: [
     '/images/instagram/img1.png',

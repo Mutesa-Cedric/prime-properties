@@ -43,4 +43,10 @@
   .card{
     box-shadow: 0px 10px 30px rgba(0, 115, 225, 0.06);
   }
+  .quote-container{
+    transform: rotate(-30deg);
+  }
+  .quote-icon{
+    transform: rotate(30deg);
+  }
 }

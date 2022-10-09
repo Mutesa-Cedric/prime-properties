@@ -100,3 +100,11 @@ export interface Service {
     banner: string;
     slug: string;
 }
+
+export interface Testimonial {
+    name: string;
+    profileImage: string;
+    role: string;
+    testimonial: string;
+    stars: number;
+}
