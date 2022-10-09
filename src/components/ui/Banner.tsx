@@ -19,7 +19,7 @@ const Banner: React.FC<BannerProps> = ({ title, bgImage }) => {
             <p className='cursor-pointer text-white text-lg'>Home</p>
           </Link>
           <span className='text-white text-lg'>|</span>
-          <Link href={pathName.split("/")[0]}>
+          <Link href={`/${pageName.split("/")[0]}`}>
             <span className='cursor-pointer text-primary-light capitalize text-lg'>{pageName.split("/")[0]}</span>
           </Link>
         </div>
