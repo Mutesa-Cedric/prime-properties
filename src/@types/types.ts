@@ -111,8 +111,19 @@ export interface Testimonial {
     stars: number;
 }
 
+export type Admin = {
+    name: string;
+    email: string;
+}
 export interface Blog {
-
+    title: string;
+    category: string;
+    banner: string;
+    content: string;
+    postedBy: Agent | Admin;
+    publishedAt: string;
+    tags: string[];
+    slug: string;
 }
 
 export interface FAQ {

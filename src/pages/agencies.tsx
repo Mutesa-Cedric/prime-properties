@@ -14,7 +14,7 @@ export async function getStaticProps() {
     const agencies = await sanityClient.fetch(`*[_type=="agency"]{
        name,
        description,
-       "image":image.asset->url,
+       "image":logo.asset->url,
        socialMedia
     }`)
     return {
@@ -41,7 +41,7 @@ const AgenciesPage = ({ agencies }: AgenciesProps) => {
                         </div>
                     </div>
                     <div className='flex items-center space-x-3'>
-                        <div onClick={() => setActiveView('list')} className="border-[#D3DEE8] border-2  p-2 hover:border-primary-light hover:bg-primary-light hover:text-white text-[#7B7B7B]" >
+                        <div onClick={() => setActiveView('list')} className={activeView==="list"?"border-2  p-2 border-primary-light bg-primary-light text-white":"border-[#D3DEE8] border-2  p-2 hover:border-primary-light hover:bg-primary-light hover:text-white text-[#7B7B7B]"} >
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M8 6H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                 <path d="M8 12H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -52,7 +52,7 @@ const AgenciesPage = ({ agencies }: AgenciesProps) => {
                             </svg>
 
                         </div>
-                        <div onClick={() => setActiveView("grid")} className="border-[#D3DEE8] border-2  p-2 hover:border-primary-light hover:bg-primary-light hover:text-white text-[#7B7B7B]">
+                        <div onClick={() => setActiveView("grid")} className={activeView==="grid"?" border-2  p-2 border-primary-light bg-primary-light text-white":"border-[#D3DEE8] border-2  p-2 hover:border-primary-light hover:bg-primary-light hover:text-white text-[#7B7B7B]"}>
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M10 3H3V10H10V3Z" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
                                 <path d="M21 3H14V10H21V3Z" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />

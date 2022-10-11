@@ -5,11 +5,13 @@ export default {
     preview: {
         select: {
             subtitle: "name",
+            media:"logo",
         },
-        prepare({ subtitle }) {
+        prepare({ subtitle,media }) {
             return {
                 title: "Agency",
-                subtitle: subtitle
+                subtitle: subtitle,
+                media:media
             }
         }
     },
@@ -39,8 +41,8 @@ export default {
             name: "socialMedia",
             title: "Social Media",
             type: "array",
-            validation: Rule => Rule.required().email().warning(
-                "please provide a valid email for this admin"
+            validation: Rule => Rule.required().warning(
+                "please provide agency social media"
             ),
             of: [
                 { type: "socialMedia" }
