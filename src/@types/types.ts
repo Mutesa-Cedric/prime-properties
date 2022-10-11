@@ -108,3 +108,27 @@ export interface Testimonial {
     testimonial: string;
     stars: number;
 }
+
+export interface Blog {
+
+}
+
+export interface FAQ {
+    question: string;
+    answer: string;
+    category: string;
+}
+
+export interface Agency {
+
+}
+
+export interface Collection {
+
+}
+
+export interface Contact {
+    icon: string;
+    title: string;
+    contacts: string[];
+} 

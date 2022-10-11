@@ -18,7 +18,7 @@ export default {
         {
             name: 'question',
             title: 'Question',
-            type: 'markdown',
+            type: 'text',
             validation: Rule => Rule.required().min(3).max(300).warning(
                 'please provide a question for this FAQ'
             )
@@ -26,10 +26,26 @@ export default {
         {
             name: 'answer',
             title: 'Answer',
-            type: 'markdown',
+            type: 'text',
             validation: Rule => Rule.required().warning(
                 "you can't create this faq without an answer"
             )
+        },
+        {
+            name: "category",
+            title: "Category",
+            type: "string",
+            options: {
+                list: [
+                    { title: "General", value: "general" },
+                    { title: "Rent Property", value: "rentProperty" },
+                    { title: "Buying Property", value: "buyingProperty" },
+                    { title: "Selling Property", value: "sellingProperty" },
+                    { title: "Terms & Conditions", value: "termsAndConditions" },
+                    { title: "Account Info", value: "accountInfo" },
+                    { title: "others", value: "others" }
+                ]
+            }
         }
     ]
 }
