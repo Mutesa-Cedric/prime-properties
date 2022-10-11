@@ -2,7 +2,7 @@ import Head from "next/head";
 import React from "react";
 import { Contact } from "../@types/types";
 import Image from "next/image";
-
+import Map from "../components/ui/Map"
 const contacts: Contact[] = [
     {
         icon: "/icons/phone_icon.svg",
@@ -13,7 +13,7 @@ const contacts: Contact[] = [
         ]
     },
     {
-        icon: "/icons/email_icon.svg",
+        icon: "/icons/email_icon_white.svg",
         title: "Email Address",
         contacts: [
             'mutesacedric@gmail.com',
@@ -21,7 +21,7 @@ const contacts: Contact[] = [
         ]
     },
     {
-        icon: "/icons/address_icon.svg",
+        icon: "/icons/address_icon_white.svg",
         title: "Our Address",
         contacts: [
             '4517 Washington Ave. Manchester, Kentucky 39495'
@@ -47,7 +47,7 @@ export default function ContactPage() {
                     </p>
 
                 </div>
-                <div className="flex space-x-5">
+                <div className="flex space-x-10">
                     <form className='flex flex-col p-6 border-[#D3DEE8] border w-2/3 space-y-6 justify-center'>
                         <div className='flex flex-col space-y-4'>
                             <div className='flex items-center w-full space-x-5'>
@@ -71,14 +71,14 @@ export default function ContactPage() {
                             </div>
                         </div>
                         <button className='bg-primary-light px-6 py-3 w-max text-white'>
-                            Send Message
+                            Submit Request
                         </button>
                     </form>
-                    <div className="flex flex-col space-y-5 border border-[#D3DEE8] rounded-[4px] p-5">
+                    <div className="flex flex-col space-y-5 border border-[#D3DEE8] rounded-sm p-5">
                         {
                             contacts.map((contact, i) => (
-                                <div className="flex flex-col items-center py-4 space-y-3">
-                                    <div className="rounded-full p-2 bg-primary-light">
+                                <div className={i!==contacts.length-1?"flex flex-col items-center py-4 space-y-3 border-b-2":"flex flex-col items-center py-4 space-y-3"} key={i}>
+                                    <div className="rounded-full w-12 flex items-center justify-center h-12 bg-primary-light">
                                         <Image src={contact.icon} height={20} width={20} />
                                     </div>
                                     <p className="font-medium">{contact.title}</p>
@@ -95,6 +95,7 @@ export default function ContactPage() {
                     </div>
                 </div>
             </main>
+            <Map height={'55vh'} />
         </div>
     )
 };

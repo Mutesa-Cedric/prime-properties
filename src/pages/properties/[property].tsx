@@ -3,6 +3,7 @@ import sanityClient from "../../lib/sanity";
 import { Property } from '../../@types/types';
 import Head from 'next/head';
 import Image from "next/image";
+import Map from '../../components/ui/Map';
 
 export async function getStaticPaths() {
   const properties = await sanityClient.fetch(`*[_type=="property"]{
@@ -95,7 +96,7 @@ function PropertyDetails({ property }: PropertyProps) {
               property.videos.map((video, i) => (
                 <div key={i} className="w-full relative h-72 bg-cover bg-center bg-no-repeat bg-blend-multiply flex items-center justify-center"
                   style={{ backgroundImage: `linear-gradient(#51789D,#51789D),url(${video.banner})` }}>
-                  <Image src={'/icons/play_button.svg'} width={110} height={110} className="cursor-pointer"/>
+                  <Image src={'/icons/play_button.svg'} width={110} height={110} className="cursor-pointer" />
                 </div>
               ))
             }
@@ -103,9 +104,7 @@ function PropertyDetails({ property }: PropertyProps) {
         </div>
         <div className="flex flex-col space-y-5">
           <h2 className="text-xl font-medium">Property Location</h2>
-          <div className="w-full h-96 relative">
-            <Image src={'/images/map.png'} layout="fill" objectFit="cover" />
-          </div>
+          <Map />
         </div>
       </main>
     </div>
