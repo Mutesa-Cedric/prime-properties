@@ -78,6 +78,11 @@ export interface Property {
     videos: Video[];
 }
 
+export type SocialMedia = {
+    name: string;
+    url: string;
+}
+
 export interface Agent {
     _key: string;
     name: string;
@@ -87,10 +92,7 @@ export interface Agent {
     phoneNumber: string;
     whatsappNumber: string;
     about: string;
-    socialMedia: {
-        name: string;
-        url: string;
-    }[];
+    socialMedia: SocialMedia[];
     slug: string;
 }
 
@@ -120,6 +122,10 @@ export interface FAQ {
 }
 
 export interface Agency {
+    name: string;
+    description: string;
+    image: string;
+    socialMedia: SocialMedia[];
 
 }
 

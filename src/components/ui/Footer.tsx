@@ -91,8 +91,8 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-8 border-t border-t-gray-400 flex pt-6 justify-center">
-          <p className="mt-8 text-base text-white md:mt-0">
-            &copy; {new Date().getFullYear()} Mutesa Cedric. All rights reserved.
+          <p className="mt-8 text-base text-white/75 md:mt-0">
+            developed And maintainded by <a className="underline" href="https://github.com/Mutesa-Cedric" target={'_blank'}>Mutesa Cedric</a> .
           </p>
         </div>
       </div>

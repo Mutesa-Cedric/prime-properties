@@ -13,7 +13,8 @@
     @apply flex flex-col space-y-1 w-full;
   }
 
-  .input-wrapper input,textarea {
+  .input-wrapper input,
+  textarea {
     @apply outline-none border border-[#D3DEE8] rounded-[2px] p-2 w-full;
   }
   .input-wrapper label {
@@ -22,7 +23,8 @@
   .input-wrapper input::placeholder {
     @apply text-[#7B7B7B]/75 text-base;
   }
-  .input-wrapper.contact-form input,textarea {
+  .input-wrapper.contact-form input,
+  textarea {
     @apply outline-none border border-[#D3DEE8] rounded-[2px] p-2 w-full;
   }
   .input-wrapper.contact-form label {
@@ -40,13 +42,20 @@
   .auth-form {
     box-shadow: 0px 10px 30px rgba(0, 115, 225, 0.06);
   }
-  .card{
+  .card {
     box-shadow: 0px 10px 30px rgba(0, 115, 225, 0.06);
   }
-  .quote-container{
+  .quote-container {
     transform: rotate(-30deg);
   }
-  .quote-icon{
+  .quote-icon {
     transform: rotate(30deg);
+  }
+  .agencyCard {
+    display: flex;
+    padding: 16px;
+    border: 1px solid #d3dee8;
+    box-shadow: 0px 10px 30px rgba(0, 115, 225, 0.06);
+    border-radius: 4px;
   }
 }

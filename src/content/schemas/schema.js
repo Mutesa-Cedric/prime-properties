@@ -15,7 +15,7 @@ import collection from "./documents/collection";
 import testimonial from "./documents/testimonial";
 import plan from "./documents/plan";
 import blogCategory from "./documents/blogCategory";
-
+import agency from "./documents/agency"
 // object imports
 import propertyFeature from "./objects/propertyFeature";
 import video from "./objects/video";
@@ -28,6 +28,7 @@ export default createSchema({
   types: schemaTypes.concat([
     admin,
     agent,
+    agency,
     property,
     blog,
     blogCategory,
