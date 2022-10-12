@@ -105,7 +105,7 @@ export interface Service {
 
 export interface Testimonial {
     name: string;
-    profileImage: string;
+    profileImage?: string;
     role: string;
     testimonial: string;
     stars: number;
@@ -115,15 +115,31 @@ export type Admin = {
     name: string;
     email: string;
 }
+
+export interface Comment {
+    commentedBy: string;
+    profileImage: string;
+    body:string;
+    _id: string;
+    replies?: Comment[]
+}
+
+export interface BlogCategory{
+    title:string;
+    slug:string
+}
+
 export interface Blog {
     title: string;
     category: string;
     banner: string;
     content: string;
+    description:string;
     postedBy: Agent | Admin;
     publishedAt: string;
     tags: string[];
     slug: string;
+    comments: Comment[]
 }
 
 export interface FAQ {

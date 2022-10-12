@@ -7,7 +7,7 @@ export default {
             subtitle: "title",
             media: "banner"
         },
-        prepare(selection){
+        prepare(selection) {
             const { subtitle, media } = selection;
             return {
                 title: "Blog",
@@ -27,11 +27,18 @@ export default {
             )
         },
         {
-          name:"category",
-          title:"Category",
-          type:"reference",
-          to:[{type:"blogCategory"}],
-          validation:Rule=>Rule.required()
+            name: "description",
+            title: "Description",
+            description: "tell people what your blog is about",
+            type: "text",
+            validation: rule => rule.required()
+        },
+        {
+            name: "category",
+            title: "Category",
+            type: "reference",
+            to: [{ type: "blogCategory" }],
+            validation: Rule => Rule.required()
         },
         {
             name: 'banner',
@@ -87,6 +94,12 @@ export default {
             validation: Rule => Rule.required().warning(
                 "please provide a slug"
             )
+        },
+        {
+            name: "comments",
+            title: "Comments",
+            type: "array",
+            of: [{ type: "comment" }],
         }
 
     ]
