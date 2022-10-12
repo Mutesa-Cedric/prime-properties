@@ -10,6 +10,11 @@ export interface FilterProperty {
     type?: string
 }
 
+export interface Fact{
+    title:string;
+    desc:string;
+}
+
 export interface ServiceAd {
     icon: string,
     title: string,

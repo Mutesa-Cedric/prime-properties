@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import React from 'react'
 import { Agent } from '../../@types/types'
-import AgentComponent from '../../components/ui/Agent'
+import AgentComponent from '../../components/agents/Agent'
 import sanityClient from "../../lib/sanity"
 import { useRecoilState } from "recoil";
 import { storedAgents } from "../../atoms/data"
