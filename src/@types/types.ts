@@ -10,9 +10,9 @@ export interface FilterProperty {
     type?: string
 }
 
-export interface Fact{
-    title:string;
-    desc:string;
+export interface Fact {
+    title: string;
+    desc: string;
 }
 
 export interface ServiceAd {
@@ -110,7 +110,7 @@ export interface Service {
 
 export interface Testimonial {
     name: string;
-    profileImage?: string;
+    profileImage: string;
     role: string;
     testimonial: string;
     stars: number;
@@ -124,14 +124,14 @@ export type Admin = {
 export interface Comment {
     commentedBy: string;
     profileImage: string;
-    body:string;
+    body: string;
     _id: string;
     replies?: Comment[]
 }
 
-export interface BlogCategory{
-    title:string;
-    slug:string
+export interface BlogCategory {
+    title: string;
+    slug: string
 }
 
 export interface Blog {
@@ -139,7 +139,7 @@ export interface Blog {
     category: string;
     banner: string;
     content: string;
-    description:string;
+    description: string;
     postedBy: Agent | Admin;
     publishedAt: string;
     tags: string[];

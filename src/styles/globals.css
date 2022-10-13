@@ -58,4 +58,9 @@
     box-shadow: 0px 10px 30px rgba(0, 115, 225, 0.06);
     border-radius: 4px;
   }
+  .mission-vision {
+    background: #ffffff;
+    border: 1px solid #d3dee8;
+    box-shadow: 0px 10px 20px rgba(0, 115, 225, 0.1);
+  }
 }
