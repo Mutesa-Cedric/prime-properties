@@ -4,13 +4,18 @@ import HomeAdsSection from '../components/home/HomeAdsSection';
 import HomeBanner from '../components/home/HomeBanner';
 import useAuth from '../hooks/useAuth';
 import sanityClient from '../lib/sanity';
-import {Property} from '../@types/types';
+import { Property, Testimonial } from '../@types/types';
+import FeaturedProperties from '../components/properties/FeaturedProperties';
+import TrustedPartners from '../components/ui/TrustedPartners';
+import WhyChooseUs from '../components/home/WhyChooseUs';
+import TestimonialSlider from '../components/ui/TestimonialSlider';
 
-interface HomePageProps{
-  properties:Property[]
+interface HomePageProps {
+  properties: Property[],
+  testimonials: Testimonial[]
 }
 
-const Home: NextPage<HomePageProps> = ({properties}) => {
+const Home: NextPage<HomePageProps> = ({ properties, testimonials }) => {
   const { user } = useAuth();
   // console.log(user);
   return (
@@ -22,18 +27,32 @@ const Home: NextPage<HomePageProps> = ({properties}) => {
       <main className='flex flex-col space-y-8 w-full'>
         <HomeBanner />
         <HomeAdsSection />
+        <FeaturedProperties properties={properties} />
+        <TrustedPartners />
+        <WhyChooseUs />
+        <TestimonialSlider testimonials={testimonials} />
       </main>
     </div>
   )
 }
 
-const propertiesQuery = `*[_type == "property"][0]`;
+const propertiesQuery = `*[_type == "property"]{
+  ...,
+  "bannerImage":bannerImage.asset->url,
+  "slug":slug.current
+}`;
 
 export async function getStaticProps() {
-  const data = await sanityClient.fetch(propertiesQuery);
+  const properties = await sanityClient.fetch(propertiesQuery);
+  const testimonials = await sanityClient.fetch(`*[_type=="testimonial"]{
+    ...,
+    "profileImage":profileImage.asset->url
+  }`);
+
   return {
-    props:{
-      properties: data
+    props: {
+      properties: properties,
+      testimonials: testimonials
     }
   }
 }

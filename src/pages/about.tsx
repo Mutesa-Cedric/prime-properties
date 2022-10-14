@@ -8,8 +8,8 @@ import SomeFacts from "../components/about/SomeFacts";
 import AgentsSlider from "../components/agents/AgentsSlider";
 import GalleryImages from "../components/gallery/GalleryImages";
 import ServicesVideo from "../components/services/ServicesVideo";
-import { Parteners } from "../components/ui/Parteners";
 import TestimonialSlider from "../components/ui/TestimonialSlider";
+import TrustedPartners from "../components/ui/TrustedPartners";
 import sanityClient from "../lib/sanity";
 
 
@@ -56,13 +56,7 @@ const AboutPage = ({ agents, testimonials, propertyImages }: AboutPageProps) => 
                     <ServicesVideo />
                     <AgentsSlider agents={agents} />
                 </div>
-                <div className="w-full flex flex-col items-center space-y-3">
-                    <div className="flex flex-col space-y-3 items-center">
-                        <h2 className="text-3xl font-semibold">Our Trusted Parteners</h2>
-                        <p className="text-center text-gray-primary/75  text-lg max-w-xl">There are many variations of passages of Lorem Ipsum available but the this in majority have suffered alteration in some</p>
-                    </div>
-                    <Parteners />
-                </div>
+                <TrustedPartners/>
                 <SomeFacts />
                 <GalleryImages propertyImages={propertyImages} />
                 <Certificates />

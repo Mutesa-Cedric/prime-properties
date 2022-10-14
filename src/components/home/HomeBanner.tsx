@@ -12,7 +12,7 @@ const HomeBanner: React.FC = () => {
                     Find Property
                 </button>
             </div>
-            <div className="relative h-full w-full">
+            <div className="relative h-full w-full bg-gray-300">
                 <Image src={'/images/home_banner.png'} layout="fill" objectFit="cover" />
             </div>
         </div>

@@ -1,30 +1,17 @@
-import React from "react";
-import { Feature, Property } from "../../@types/types";
 import Link from "next/link";
+import React from "react";
 import Image from "next/image";
+import { Property } from "../../@types/types";
+import { PropertyFeature } from "./PropertyCard";
 
-
-interface FeatureProps {
-    i: number;
-    feature: Feature;
-}
-
-export const PropertyFeature = ({ feature: { name, value, icon }, i }: FeatureProps) => {
-    return (
-        <div className={i !== 2 ? "flex space-x-1 items-center border-r-2 pr-2" : "flex space-x-1 items-center"}>
-            <Image src={`/icons/${icon}.svg`} width={20} height={20} />
-            <p className="text-sm text-gray-primary/75">{value}</p>
-            <p className="text-sm text-gray-primary/75">{name}</p>
-        </div>
-    )
-}
-
-const PropertyCard = ({
-    name, price, bannerImage, address, features, status, slug
-}: Property) => {
+const PropertyCardWide = (
+    {
+        name, price, bannerImage, address, features, status, slug
+    }: Property
+) => {
     return (
         <Link href={`/${slug}`}>
-            <div className="flex flex-col space-y-3 shadow-md border border-white hover:shadow-lg transition duration-200 cursor-pointer rounded w-[21.4vw] h-[50vh]">
+            <div className="flex flex-col space-y-3 shadow-md border border-white hover:shadow-lg transition duration-300 cursor-pointer rounded w-[21.4vw] h-[50vh] ">
                 <div className="relative w-full h-48">
                     <Image src={bannerImage} layout="fill" objectFit="cover" />
                     <div className="absolute top-2 left-0 w-full z-20 py-2 flex items-center justify-between px-4">
@@ -68,4 +55,4 @@ const PropertyCard = ({
     )
 }
 
-export default PropertyCard;
+export default PropertyCardWide;
