@@ -24,19 +24,25 @@ export async function getStaticProps() {
         "profileImage":profileImage.asset->url
     }`);
 
+    const propertyImages = await sanityClient.fetch(`*[_type=="property"]{
+        "bannerImage":bannerImage.asset->url
+    }`);
+
     return {
         props: {
             agents: agents,
-            testimonials: testimonials
+            testimonials: testimonials,
+            propertyImages: propertyImages
         }
     }
 }
 
 interface AboutPageProps {
     agents: Agent[];
-    testimonials: Testimonial[]
+    testimonials: Testimonial[];
+    propertyImages: {bannerImage:string}[];
 }
-const AboutPage = ({ agents, testimonials }: AboutPageProps) => {
+const AboutPage = ({ agents, testimonials, propertyImages }: AboutPageProps) => {
     return (
         <div className="w-full">
             <Head>
@@ -58,7 +64,7 @@ const AboutPage = ({ agents, testimonials }: AboutPageProps) => {
                     <Parteners />
                 </div>
                 <SomeFacts />
-                <GalleryImages />
+                <GalleryImages propertyImages={propertyImages} />
                 <Certificates />
                 <TestimonialSlider testimonials={testimonials} />
             </main>

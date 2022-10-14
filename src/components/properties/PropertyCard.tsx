@@ -24,7 +24,7 @@ const PropertyCard = ({
 }: Property) => {
     return (
         <Link href={`/${slug}`}>
-            <div className="flex flex-col space-y-3 shadow-sm border border-white hover:border-primary-light cursor-pointer">
+            <div className="flex flex-col space-y-3 shadow-md border border-white hover:shadow-lg transition duration-300 cursor-pointer rounded">
                 <div className="relative w-full h-48">
                     <Image src={bannerImage} layout="fill" objectFit="cover" />
                     <div className="absolute top-2 left-0 w-full z-20 py-2 flex items-center justify-between px-4">
@@ -44,7 +44,7 @@ const PropertyCard = ({
                     </div>
                 </div>
                 <div className="flex flex-col space-y-2 p-2">
-                    <h2 className="font-medium text-xl">{name}</h2>
+                    <h2 className="font-medium text-xl truncate">{name}</h2>
                     <div className="flex items-center space-x-2">
                         <Image src='/icons/address_icon.svg' height={20} width={20} />
                         <p className="text-sm text-gray-primary/75">address</p>
