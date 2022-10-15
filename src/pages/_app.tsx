@@ -11,17 +11,17 @@ function MyApp({ Component, pageProps }: { Component: any, pageProps: AppProps }
 
     <RecoilRoot>
       {/* <DataProvider> */}
-        <AuthProvider>
-          <MainLayout>
-            {
-              Component.innerPage ?
-                <InnerPageLayout pageTitle={Component.title}>
-                  <Component {...pageProps} />
-                </InnerPageLayout> :
+      <AuthProvider>
+        <MainLayout isHome={Component.isHome || false}>
+          {
+            Component.innerPage ?
+              <InnerPageLayout pageTitle={Component.title}>
                 <Component {...pageProps} />
-            }
-          </MainLayout>
-        </AuthProvider>
+              </InnerPageLayout> :
+              <Component {...pageProps} />
+          }
+        </MainLayout>
+      </AuthProvider>
       {/* </DataProvider> */}
     </RecoilRoot>
 

@@ -1,5 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
+import SubscribeToNewsLetter from "./SubscribeToNewsLetter"
 
 const navigation = {
 
@@ -27,12 +28,13 @@ const navigation = {
 
 }
 
-export default function Footer() {
+export default function Footer({ isHome }: { isHome: boolean }) {
   return (
-    <footer className="bg-primary-dark w-full lg:px-60" aria-labelledby="footer-heading">
+    <footer  className={isHome ? "bg-primary-dark w-full lg:px-60 pt-20 relative" : "bg-primary-dark w-full lg:px-60"} aria-labelledby="footer-heading">
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>
+      {isHome && <SubscribeToNewsLetter />}
       <div className="mx-auto w-full py-12 sm:px-6 lg:py-16">
         <div className="pb-8 xl:grid xl:grid-cols-5 xl:gap-8">
           <div className="grid grid-cols-3 gap-8 xl:col-span-7">

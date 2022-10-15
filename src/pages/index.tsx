@@ -18,7 +18,7 @@ interface HomePageProps {
   blogs: Blog[]
 }
 
-const Home: NextPage<HomePageProps> = ({ properties, testimonials, blogs }) => {
+const Home= ({ properties, testimonials, blogs }:HomePageProps) => {
   const { user } = useAuth();
   const propertiesForSale = properties.filter(property => property.status === "forSale")
   // console.log(user);
@@ -70,4 +70,5 @@ export async function getStaticProps() {
   }
 }
 
+Home.isHome=true;
 export default Home
