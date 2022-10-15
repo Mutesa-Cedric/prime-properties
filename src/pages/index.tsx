@@ -4,21 +4,24 @@ import HomeAdsSection from '../components/home/HomeAdsSection';
 import HomeBanner from '../components/home/HomeBanner';
 import useAuth from '../hooks/useAuth';
 import sanityClient from '../lib/sanity';
-import { Blog, Property, Testimonial } from '../@types/types';
+import { Blog, City, Property, Testimonial } from '../@types/types';
 import FeaturedProperties from '../components/properties/FeaturedProperties';
 import TrustedPartners from '../components/ui/TrustedPartners';
 import WhyChooseUs from '../components/home/WhyChooseUs';
 import TestimonialSlider from '../components/ui/TestimonialSlider';
 import PropertyNews from '../components/home/PropertyNews';
 import LatestPropertiesForSale from '../components/home/LatestPropertiesForSale';
+import PropertiesInCities from '../components/home/PropertiesInCities';
+import RecentlyAddedProperties from '../components/home/RecentlyAddedProperties';
 
 interface HomePageProps {
   properties: Property[],
   testimonials: Testimonial[],
-  blogs: Blog[]
+  blogs: Blog[],
+  cities: City[]
 }
 
-const Home= ({ properties, testimonials, blogs }:HomePageProps) => {
+const Home = ({ properties, testimonials, blogs, cities }: HomePageProps) => {
   const { user } = useAuth();
   const propertiesForSale = properties.filter(property => property.status === "forSale")
   // console.log(user);
@@ -33,6 +36,8 @@ const Home= ({ properties, testimonials, blogs }:HomePageProps) => {
         <HomeAdsSection />
         <FeaturedProperties properties={properties} />
         <TrustedPartners />
+        <PropertiesInCities cities={cities} />
+        <RecentlyAddedProperties properties={properties} />
         <WhyChooseUs />
         <LatestPropertiesForSale properties={propertiesForSale} />
         <TestimonialSlider testimonials={testimonials} />
@@ -61,14 +66,17 @@ export async function getStaticProps() {
     postedBy->
 }`);
 
+  const cities = await sanityClient.fetch(`*[_type=="city"]`);
+
   return {
     props: {
       properties: properties,
       testimonials: testimonials,
       blogs: blogs,
+      cities: cities
     }
   }
 }
 
-Home.isHome=true;
+Home.isHome = true;
 export default Home

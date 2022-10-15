@@ -33,7 +33,8 @@ export type Feature = {
     icon: string
 }
 export type Image = {
-    image: string
+    _type: "image"
+    asset: any
 }
 
 export type Slug = {
@@ -105,7 +106,7 @@ export interface Service {
     name: string;
     description: string;
     banner: string;
-    slug: string;   
+    slug: string;
 }
 
 export interface Testimonial {
@@ -169,4 +170,9 @@ export interface Contact {
     icon: string;
     title: string;
     contacts: string[];
-} 
+}
+
+export interface City {
+    name: string;
+    banner: Image
+}

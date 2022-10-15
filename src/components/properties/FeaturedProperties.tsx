@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Property } from "../../@types/types";
 import PropertyCardWide from "./PropertyCardWide";
 
-interface PropertiesProps {
+export interface PropertiesProps {
     properties: Property[]
 }
 const FeaturedProperties = ({ properties }: PropertiesProps) => {
