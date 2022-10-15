@@ -20,6 +20,8 @@ export async function getStaticProps() {
         }
     }
 }
+
+
 const BlogsPage = ({ blogs }: BlogsProps) => {
     return (
         <div className="w-full">

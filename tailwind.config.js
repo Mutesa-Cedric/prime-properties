@@ -1,4 +1,3 @@
-
 const defaultTheme = require('tailwindcss/defaultTheme');
 module.exports = {
   content: [
@@ -11,15 +10,17 @@ module.exports = {
       fontFamily: {
         sans: ['Roboto', ...defaultTheme.fontFamily.sans]
       },
-      colors:{
-        "primary-light":"#0984E3",
-        "primary-dark":"#25517A",
-        "gray-primary":"#333333",
-        "heading-1":"#263048"
+      colors: {
+        "primary-light": "#0984E3",
+        "primary-dark": "#25517A",
+        "gray-primary": "#333333",
+        "heading-1": "#263048",
+        "heading-2": "#2A2C30",
+        "bg-1": "#FAF8FB"
       }
     },
   },
   plugins: [
-    "tailwind-scrollbar-hide"
+    require('tailwind-scrollbar-hide'),
   ],
 }
