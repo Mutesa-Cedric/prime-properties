@@ -35,7 +35,7 @@ export default function Footer({ isHome }: { isHome: boolean }) {
         Footer
       </h2>
       {isHome && <SubscribeToNewsLetter />}
-      <div className="mx-auto w-full py-12 sm:px-6 lg:py-16">
+      <div className="mx-auto w-full py-12 lg:py-16">
         <div className="pb-8 xl:grid xl:grid-cols-5 xl:gap-8">
           <div className="grid grid-cols-3 gap-8 xl:col-span-7">
             <div className="mt-12 md:mt-0 space-y-6">

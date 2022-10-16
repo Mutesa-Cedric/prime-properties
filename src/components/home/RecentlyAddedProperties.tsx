@@ -11,7 +11,7 @@ const RecentlyAddedProperties = ({ properties }: PropertiesProps) => {
                 <p className="max-w-xl text-base text-gray-primary/75">There are many variations of passages of Lorem Ipsum available but the this in majority have suffered alteration in some</p>
             </div>
             <div
-                className="grid auto-cols-auto grid-flow-col w-screen scrollbar-hide  items-center space-x-0.5 overflow-x-scroll  md:space-x-5 md:p-2 lg:pl-60"
+                className="grid auto-cols-auto grid-flow-col w-screen scrollbar-hide  items-center space-x-0.5 overflow-x-scroll overflow-y-hidden  md:space-x-5 md:p-2 lg:pl-60"
             >
                 {/* {
                     properties.map((property, i) => (

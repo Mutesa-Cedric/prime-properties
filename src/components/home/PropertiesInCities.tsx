@@ -18,7 +18,7 @@ interface CityProps {
 const City = ({ city, i }: CityProps) => {
     const imageProps = useNextSanityImage(sanityClient, city.banner);
     return (
-        <div className="group flex items-center justify-center relative bg-[#465F78] blend-n-multiply bg-cover bg-center bg-no-repeat bg-blend-multiply"
+        <div className="group flex items-center justify-center relative bg-[#465F78] blend-n-multiply bg-cover bg-center bg-no-repeat bg-blend-multiply cursor-pointer"
             style={{
                 backgroundImage: `linear-gradient(#a8b5c2,#a8b5c2),url(${imageProps.src})`,
                 height: i === 3 ? `34.5vh` : `${imageProps.height - 50}px`,

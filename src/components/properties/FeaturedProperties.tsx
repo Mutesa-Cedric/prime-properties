@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { Property } from "../../@types/types";
 import PropertyCardWide from "./PropertyCardWide";
 
@@ -7,30 +7,23 @@ export interface PropertiesProps {
     properties: Property[]
 }
 const FeaturedProperties = ({ properties }: PropertiesProps) => {
-    const [activeProperties, setActiveProperties] = useState({
-        start: 0,
-        end: 3
-    });
+    const sliderRef = useRef<HTMLDivElement>(null);
+    const [isMoved, setIsMoved] = useState(false)
 
-    const handleNext = () => {
-        if (activeProperties.end < properties.length) {
-            setActiveProperties({
-                start: activeProperties.start + 1,
-                end: activeProperties.end + 1
-            })
-        }
-    }
+    const handleClick = (direction: string) => {
+        setIsMoved(true)
+        if (sliderRef.current) {
+            const { scrollLeft, clientWidth } = sliderRef.current
 
-    const handlePrev = () => {
-        if (activeProperties.start > 0) {
-            setActiveProperties({
-                start: activeProperties.start - 1,
-                end: activeProperties.end - 1
-            })
+            const scrollTo =
+                direction === 'left'
+                    ? scrollLeft - clientWidth
+                    : scrollLeft + clientWidth
+            sliderRef.current.scrollTo({ left: scrollTo, behavior: 'smooth' })
         }
     }
     return (
-        <div className="bg-[#FAF8FB] py-10 flex justify-between h-screen flex-col ">
+        <div className="bg-[#FAF8FB] py-10 flex justify-between h-screen flex-col  overflow-hidden">
 
             {/* header */}
             <div className="flex w-full justify-between items-center lg:px-60">
@@ -46,7 +39,7 @@ const FeaturedProperties = ({ properties }: PropertiesProps) => {
             </div>
 
             {/* carousel */}
-            <div className="grid grid-cols-1 py-8 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full lg:px-60" >
+            <div ref={sliderRef} className="grid gap-x-8 auto-cols-auto grid-flow-col w-screen scrollbar-hide overflow-x-scroll lg:pl-60" >
                 {
                     properties.map((property, i) => (
                         <PropertyCardWide key={i} {...property} />
@@ -63,16 +56,17 @@ const FeaturedProperties = ({ properties }: PropertiesProps) => {
                     </Link>
                 </p>
                 <div className="flex space-x-3">
-                    <button disabled={activeProperties.start == 0} type="button" onClick={handlePrev}
-                        className={activeProperties.start > 0 ? "h-12 w-12 rounded-full border-2 border-primary-light hover:bg-primary-light hover:text-white transition duration-300 flex items-center justify-center text-primary-light" : "h-12 w-12 rounded-full border-2 border-[#7B7B7B] text-[#7B7B7B] flex items-center justify-center"}
+                    <button type="button" onClick={() => handleClick('left')}
+                        className={`h-12 w-12 rounded-full border-2 border-primary-light hover:bg-primary-light hover:text-white transition duration-300 flex items-center justify-center text-primary-light ${!isMoved && 'hidden'
+                            }`}
                     >
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
                         </svg>
                     </button>
 
-                    <button disabled={activeProperties.end >= properties.length} onClick={handleNext}
-                        className={activeProperties.end<properties.length?"h-12 w-12 rounded-full border-2 border-primary-light hover:bg-primary-light hover:text-white transition duration-300 flex items-center justify-center text-primary-light":"h-12 w-12 rounded-full border-2 border-[#7B7B7B] text-[#7B7B7B] flex items-center justify-center"}
+                    <button onClick={() => handleClick('right')}
+                        className={`h-12 w-12 rounded-full border-2 border-primary-light hover:bg-primary-light hover:text-white transition duration-300 flex items-center justify-center text-primary-light }`}
                     >
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />

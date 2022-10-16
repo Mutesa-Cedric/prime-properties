@@ -17,7 +17,7 @@ const BlogPreview = ({ banner, title, postedBy, publishedAt }: Blog) => {
                     </div>
                     <div className="flex items-center space-x-1">
                         <Image src="/icons/clock_icon.svg" width={15} height={15} />
-                        <p>{postedBy.name}</p>
+                        <p className="truncate">{postedBy.name}</p>
                     </div>
                 </div>
             </div>

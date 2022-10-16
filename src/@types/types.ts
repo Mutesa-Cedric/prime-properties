@@ -33,6 +33,7 @@ export type Feature = {
     icon: string
 }
 export type Image = {
+    image: string;
     _type: "image"
     asset: any
 }
