@@ -36,7 +36,7 @@ const LatestPropertiesForSale = ({ properties }: PropertyProps) => {
                 <p className='text-base text-gray-primary/50 max-w-lg text-center'>There are many variations of passages of Lorem Ipsum available but the this in majority have suffered alteration in some</p>
             </div>
             <div
-                className="grid auto-cols-auto grid-flow-col w-screen scrollbar-hide  items-center space-x-0.5 overflow-x-scroll  md:space-x-5 md:p-2 flex-shrink-0"
+                className="grid auto-cols-auto grid-flow-col w-screen scrollbar-hide  items-center space-x-0.5 overflow-x-scroll  md:space-x-5 md:p-2"
             >
                 {/* {
                     properties.map((property, i) => (

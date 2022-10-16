@@ -66,7 +66,7 @@ export async function getStaticProps() {
     postedBy->
 }`);
 
-  const cities = await sanityClient.fetch(`*[_type=="city"]`);
+  const cities = await sanityClient.fetch(`*[_type=="city"] | order(_createdAt asc)`);
 
   return {
     props: {
