@@ -47,12 +47,12 @@ const socials: { name: string, href: string, Icon: string }[] = [
 
 const SubscribeToNewsLetter = () => {
     return (
-        <div className="absolute bg-primary-light shadow-md p-12 flex items-center w-[65%] left-[17.5%] -top-28">
+        <div className="absolute bg-primary-light shadow-md p-12 flex items-center w-[68%] -top-28">
             <div className="text-white flex flex-col w-full space-y-5">
                 <h2 className="text-2xl font-medium">Subscribe to get daily updates.</h2>
                 <div className="relative w-full">
                     <input type="text" placeholder="Enter Your Email Address " className=" py-5 placeholder:text-xl w-[90%] pl-8 pr-40 text-gray-primary/75 bg-white outline-none " />
-                    <button className="absolute bg-primary-light rounded text-white right-20 top-2 px-6 py-3">
+                    <button className="absolute bg-primary-light rounded-sm text-white right-20 top-2 px-6 py-3">
                         Subscribe
                     </button>
                 </div>

@@ -61,7 +61,7 @@ const ViewBlog = ({ blog, content, categories }: BlogProps) => {
     return (
         <div className="w-full">
             <Head>
-                <title>prime properties | page not fount</title>
+                <title>prime properties | {blog.title}</title>
                 <link rel="shortcut icon" href="/icons/logo.svg" type="image/x-icon" />
             </Head>
             <main className="lg:px-60 py-20 flex justify-between">
@@ -122,7 +122,6 @@ const ViewBlog = ({ blog, content, categories }: BlogProps) => {
                             <p className="text-medium text-base text-gray-primary">There are many variations</p>
                         </div>
                     </div>
-
                 </div>
                 <div className="flex flex-col w-[30%] space-y-6">
                     <div className="text-[#EEF7FF] p-3 relative">

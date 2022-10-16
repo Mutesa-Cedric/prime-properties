@@ -88,7 +88,7 @@ export default {
                 source: (doc) => {
                     return `blogs/${doc.title}`
                 },
-                slugify: (input: string) =>
+                    slugify: (input: string) =>
                     input.toLowerCase().replace(/\s+/g, "-").slice(0, 200),
             },
             validation: Rule => Rule.required().warning(

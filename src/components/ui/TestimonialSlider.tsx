@@ -11,7 +11,7 @@ const TestimonialSlider = ({ testimonials }: TestimonialProps) => {
     return (
         <div className="lg:px-60 md:px-40 sm:px-20 px-10 flex flex-col items-center py-10 bg-white relative">
             <div className="flex flex-col space-y-3 items-center pb-10">
-                <h2 className='font-medium text-2xl text-gray-primary'>What our Clients say  </h2>
+                <h2 className='font-medium text-2xl text-heading-1'>What our Clients say  </h2>
                 <p className="text-gray-primary/75 text-base max-w-lg text-center">There are many variations of passages of Lorem Ipsum available but the this in majority have suffered alteration in some</p>
             </div>
             <TestimonialSliderComponent {...sliderTestimonials[activeTestimonial]} />

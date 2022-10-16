@@ -18,7 +18,7 @@ export default {
         {
             name: "body",
             title: "Body",
-            type: "string",
+            type: "text",
             validation: rule => rule.required().min(3)
         },
         {

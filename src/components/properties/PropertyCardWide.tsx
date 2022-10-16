@@ -11,9 +11,9 @@ const PropertyCardWide = (
 ) => {
     return (
         <Link href={`/${slug}`}>
-            <div className="flex flex-col space-y-3 shadow-md border border-white hover:shadow-lg transition duration-300 cursor-pointer rounded w-[450px] h-auto ">
-                <div className="relative w-full h-48">
-                    <Image src={bannerImage} layout="fill" objectFit="cover" className="border-2" />
+            <div className="flex flex-col space-y-3 shadow-md border border-white hover:shadow-lg transition duration-300 cursor-pointer rounded w-[450px] h-auto shadow-md hover:shadow-xl">
+                <div className="relative w-full h-48 rounded">
+                    <Image src={bannerImage} layout="fill" objectFit="cover" className="rounded" />
                 </div>
                 <div className="flex flex-col space-y-2 p-4">
                     <h2 className="font-medium text-xl truncate">{name}</h2>

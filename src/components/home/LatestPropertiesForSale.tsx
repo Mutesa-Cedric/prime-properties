@@ -9,7 +9,7 @@ interface PropertyProps {
 
 const PropertyForSale: React.FC<Property> = ({ features, overview, price, bannerImage, name }) => {
     return (
-        <div className='w-[520px] relative h-[400px] bg-cover bg-no-repeat bg-center group flex items-center justify-center'>
+        <div className='w-[520px] relative h-[400px] bg-cover bg-no-repeat bg-center group flex items-center justify-center cursor-pointer'>
             <Image src={bannerImage} layout="fill" objectFit='cover' />
             <Fade>
                 <div className=' bg-white hidden group-hover:flex p-6 flex-col space-y-2 max-w-md'>
@@ -35,7 +35,7 @@ const LatestPropertiesForSale = ({ properties }: PropertyProps) => {
         <div className='flex overflow-hidden  items-center flex-col  bg-bg-1 pt-40  space-y-4 pb-12'>
             <div className='flex flex-col space-y-2 items-center pb-12'>
                 <h2 className='text-2xl text-heading-1 font-semibold'>Latest Properties For Sale</h2>
-                <p className='text-base text-gray-primary/50 max-w-lg text-center'>There are many variations of passages of Lorem Ipsum available but the this in majority have suffered alteration in some</p>
+                <p className='text-lg text-gray-primary/50 max-w-xl text-center'>There are many variations of passages of Lorem Ipsum available but the this in majority have suffered alteration in some</p>
             </div>
             <div
                 className="grid auto-cols-auto grid-flow-col w-screen scrollbar-hide  items-center space-x-0.5 overflow-x-scroll  md:space-x-5 md:p-2"
