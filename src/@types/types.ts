@@ -138,7 +138,10 @@ export interface BlogCategory {
 
 export interface Blog {
     title: string;
-    category: string;
+    category: {
+        title:string,
+        slug:string
+    };
     banner: string;
     content: string;
     description: string;
