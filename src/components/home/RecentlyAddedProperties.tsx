@@ -13,17 +13,12 @@ const RecentlyAddedProperties = ({ properties }: PropertiesProps) => {
             <div
                 className="grid auto-cols-auto grid-flow-col w-screen scrollbar-hide  items-center space-x-0.5 overflow-x-scroll overflow-y-hidden  md:space-x-5 md:p-2 lg:pl-60"
             >
-                {/* {
+                {
                     properties.map((property, i) => (
                         <PropertyCard key={i} {...property} />
                     ))
-                } */}
-
-                {
-                    new Array(8).fill(0).map((_item, i) => (
-                        <PropertyCard key={i} {...properties[0]} />
-                    ))
                 }
+
             </div>
         </div>
     )

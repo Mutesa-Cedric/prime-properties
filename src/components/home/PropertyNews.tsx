@@ -16,7 +16,7 @@ const PropertyNews: React.FC<BlogProps> = ({ blogs }) => {
                 </div>
                 <Link href={'/blogs'}>
                     <button className="py-4 text-sm text-white px-6 bg-primary-light">
-                        Read More BLogs
+                        Read More Blogs
                     </button>
                 </Link>
             </div>

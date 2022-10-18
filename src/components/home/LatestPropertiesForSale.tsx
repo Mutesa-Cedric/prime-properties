@@ -9,7 +9,7 @@ interface PropertyProps {
 
 const PropertyForSale: React.FC<Property> = ({ features, overview, price, bannerImage, name }) => {
     return (
-        <div className='w-[520px] relative h-[400px] bg-cover bg-no-repeat bg-center group flex items-center justify-center cursor-pointer'>
+        <div className='w-[500px] relative h-[350px] bg-cover bg-no-repeat bg-center group flex items-center justify-center cursor-pointer'>
             <Image src={bannerImage} layout="fill" objectFit='cover' />
             <Fade>
                 <div className=' bg-white hidden group-hover:flex p-6 flex-col space-y-2 max-w-md'>
@@ -40,16 +40,9 @@ const LatestPropertiesForSale = ({ properties }: PropertyProps) => {
             <div
                 className="grid auto-cols-auto grid-flow-col w-screen scrollbar-hide  items-center space-x-0.5 overflow-x-scroll  md:space-x-5 md:p-2"
             >
-                {/* {
+                {
                     properties.map((property, i) => (
                         <PropertyForSale key={i} {...property} />
-                    )
-                    )
-                } */}
-
-                {
-                    new Array(6).fill(0).map((_, i) => (
-                        <PropertyForSale key={i} {...properties[0]} />
                     )
                     )
                 }

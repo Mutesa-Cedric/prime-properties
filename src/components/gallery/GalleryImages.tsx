@@ -14,16 +14,12 @@ const GalleryImages = ({ propertyImages }: Props) => {
                 <p className='text-center max-w-lg text-gray-primary/50 text-base'>There are many variations of passages of Lorem Ipsum available but the this in majority have suffered alteration in some</p>
             </div>
             <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6'>
-                {/* {
+                {
                     propertyImages.slice(0, 6).map((img, i) => (
                         <Image key={i} src={img.bannerImage} height={270} width={350} />
                     ))
-                } */}
-                {
-                    new Array(6).fill(1).map((_el, i) => (
-                        <Image key={i} src={propertyImages[0].bannerImage} height={290} width={370} />
-                    ))
                 }
+               
             </div>
         </div>
     )

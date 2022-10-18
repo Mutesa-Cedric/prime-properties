@@ -4,6 +4,39 @@ import React from 'react'
 import useAuth from '../../hooks/useAuth'
 
 
+interface NavLink {
+    title: string;
+    href: string;
+}
+
+const navLinks: NavLink[] = [
+    {
+        title: "Home",
+        href: "/"
+    },
+    {
+        title: "About",
+        href: "/about"
+    },
+    {
+        title: "Services",
+        href: "/services"
+    },
+    {
+        title: "Properties",
+        href: "/properties"
+    },
+    {
+        title: "Agents",
+        href: "/agents"
+
+    },
+    {
+        title: "Contact",
+        href: "/contact"
+    },
+
+]
 function Navbar() {
     const { user } = useAuth()
     return (
@@ -50,22 +83,15 @@ function Navbar() {
                     <p className='text-xl font-medium'>Prime Properties</p>
                 </div>
                 <div className='flex space-x-4 items-center'>
-                    <Link href="/">
-                        <span className='cursor-pointer'>Home</span>
-                    </Link>
-                    <Link href="/about">
-                        <span className='cursor-pointer'>About Us</span>
-                    </Link>
-                    <Link href="/properties">
-                        <span className='cursor-pointer'>Properties</span>
-                    </Link>
-                    <Link href="/agents">
-                        <span className='cursor-pointer'>Agents</span>
-                    </Link>
-                    <Link href="/contact">
-                        <span className='cursor-pointer'>Contact Us</span>
-                    </Link>
-                    <div className='bg-primary-light h-10 w-10 space-y-1 px-2 flex items-center flex-col justify-center'>
+                    {
+                        navLinks.map((link, i) => (
+                            <Link href={link.href} key={i}>
+                                <span className='cursor-pointer'>{link.title}</span>
+                            </Link>
+                        ))
+                    }
+
+                    <div className='bg-primary-light h-10 w-10 space-y-1 px-2 flex items-center flex-col justify-center cursor-pointer'>
                         {
                             new Array(3).fill(0).map((_, i) => (
                                 <div key={i} className='h-[3px] bg-white w-full mx-1 rounded-xl'></div>

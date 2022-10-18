@@ -22,7 +22,6 @@ export async function getStaticProps() {
 
     const agents = await sanityClient.fetch(`*[_type=="agent"]{
         ...,
-        "profileImage":image.asset->url,
         "slug":slug.current
     }`);
 
