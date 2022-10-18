@@ -149,7 +149,7 @@ export interface Blog {
     publishedAt: string;
     tags: string[];
     slug: string;
-    comments: Comment[]
+    comments?: Comment[]
 }
 
 export interface FAQ {

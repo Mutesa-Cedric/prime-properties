@@ -13,6 +13,7 @@
     "next": "latest",
     "next-mdx-remote": "^4.1.0",
     "next-sanity-image": "^4.1.0",
+    "nprogress": "^0.2.0",
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "react-icons": "^4.4.0",

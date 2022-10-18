@@ -21,15 +21,9 @@ const PropertyNews: React.FC<BlogProps> = ({ blogs }) => {
                 </Link>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-6">
-                {/* {
+                {
                     blogs.slice(0, 3).map((blog, i) => (
                         <BlogPreview key={i} {...blog} />
-                    ))
-                } */}
-
-                {
-                    new Array(3).fill(0).map((_item, i) => (
-                        <BlogPreview key={i} {...blogs[0]} />
                     ))
                 }
             </div>

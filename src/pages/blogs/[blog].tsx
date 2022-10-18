@@ -58,7 +58,6 @@ export async function getStaticProps({ params }: { params: { blog: string } }) {
 
 const ViewBlog = ({ blog, content, categories }: BlogProps) => {
 
-    console.log(categories[0].title === blog.category.title);
     return (
         <div className="w-full">
             <Head>
@@ -79,7 +78,7 @@ const ViewBlog = ({ blog, content, categories }: BlogProps) => {
                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M13.125 10.625H6.875C6.53 10.625 6.25 10.905 6.25 11.25C6.25 11.595 6.53 11.875 6.875 11.875H13.125C13.47 11.875 13.75 11.595 13.75 11.25C13.75 10.905 13.47 10.625 13.125 10.625ZM14.375 6.875H5.625C5.28 6.875 5 7.155 5 7.5C5 7.845 5.28 8.125 5.625 8.125H14.375C14.72 8.125 15 7.845 15 7.5C15 7.155 14.72 6.875 14.375 6.875ZM10 0C4.47752 0 0 3.91748 0 8.75C0 11.5119 1.46562 13.9706 3.75 15.5744V20L8.13062 17.3419C8.7369 17.4419 9.36062 17.5 10 17.5C15.5231 17.5 20 13.5825 20 8.75C20 3.91748 15.5231 0 10 0ZM10 16.25C9.27 16.25 8.565 16.165 7.88748 16.0206L4.94497 17.7893L4.98435 14.8906C2.72876 13.5338 1.25 11.2913 1.25 8.75C1.25 4.60814 5.16748 1.25 10 1.25C14.8325 1.25 18.75 4.60814 18.75 8.75C18.75 12.8919 14.8325 16.25 10 16.25Z" fill="#7B7B7B" />
                             </svg>
-                            <p>{blog.comments.length} Comments</p>
+                            <p>{blog.comments ? blog.comments.length : 0} Comments</p>
                         </div>
                     </div>
                     <div className="relative w-full h-72">
@@ -117,7 +116,6 @@ const ViewBlog = ({ blog, content, categories }: BlogProps) => {
                                 <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M18.8242 14.6094C18.8242 17.7812 15.7617 19.25 12.8242 19.25C9.30859 19.25 6.37109 17.6875 6.37109 15.7656C6.37109 14.9062 6.85547 14.125 7.94922 14.125C9.62109 14.125 9.77734 16.5312 12.668 16.5312C14.043 16.5312 14.9336 15.9219 14.9336 15.125C14.9336 14.125 14.0742 13.9687 12.6836 13.625L10.4023 13.0625C8.12109 12.5156 6.37109 11.5781 6.37109 8.95312C6.37109 5.78125 9.51172 4.60938 12.2148 4.60938C15.168 4.60938 18.1523 5.78125 18.1523 7.57812C18.1523 8.48437 17.543 9.28125 16.5273 9.28125C15.0117 9.28125 14.9648 7.48437 12.5117 7.48437C11.1367 7.48437 10.2617 7.85937 10.2617 8.6875C10.2617 9.59375 11.1523 9.79687 12.3398 10.0781L13.9648 10.4531C16.1836 10.9531 18.8242 11.8906 18.8242 14.6094ZM24.4961 18C24.4961 16.625 24.0273 15.3594 23.2461 14.3438C23.4023 13.5937 23.4961 12.7969 23.4961 12C23.4961 5.92188 18.5742 0.999998 12.4961 0.999998C11.6992 0.999998 10.9023 1.09375 10.1523 1.25C9.13672 0.46875 7.87109 -1.19209e-06 6.49609 -1.19209e-06C3.18359 -1.19209e-06 0.496094 2.6875 0.496094 6C0.496094 7.375 0.964844 8.64062 1.74609 9.65625C1.58984 10.4062 1.49609 11.2031 1.49609 12C1.49609 18.0781 6.41797 23 12.4961 23C13.293 23 14.0898 22.9063 14.8398 22.75C15.8555 23.5313 17.1211 24 18.4961 24C21.8086 24 24.4961 21.3125 24.4961 18Z" fill="#7B7B7B" />
                                 </svg>
-
                             </div>
                         </div>
                     </div>
@@ -134,16 +132,17 @@ const ViewBlog = ({ blog, content, categories }: BlogProps) => {
 
                     <div className="flex flex-col space-y-2">
                         <div className="pb-2 text-2xl font-semibold text-heading-1 flex flex-col space-y-2">
-                            <p> 0 {blog.comments.length} comments</p>
+                            <p> 0 {blog.comments?.length} comments</p>
                             <div className="h-1 border w-24 rounded-xl bg-primary-light border-primary-light"></div>
                         </div>
 
                         {/* comments */}
                         <div className="flex flex-col space-y-2 pt-2 pb-4">
-                            {
+                            {blog.comments ?
                                 blog.comments.map((comment, index) => (
                                     <CommentComponent {...comment} key={index} />
-                                ))
+                                )) :
+                                <p className="text-base text-gray-primary">No comments yet</p>
                             }
                         </div>
 

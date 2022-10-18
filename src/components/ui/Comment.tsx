@@ -13,7 +13,7 @@ const CommentComponent = ({ commentedBy, profileImage, replies, body }: Comment)
         <div className="flex flex-col space-x-12 w-full">
             <div className="flex space-x-4 pb-4 border-b-2 border-[#D3DEE8]">
                 <div className="relative h-11 w-16 rounded-full bg-gray-400">
-                    <Image src={imageProps.src} layout="fill" objectFit="cover" />
+                    <Image src={imageProps.src} layout="fill" objectFit="cover" className="rounded-full" />
                 </div>
                 <div className="flex flex-col space-y-2">
                     <div className="flex w-full items-center justify-between">
