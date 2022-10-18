@@ -12,10 +12,10 @@ const CommentComponent = ({ commentedBy, profileImage, replies, body }: Comment)
     return (
         <div className="flex flex-col space-x-12 w-full">
             <div className="flex space-x-4 pb-4 border-b-2 border-[#D3DEE8]">
-                <div className="relative h-11 w-16 rounded-full bg-gray-400">
+                <div className="relative h-12 w-12 rounded-full bg-gray-400">
                     <Image src={imageProps.src} layout="fill" objectFit="cover" className="rounded-full" />
                 </div>
-                <div className="flex flex-col space-y-2">
+                <div className="flex flex-col space-y-2 justify-between">
                     <div className="flex w-full items-center justify-between">
                         <h2 className="text-lg font-medium text-gray-primary">{commentedBy}</h2>
                         <div className="text-gray-primary/50 flex items-center  space-x-2 text-sm">
@@ -31,7 +31,7 @@ const CommentComponent = ({ commentedBy, profileImage, replies, body }: Comment)
                 </div>
             </div>
             {replies && replies.length > 0 &&
-                <div className="flex flex-col space-y-2 pt-4">
+                <div className="flex flex-col space-y-2 pt-4 w-full">
                     {
                         replies?.map((reply, i) => (
                             <CommentComponent key={i} {...reply} />

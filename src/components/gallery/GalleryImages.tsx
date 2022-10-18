@@ -21,6 +21,10 @@ const GalleryImages = ({ propertyImages }: Props) => {
                 }
                
             </div>
+
+            <button className="bg-primary-light text-white py-2 px-6">
+                View More Images
+            </button>
         </div>
     )
 }

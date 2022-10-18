@@ -180,3 +180,15 @@ export interface City {
     name: string;
     banner: Image
 }
+
+
+export interface AppData{
+    properties:Property[]
+    blogs:Blog[]
+    agents:Agent[]
+    agencies:Agency[]
+    services:Service[]
+    plans:Plan[]
+    testimonials:Testimonial[]
+    faqs:FAQ[]
+}

@@ -3,7 +3,6 @@ import Link from 'next/link'
 import React from 'react'
 import useAuth from '../../hooks/useAuth'
 
-
 interface NavLink {
     title: string;
     href: string;
@@ -38,7 +37,8 @@ const navLinks: NavLink[] = [
 
 ]
 function Navbar() {
-    const { user } = useAuth()
+    const { user } = useAuth();
+
     return (
         <div className="flex flex-col w-full h-auto">
 

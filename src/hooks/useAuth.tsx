@@ -29,7 +29,7 @@ const AuthContext = createContext<IAuth>({
   user: null,
   signupWithEmail: async () => { },
   loginWithEmail: async () => { },
-  logout:async () => {},
+  logout: async () => { },
   error: null,
   loading: false
 })
@@ -55,6 +55,8 @@ export function AuthProvider({ children }: AuthProviderProps) {
         password
       );
       setUser(userCredential.user);
+      setLoading(false);
+      router.push('/')
     } catch (error) {
       console.log(error);
     }
@@ -70,6 +72,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
       );
       setUser(userCredential.user);
       setLoading(false);
+      router.push('/')
 
     } catch (error: any) {
       setError(error.message);
@@ -102,7 +105,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
   const memoedValue = useMemo(() => ({
     user, signupWithEmail, loginWithEmail, error, logout, loading
-  }), [user,loading,error])
+  }), [user, loading, error])
   return (
     <AuthContext.Provider value={memoedValue}>
       {children}
