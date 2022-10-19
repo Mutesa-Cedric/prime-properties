@@ -139,8 +139,8 @@ export interface BlogCategory {
 export interface Blog {
     title: string;
     category: {
-        title:string,
-        slug:string
+        title: string,
+        slug: string
     };
     banner: string;
     content: string;
@@ -182,13 +182,14 @@ export interface City {
 }
 
 
-export interface AppData{
-    properties:Property[]
-    blogs:Blog[]
-    agents:Agent[]
-    agencies:Agency[]
-    services:Service[]
-    plans:Plan[]
-    testimonials:Testimonial[]
-    faqs:FAQ[]
+export interface AppData {
+    properties: Property[]
+    blogs: Blog[]
+    agents: Agent[]
+    agencies: Agency[]
+    services: Service[]
+    plans: Plan[]
+    testimonials: Testimonial[]
+    faqs: FAQ[]
+    cities: City[]
 }

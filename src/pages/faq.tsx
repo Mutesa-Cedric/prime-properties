@@ -35,13 +35,13 @@ const FaqComponent: React.FC<FAQCompProps> = ({ faq: { question, answer }, i, ac
                 <h2 className="text-base text-gray-primary/75 font-medium">{question}</h2>
                 {activeAnswer !== i
                     ? <div onClick={() => handleClick(i)} className="text-gray-300  text-xl hover:text-primary-light cursor-pointer">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
                         </svg>
 
                     </div> :
                     <div onClick={() => handleClick(null)} className="text-gray-300  text-xl hover:text-primary-light cursor-pointer">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M18 12H6" />
                         </svg>
                     </div>

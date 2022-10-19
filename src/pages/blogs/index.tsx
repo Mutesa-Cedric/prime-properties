@@ -1,21 +1,12 @@
 import Head from "next/head";
 import React from "react";
-import { Blog } from "../../@types/types";
+import { AppData } from "../../@types/types";
 import BlogComponent from "../../components/blog/Blog";
 import sanityClient from "../../lib/sanity"
-
-interface BlogsProps {
-    blogs: Blog[]
-}
+import { blogsQuery } from "../../utils/queries";
 
 export async function getStaticProps() {
-    const blogs = await sanityClient.fetch(`*[_type=="blog"]{
-        ...,
-        "banner":banner.asset->url,
-        postedBy->,
-        category->,
-        "slug":slug.current
-    }`);
+    const blogs = await sanityClient.fetch(blogsQuery);
 
     return {
         props: {
@@ -25,7 +16,7 @@ export async function getStaticProps() {
 }
 
 
-const BlogsPage = ({ blogs }: BlogsProps) => {
+const BlogsPage = ({ blogs }: AppData) => {
     return (
         <div className="w-full">
             <Head>
@@ -38,14 +29,14 @@ const BlogsPage = ({ blogs }: BlogsProps) => {
                         <BlogComponent blog={blog} key={i} />
                     ))
                 }
-              
+
             </main>
         </div>
     )
 
 }
 
-BlogsPage.innerPage=true;
-BlogsPage.title="Blog Articles";
+BlogsPage.innerPage = true;
+BlogsPage.title = "Blog Articles";
 
 export default BlogsPage

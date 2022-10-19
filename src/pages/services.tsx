@@ -2,28 +2,17 @@ import React, { useState } from "react";
 import Head from "next/head";
 import FooterBanner from "../components/ui/FooterBanner";
 import sanityClient from "../lib/sanity";
-import { Agent, Service } from "../@types/types";
+import { AppData, Service } from "../@types/types";
 import ServiceComponent from "../components/services/service";
 import ServicesVideo from "../components/services/ServicesVideo";
 import AgentsSlider from "../components/agents/AgentsSlider";
+import { agentsQuery, servicesQuery } from "../utils/queries";
 
-
-interface ServicesProps {
-    services: Service[];
-    agents: Agent[]
-}
 
 export async function getStaticProps() {
-    const services = await sanityClient.fetch(`*[_type=="service"]{
-        ...,
-        "banner":banner.asset->url,
-        "slug":slug.current
-    }`);
+    const services = await sanityClient.fetch(servicesQuery);
 
-    const agents = await sanityClient.fetch(`*[_type=="agent"]{
-        ...,
-        "slug":slug.current
-    }`);
+    const agents = await sanityClient.fetch(agentsQuery);
 
     return {
         props: {
@@ -33,7 +22,7 @@ export async function getStaticProps() {
     }
 }
 
-const Services = ({ services, agents }: ServicesProps) => {
+const Services = ({ services, agents }: AppData) => {
     return (
         <div className="w-full">
             <Head>

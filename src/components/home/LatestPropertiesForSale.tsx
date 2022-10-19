@@ -3,30 +3,32 @@ import { Property } from '../../@types/types'
 import Image from "next/image";
 import { PropertyFeature } from '../properties/PropertyCard';
 import Fade from "react-reveal/fade";
+import Link from 'next/link';
 interface PropertyProps {
     properties: Property[]
 }
 
-const PropertyForSale: React.FC<Property> = ({ features, overview, price, bannerImage, name }) => {
+const PropertyForSale: React.FC<Property> = ({ features, overview, price, bannerImage, name, slug }) => {
     return (
-        <div className='w-[500px] relative h-[350px] bg-cover bg-no-repeat bg-center group flex items-center justify-center cursor-pointer'>
-            <Image src={bannerImage} layout="fill" objectFit='cover' />
-            <Fade>
-                <div className=' bg-white hidden group-hover:flex p-6 flex-col space-y-2 max-w-md'>
-                    <h2 className='text-lg font-semibold text-heading-2'>{name}</h2>
-                    <h3 className='text-lg font-semibold text-primary-light'>${price}</h3>
-                    <p className='text-gray-primary/75 overflow-hidden text-sm h-24'>{overview}</p>
-                    <div className="w-full justify-between transition duration-all items-center flex py-4">
-                        {
-                            features.slice(0, 3).map((feature, i) => (
-                                <PropertyFeature key={i} feature={feature} i={i} />
-                            ))
-                        }
+        <Link href={`/${slug}`}>
+            <div className='w-[500px] relative h-[350px] bg-cover bg-no-repeat bg-center group flex items-center justify-center cursor-pointer'>
+                <Image src={bannerImage} layout="fill" objectFit='cover' />
+                <Fade>
+                    <div className=' bg-white hidden group-hover:flex p-6 flex-col space-y-2 max-w-md'>
+                        <h2 className='text-lg font-semibold text-heading-2'>{name}</h2>
+                        <h3 className='text-lg font-semibold text-primary-light'>${price}</h3>
+                        <p className='text-gray-primary/75 overflow-hidden text-sm h-24'>{overview}</p>
+                        <div className="w-full justify-between transition duration-all items-center flex py-4">
+                            {
+                                features.slice(0, 3).map((feature, i) => (
+                                    <PropertyFeature key={i} feature={feature} i={i} />
+                                ))
+                            }
+                        </div>
                     </div>
-                </div>
-            </Fade>
-        </div>
-
+                </Fade>
+            </div>
+        </Link>
     )
 }
 

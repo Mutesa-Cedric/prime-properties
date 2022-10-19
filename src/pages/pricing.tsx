@@ -1,17 +1,13 @@
 import Head from 'next/head';
 import React from 'react'
-import { Plan } from '../@types/types';
+import { AppData, Plan } from '../@types/types';
 import PlanComponent from '../components/pricing/plan';
 import FooterBanner from '../components/ui/FooterBanner';
 import sanityClient from "../lib/sanity";
-
-
-interface PricingProps {
-    plans: Plan[];
-}
+import { plansQuery } from '../utils/queries';
 
 export async function getStaticProps() {
-    const plans = await sanityClient.fetch(`*[_type=="plan"]`);
+    const plans = await sanityClient.fetch(plansQuery);
     plans.sort((a: Plan, b: Plan) => {
         return a.price > b.price ? 1 : -1;
     })
@@ -22,7 +18,7 @@ export async function getStaticProps() {
     }
 }
 
-const Pricing = ({ plans }: PricingProps) => {
+const Pricing = ({ plans }: AppData) => {
     return (
         <div className='w-full'>
             <Head>
@@ -36,7 +32,7 @@ const Pricing = ({ plans }: PricingProps) => {
                     })
                 }
             </main>
-            <FooterBanner/>
+            <FooterBanner />
         </div>
     )
 }

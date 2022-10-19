@@ -44,9 +44,4 @@ export const faqsQuery = `*[_type=="faq"]{
   answer
 }`;
 
-
-
-
-
-
-
+export const citiesQuery = `*[_type=="city"] | order(_createdAt asc)`;

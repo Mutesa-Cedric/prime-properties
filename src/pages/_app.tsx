@@ -1,5 +1,5 @@
 import '../styles/globals.css'
-import App, { AppProps, AppContext, AppInitialProps } from 'next/app'
+import  { AppProps } from 'next/app'
 import { NextComponentType } from "next"
 import MainLayout from '../layouts/MainLayout'
 import { AuthProvider } from '../hooks/useAuth';
@@ -8,11 +8,6 @@ import { RecoilRoot } from "recoil";
 import Router from "next/router";
 import NProgress from 'nprogress'; //nprogress module
 import '../styles/nprogress.css' //styles of nprogress
-import { Agency, Agent, AppData, Blog, FAQ, Plan, Property, Service, Testimonial } from '../@types/types';
-import sanityClient from "../lib/sanity";
-import { agenciesQuery, agentsQuery, blogsQuery, faqsQuery, plansQuery, propertiesQuery, servicesQuery, testimonialsQuery } from "../utils/queries";
-
-
 
 NProgress.configure({
   showSpinner: false,
@@ -31,11 +26,11 @@ type MyAppProps = AppProps & {
     innerPage?: boolean,
     title?: string
   },
-  data: AppData
 };
 
 
-function MyApp({ Component, pageProps, data }: MyAppProps) {
+function MyApp({ Component, pageProps }: MyAppProps) {
+  // console.log(data)
   return (
     <RecoilRoot>
       {/* <DataProvider> */}
@@ -44,7 +39,7 @@ function MyApp({ Component, pageProps, data }: MyAppProps) {
           {
             Component.innerPage ?
               <InnerPageLayout pageTitle={Component.title!}>
-                <Component {...pageProps} {...data} />
+                <Component {...pageProps} />
               </InnerPageLayout> :
               <Component {...pageProps} />
           }
@@ -54,35 +49,5 @@ function MyApp({ Component, pageProps, data }: MyAppProps) {
     </RecoilRoot>
   )
 }
-
-MyApp.getInitialProps = async (appContext: AppContext): Promise<AppData & AppInitialProps> => {
-  const appProps = await App.getInitialProps(appContext);
-  const properties = await sanityClient.fetch<Property[]>(propertiesQuery);
-  const blogs = await sanityClient.fetch<Blog[]>(blogsQuery);
-  const agents = await sanityClient.fetch<Agent[]>(agentsQuery);
-  const agencies = await sanityClient.fetch<Agency[]>(agenciesQuery);
-  const services = await sanityClient.fetch<Service[]>(servicesQuery);
-  const plans = await sanityClient.fetch<Plan[]>(plansQuery);
-  const testimonials = await sanityClient.fetch<Testimonial[]>(testimonialsQuery)
-  const faqs = await sanityClient.fetch<FAQ[]>(faqsQuery);
-
-
-  const data: AppData = {
-    properties: properties,
-    blogs: blogs,
-    agents: agents,
-    agencies: agencies,
-    services: services,
-    plans: plans,
-    testimonials: testimonials,
-    faqs: faqs,
-  }
-
-  return {
-    ...appProps,
-    ...data
-  };
-}
-
 
 export default MyApp;

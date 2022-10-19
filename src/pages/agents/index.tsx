@@ -1,15 +1,13 @@
 import Head from 'next/head'
 import React from 'react'
-import { Agent } from '../../@types/types'
+import { Agent, AppData } from '../../@types/types'
 import AgentComponent from '../../components/agents/Agent'
 import sanityClient from "../../lib/sanity"
 import { useRecoilState } from "recoil";
 import { storedAgents } from "../../atoms/data"
+import { agentsQuery } from '../../utils/queries'
 
-interface AgentsProps {
-    agents: Agent[]
-}
-const Agents = ({ agents }: AgentsProps) => {
+const Agents = ({ agents }: AppData) => {
     const [currentAgents, setAgents] = useRecoilState<Agent[] | null>(storedAgents);
     setAgents(agents);
 
@@ -30,11 +28,6 @@ const Agents = ({ agents }: AgentsProps) => {
     )
 }
 
-const agentsQuery = `*[_type=="agent"]{
-    ...,
-    "slug":slug.current,
-    
-}`;
 
 export async function getStaticProps() {
     const agents = await sanityClient.fetch(agentsQuery);

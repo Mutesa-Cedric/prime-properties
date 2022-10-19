@@ -1,14 +1,12 @@
 import React from "react";
 import Head from "next/head";
 import sanityClient from "../lib/sanity";
-import { Testimonial } from "../@types/types";
+import { AppData } from "../@types/types";
 import TestimonialComponent from "../components/testimonials/testimonial";
+import { testimonialsQuery } from "../utils/queries";
 
 export async function getStaticProps() {
-    const testimonials = await sanityClient.fetch(`*[_type=="testimonial"]{
-        ...,
-        "profileImage":profileImage.asset->url
-    }`);
+    const testimonials = await sanityClient.fetch(testimonialsQuery);
     return {
         props: {
             testimonials
@@ -16,11 +14,8 @@ export async function getStaticProps() {
     }
 }
 
-interface TestimonialProps {
-    testimonials: Testimonial[]
-}
+const Testimonials = ({ testimonials }: AppData) => {
 
-const Testimonials = ({ testimonials }: TestimonialProps) => {
     return (
         <div className="w-full">
             <Head>
@@ -35,7 +30,7 @@ const Testimonials = ({ testimonials }: TestimonialProps) => {
                 }
             </main>
         </div>
-    )   
+    )
 }
 
 Testimonials.innerPage = true;

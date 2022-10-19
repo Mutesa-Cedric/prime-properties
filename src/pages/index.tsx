@@ -1,10 +1,8 @@
-import type { NextPage } from 'next'
 import Head from 'next/head'
 import HomeAdsSection from '../components/home/HomeAdsSection';
 import HomeBanner from '../components/home/HomeBanner';
-import useAuth from '../hooks/useAuth';
 import sanityClient from '../lib/sanity';
-import { Blog, City, Property, Testimonial } from '../@types/types';
+import { AppData } from '../@types/types';
 import FeaturedProperties from '../components/properties/FeaturedProperties';
 import TrustedPartners from '../components/ui/TrustedPartners';
 import WhyChooseUs from '../components/home/WhyChooseUs';
@@ -13,16 +11,10 @@ import PropertyNews from '../components/home/PropertyNews';
 import LatestPropertiesForSale from '../components/home/LatestPropertiesForSale';
 import PropertiesInCities from '../components/home/PropertiesInCities';
 import RecentlyAddedProperties from '../components/home/RecentlyAddedProperties';
+import { blogsQuery, citiesQuery, propertiesQuery, testimonialsQuery } from '../utils/queries';
 
-interface HomePageProps {
-  properties: Property[],
-  testimonials: Testimonial[],
-  blogs: Blog[],
-  cities: City[]
-}
 
-const Home = ({ properties, testimonials, blogs, cities }: HomePageProps) => {
-  const { user } = useAuth();
+const Home = ({ properties, testimonials, blogs, cities }: AppData) => {
   const propertiesForSale = properties.filter(property => property.status === "forSale")
   // console.log(user);
   return (
@@ -47,26 +39,11 @@ const Home = ({ properties, testimonials, blogs, cities }: HomePageProps) => {
   )
 }
 
-const propertiesQuery = `*[_type == "property"]{
-  ...,
-  "bannerImage":bannerImage.asset->url,
-  "slug":slug.current
-}`;
-
 export async function getStaticProps() {
   const properties = await sanityClient.fetch(propertiesQuery);
-  const testimonials = await sanityClient.fetch(`*[_type=="testimonial"]{
-    ...,
-    "profileImage":profileImage.asset->url
-  }`);
-  const blogs = await sanityClient.fetch(`*[_type=="blog"]{
-    ...,
-    "banner":banner.asset->url,
-    "slug":slug.current,
-    postedBy->
-}`);
-
-  const cities = await sanityClient.fetch(`*[_type=="city"] | order(_createdAt asc)`);
+  const testimonials = await sanityClient.fetch(testimonialsQuery);
+  const blogs = await sanityClient.fetch(blogsQuery);
+  const cities = await sanityClient.fetch(citiesQuery);
 
   return {
     props: {

@@ -1,16 +1,13 @@
 import Head from 'next/head';
 import React from 'react'
-import { Property } from '../../@types/types';
+import { AppData } from '../../@types/types';
 import PropertyCard from '../../components/properties/PropertyCard';
 import PropertySearch from '../../components/properties/PropertySearch';
 import sanityClient from "../../lib/sanity";
+import { propertiesQuery } from '../../utils/queries';
 
 export async function getStaticProps() {
-  const properties = await sanityClient.fetch(`*[_type=="property"]{
-    ...,
-    "slug": slug.current,
-    "bannerImage":bannerImage.asset->url
-  }`);
+  const properties = await sanityClient.fetch(propertiesQuery);
   return {
     props: {
       properties
@@ -18,10 +15,7 @@ export async function getStaticProps() {
   }
 }
 
-interface PropertiesProps {
-  properties: Property[]
-}
-const Index = ({ properties }: PropertiesProps) => {
+const Index = ({ properties }: AppData) => {
   return (
     <div className="w-full lg:px-60">
       <Head>

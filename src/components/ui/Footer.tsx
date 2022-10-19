@@ -9,7 +9,7 @@ const navigation = {
     { name: "Our Services", href: "/services" },
     { name: "Privacy", href: "/privacy" },
     { name: "Contact Us", href: "/contact" },
-    { name: "Meet Our Team", href: "/team" },
+    { name: "Blogs", href: "/blogs" },
     { name: "FAQ", href: "/faq" },
     { name: "Our partners", href: "/agencies" },
     { name: "Our agents", href: "/agents" },
