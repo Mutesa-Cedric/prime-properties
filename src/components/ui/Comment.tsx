@@ -15,7 +15,7 @@ const CommentComponent = ({ commentedBy, profileImage, replies, body }: Comment)
                 <div className="relative h-12 w-12 rounded-full bg-gray-400">
                     <Image src={imageProps.src} layout="fill" objectFit="cover" className="rounded-full" />
                 </div>
-                <div className="flex flex-col space-y-2 justify-between">
+                <div className="flex flex-col space-y-2 justify-between w-full">
                     <div className="flex w-full items-center justify-between">
                         <h2 className="text-lg font-medium text-gray-primary">{commentedBy}</h2>
                         <div className="text-gray-primary/50 flex items-center  space-x-2 text-sm">

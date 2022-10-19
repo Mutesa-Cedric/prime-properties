@@ -43,8 +43,8 @@ function Navbar() {
         <div className="flex flex-col w-full h-auto">
 
             {/* upper navigation */}
-            <div className='flex items-center justify-between w-full bg-primary-light py-3 text-white px-60'>
-                <div className='flex items-center space-x-3'>
+            <div className='flex items-center justify-between w-full bg-primary-light py-3 text-white lg:px-60 px-6 sm:px-12'>
+                <div className='flex items-center  space-x-0 sm:space-x-3 flex-col sm:flex-row'>
                     <div className='flex items-center space-x-1'>
                         <Image src="/icons/message_icon.svg" height={20} width={24} />
                         <p>info@primeproperties.com</p>
@@ -82,7 +82,7 @@ function Navbar() {
                     <Image src={'/icons/logo.svg'} height={30} width={20} />
                     <p className='text-xl font-medium'>Prime Properties</p>
                 </div>
-                <div className='flex space-x-4 items-center'>
+                <div className='hidden md:flex flex space-x-4 items-center'>
                     {
                         navLinks.map((link, i) => (
                             <Link href={link.href} key={i}>
