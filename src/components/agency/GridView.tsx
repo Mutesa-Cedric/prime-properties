@@ -1,16 +1,24 @@
 import React from 'react'
-import { AgenciesProps } from '../../pages/agencies'
-import Agency from './Agency'
+import { Agency } from '../../@types/types'
+import AgencyComponent from './Agency'
+import Fade from "react-reveal/fade";
 
-const GridView: React.FC<AgenciesProps> = ({ agencies }) => {
+interface AgencyProps {
+    agencies: Agency[]
+}
+
+const GridView = ({ agencies }: AgencyProps) => {
+
     return (
-        <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {
-                agencies.map((agency, i) => (
-                    <Agency key={i} agency={agency} view="grid" />)
-                )
-            }
-        </div>
+        <Fade duration={2000}>
+            <div className="w-full grid  md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {
+                    agencies.map((agency, i) => (
+                        <AgencyComponent key={i} agency={agency} view="grid" />)
+                    )
+                }
+            </div>
+        </Fade>
     )
 }
 

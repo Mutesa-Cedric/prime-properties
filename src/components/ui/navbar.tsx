@@ -3,42 +3,11 @@ import Link from 'next/link'
 import React from 'react'
 import { useRecoilState } from 'recoil';
 import { showDropDownMenu } from '../../atoms/states';
+import { navLinks } from '../../constants/sitemap';
 import useAuth from '../../hooks/useAuth'
 import MenuDropDown from './MenuDropDown';
 
-interface NavLink {
-    title: string;
-    href: string;
-}
 
-const navLinks: NavLink[] = [
-    {
-        title: "Home",
-        href: "/"
-    },
-    {
-        title: "About",
-        href: "/about"
-    },
-    {
-        title: "Services",
-        href: "/services"
-    },
-    {
-        title: "Properties",
-        href: "/properties"
-    },
-    {
-        title: "Agents",
-        href: "/agents"
-
-    },
-    {
-        title: "Contact",
-        href: "/contact"
-    },
-
-]
 function Navbar() {
     const { user, logout } = useAuth();
     const [dropDownMenu, setShowDropDownMenu] = useRecoilState(showDropDownMenu)
@@ -96,7 +65,7 @@ function Navbar() {
                 </div>
                 <div className='hidden md:flex flex space-x-4 items-center'>
                     {
-                        navLinks.map((link, i) => (
+                        navLinks.slice(0, 6).map((link, i) => (
                             <Link href={link.href} key={i}>
                                 <span className='cursor-pointer'>{link.title}</span>
                             </Link>

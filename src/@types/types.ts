@@ -193,3 +193,8 @@ export interface AppData {
     faqs: FAQ[]
     cities: City[]
 }
+
+export interface NavLink {
+    title: string;
+    href: string;
+}

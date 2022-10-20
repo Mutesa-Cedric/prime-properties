@@ -20,6 +20,7 @@ Router.events.on('routeChangeError', () => NProgress.done());
 
 // creatint custom appProps type from AppProps
 
+
 type MyAppProps = AppProps & {
   Component: NextComponentType & {
     isHome?: boolean,

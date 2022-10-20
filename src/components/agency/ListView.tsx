@@ -1,14 +1,22 @@
 import React from 'react'
-import { AgenciesProps } from '../../pages/agencies'
-import Agency from './Agency'
+import { Agency } from '../../@types/types'
+import AgencyComponent from './Agency'
+import Fade from "react-reveal/fade";
 
-const ListView: React.FC<AgenciesProps> = ({ agencies }) => {
+
+interface AgencyProps {
+    agencies: Agency[]
+}
+const ListView = ({ agencies }: AgencyProps) => {
     return (
-        <div className='flex flex-col w-full space-y-4'>
-            {agencies.map((agency, i) => (
-                <Agency key={i} agency={agency} view="list" />)
-            )}
-        </div>
+        <Fade duration={2000}>
+            <div className='flex flex-col w-full space-y-4'>
+                {agencies.map((agency, i) => (
+                    <AgencyComponent key={i} agency={agency} view="list" />)
+                )}
+            </div>
+        </Fade>
+
     )
 }
 

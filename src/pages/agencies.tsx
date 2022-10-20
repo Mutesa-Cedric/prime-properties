@@ -24,10 +24,10 @@ const AgenciesPage = ({ agencies }: AppData) => {
                 <title>Prime Properties | Agencies</title>
                 <link rel="shortcut icon" href="/icons/logo.svg" type="image/x-icon" />
             </Head>
-            <main className='flex flex-col w-full py-20 space-y-8 lg:px-60'>
+            <main className='flex flex-col w-full py-20 space-y-8 xl:px-60 lg:px-40 md:px-12'>
                 <div className='flex items-center justify-between w-full pb-4 border-b-2 border-b-[#D3DEE8]'>
                     <div className='relative rounded-[4px] border-2 border-[#D3DEE8] pl-6 py-1'>
-                        <input type="text" className='outline-none p-2 placeholder:text-gray-primary/75' placeholder='Search Agents' />
+                        <input type="text" className='outline-none p-2 placeholder:text-gray-primary/75' placeholder='Search Agency' />
                         <div className='absolute top-3.5 left-2'>
                             <Image src={'/icons/search_icon.svg'} width={16} height={16} />
                         </div>
