@@ -30,14 +30,14 @@ const navigation = {
 
 export default function Footer({ isHome }: { isHome: boolean }) {
   return (
-    <footer  className={isHome ? "bg-primary-dark w-full lg:px-60 pt-20 relative" : "bg-primary-dark w-full lg:px-60"} aria-labelledby="footer-heading">
+    <footer  className={isHome ? "bg-primary-dark w-full xl:px-60 lg:px-40 md:px-12 xl:pt-20 lg:pt-28 md:pt-36 relative" : "bg-primary-dark w-full xl:px-60 lg:px-40 md:px-12"} aria-labelledby="footer-heading">
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>
       {isHome && <SubscribeToNewsLetter />}
       <div className="mx-auto w-full py-12 lg:py-16">
         <div className="pb-8 xl:grid xl:grid-cols-5 xl:gap-8">
-          <div className="grid grid-cols-3 gap-8 xl:col-span-7">
+          <div className="grid xl:grid-cols-3 md:grid-cols-2 gap-8 xl:col-span-7">
             <div className="mt-12 md:mt-0 space-y-6">
               <div className="flex items-center space-x-2">
                 <Image src="/icons/logo_white.svg" width="30" height="30" />
@@ -81,10 +81,10 @@ export default function Footer({ isHome }: { isHome: boolean }) {
               </div>
             </div>
             <div className="mt-12 md:mt-0">
-              <h3 className="text-base font-medium text-white">Follow Instagram</h3>
+              <h3 className="text-base font-medium text-white ">Follow Instagram</h3>
               <ul role="list" className="mt-4 grid grid-cols-3 gap-2">
                 {navigation.followInstagram.map((item, i) => (
-                  <div className="w-24 h-24 relative" key={i}>
+                  <div className="xl:w-24 md:w-36 xl:h-24 md:h-36 relative" key={i}>
                     <Image objectFit="cover" key={i} src={item} layout="fill" />
                   </div>
                 ))}

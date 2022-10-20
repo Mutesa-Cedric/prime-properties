@@ -8,10 +8,10 @@ interface BlogProps {
 }
 const PropertyNews: React.FC<BlogProps> = ({ blogs }) => {
     return (
-        <div className="bg-[#F9FCFF] h-screen w-full lg:px-60 pt-20 flex flex-col  space-y-12">
+        <div className="bg-[#F9FCFF] h-screen w-full xl:px-60 lg:px-40 md:px-12 md:mb-24 pt-20 flex flex-col  space-y-12">
             <div className="flex w-full justify-between items-center">
                 <div className="flex flex-col space-y-4">
-                    <h2 className="text-heading-1 font-semibold text-2xl ">Read Our Properyt News</h2>
+                    <h2 className="text-heading-1 font-semibold text-2xl ">Read Our Property News</h2>
                     <p className="text-gray-primary/75 max-w-xl text-base">There are many variations of passages of Lorem Ipsum available but the this in majority have suffered alteration in some</p>
                 </div>
                 <Link href={'/blogs'}>

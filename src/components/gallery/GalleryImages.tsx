@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from "next/image";
+import Link from 'next/link';
 
 interface Props {
     propertyImages: {
@@ -8,7 +9,7 @@ interface Props {
 }
 const GalleryImages = ({ propertyImages }: Props) => {
     return (
-        <div className="lg:px-60 md:px-40 sm:px-20 px-10 flex flex-col items-center space-y-12">
+        <div className="xl:px-60 lg:px-40 md:px-12 px-10 flex flex-col items-center space-y-12">
             <div className='flex flex-col items-center space-y-3'>
                 <h2 className="text-2xl font-medium text-gray-primary">Our Gallery Images</h2>
                 <p className='text-center max-w-lg text-gray-primary/50 text-base'>There are many variations of passages of Lorem Ipsum available but the this in majority have suffered alteration in some</p>
@@ -19,12 +20,14 @@ const GalleryImages = ({ propertyImages }: Props) => {
                         <Image key={i} src={img.bannerImage} height={270} width={350} />
                     ))
                 }
-               
-            </div>
 
-            <button className="bg-primary-light text-white py-2 px-6">
-                View More Images
-            </button>
+            </div>
+            <Link href={'/gallery'}>
+                <button className="bg-primary-light text-white py-2 px-6">
+                    View More Images
+                </button>
+            </Link>
+
         </div>
     )
 }

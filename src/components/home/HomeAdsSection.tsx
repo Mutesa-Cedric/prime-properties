@@ -19,12 +19,12 @@ const serviceAds = [
 
 function HomeAdsSection() {
     return (
-            <div className='w-full py-16 flex  flex-col md:flex-row md:space-x-4 space-x-0 md:space-y-0 space-y-6  justify-between lg:px-60 lg:h-[90vh]'>
+            <div className='w-full py-16 flex  flex-col md:flex-row md:space-x-4 space-x-0 md:space-y-0 space-y-6  justify-between xl:px-60 lg:px-40 md:px-12 h-auto xl:h-[90vh]'>
                 <div className="relative">
-                    <div className='relative h-[450px] w-[350px] bg-gray-300'>
+                    <div className='relative h-[450px] xl:w-[350px] md:w-[300px] bg-gray-300'>
                         <Image src='/images/home/giant-building-with-sun.png' layout='fill' objectFit='cover' />
                     </div>
-                    <div className="absolute top-44 left-32 h-[350px] w-[340px] bg-gray-300">
+                    <div className="absolute xl:top-44 md:top-60 left-32 xl:h-[350px] md:h-[300px] xl:w-[340px] lg:w-[300px] md:w-[250px] bg-gray-300">
                         <Image src='/images/home/family.png' layout='fill' objectFit='cover' />
                     </div>
                 </div>

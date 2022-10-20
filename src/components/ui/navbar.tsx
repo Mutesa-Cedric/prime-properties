@@ -1,7 +1,10 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+import { useRecoilState } from 'recoil';
+import { showDropDownMenu } from '../../atoms/states';
 import useAuth from '../../hooks/useAuth'
+import MenuDropDown from './MenuDropDown';
 
 interface NavLink {
     title: string;
@@ -38,12 +41,15 @@ const navLinks: NavLink[] = [
 ]
 function Navbar() {
     const { user } = useAuth();
-
+    const [dropDownMenu, setShowDropDownMenu] = useRecoilState(showDropDownMenu)
     return (
-        <div className="flex flex-col w-full h-auto">
-
+        <div className="flex relative flex-col w-full h-auto">
+            {/* dropdown menu */}
+            {
+                dropDownMenu && <MenuDropDown />
+            }
             {/* upper navigation */}
-            <div className='flex items-center justify-between w-full bg-primary-light py-3 text-white lg:px-60 px-6 sm:px-12'>
+            <div className='flex items-center justify-between w-full bg-primary-light py-3 text-white xl:px-60 lg:px-40 md:px-12'>
                 <div className='flex items-center  space-x-0 sm:space-x-3 flex-col sm:flex-row'>
                     <div className='flex items-center space-x-1'>
                         <Image src="/icons/message_icon.svg" height={20} width={24} />
@@ -77,7 +83,7 @@ function Navbar() {
             </div>
 
             {/* lower navigation */}
-            <div className='flex items-center justify-between py-4 px-60'>
+            <div className='flex items-center justify-between py-4 xl:px-60 lg:px-40 md:px-12'>
                 <div className='flex items-center'>
                     <Image src={'/icons/logo.svg'} height={30} width={20} />
                     <p className='text-xl font-medium'>Prime Properties</p>
@@ -91,7 +97,7 @@ function Navbar() {
                         ))
                     }
 
-                    <div className='bg-primary-light h-10 w-10 space-y-1 px-2 flex items-center flex-col justify-center cursor-pointer'>
+                    <div onClick={() => setShowDropDownMenu(!dropDownMenu)} className='bg-primary-light h-10 w-10 space-y-1 px-2 flex items-center flex-col justify-center cursor-pointer'>
                         {
                             new Array(3).fill(0).map((_, i) => (
                                 <div key={i} className='h-[3px] bg-white w-full mx-1 rounded-xl'></div>

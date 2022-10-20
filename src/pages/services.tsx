@@ -29,7 +29,7 @@ const Services = ({ services, agents }: AppData) => {
                 <title>Prime Properties | Our services</title>
                 <link rel="shortcut icon" href="/icons/logo.svg" type="image/x-icon" />
             </Head>
-            <main className="w-full flex flex-col space-y-16 lg:px-60 py-20">
+            <main className="w-full flex flex-col space-y-16 xl:px-60 lg:px-40 md:px-12 py-20">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-12">
                     {
                         services.map((service: Service, i) => (

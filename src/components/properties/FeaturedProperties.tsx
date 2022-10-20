@@ -26,12 +26,12 @@ const FeaturedProperties = ({ properties }: PropertiesProps) => {
     }
     return (
         <Fade>
-            <div className="bg-[#FAF8FB] py-10 flex justify-between h-screen flex-col  overflow-hidden">
+            <div className="bg-[#FAF8FB] py-10 flex justify-between md:h-auto space-y-12 flex-col  overflow-hidden">
 
                 {/* header */}
-                <div className="flex w-full justify-between items-center lg:px-60">
+                <div className="flex w-full justify-between items-center xl:px-60 lg:px-40 md:px-12 ">
                     <div className="flex flex-col space-y-4">
-                        <h2 className="text-heading-1 font-semibold text-2xl ">Our Featured Properties</h2>
+                        <h2 className="text-heading-1 font-semibold ">Our Featured Properties</h2>
                         <p className="text-gray-primary/75 max-w-xl">There are many variations of passages of Lorem Ipsum available but the this in majority have suffered alteration in some</p>
                     </div>
                     <Link href={'/properties'}>
@@ -42,7 +42,7 @@ const FeaturedProperties = ({ properties }: PropertiesProps) => {
                 </div>
 
                 {/* carousel */}
-                <div ref={sliderRef} className="grid gap-x-8 auto-cols-auto grid-flow-col w-screen scrollbar-hide overflow-x-scroll lg:pl-60" >
+                <div ref={sliderRef} className="grid gap-x-8 auto-cols-auto grid-flow-col w-screen scrollbar-hide overflow-x-scroll xl:pl-60 lg:pl-40 md:pl-12" >
                     {
                         properties.map((property, i) => (
                             <PropertyCardWide key={i} {...property} />
@@ -52,7 +52,7 @@ const FeaturedProperties = ({ properties }: PropertiesProps) => {
 
                 {/* carousel controller */}
 
-                <div className="flex w-full items-center justify-between lg:px-60">
+                <div className="flex w-full items-center justify-between xl:px-60 lg:px-40 md:px-12">
                     <p className="text-base text-gray-primary/50 max-w-xl">If you not find property there are many variations of passages of lorem Ipsum available but the majority have suffered
                         <Link href={'/contact'}>
                             <span className="text-primary-light cursor-pointer pl-1">Contact Us</span>

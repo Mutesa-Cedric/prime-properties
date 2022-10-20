@@ -50,7 +50,7 @@ const AboutPage = ({ agents, testimonials, propertyImages }: AboutPageProps) => 
                 <link rel="shortcut icon" href="/icons/logo.svg" type="image/x-icon" />
             </Head>
             <main className="flex flex-col  pb-12 pt-24 space-y-12">
-                <div className="flex flex-col relative lg:px-60 space-y-12">
+                <div className="flex flex-col relative xl:px-60 lg:px-40 md:px-12 space-y-12">
                     <KnowMore />
                     <MissionVision />
                     <ServicesVideo />

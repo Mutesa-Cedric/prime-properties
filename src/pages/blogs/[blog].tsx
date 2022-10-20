@@ -64,7 +64,7 @@ const ViewBlog = ({ blog, content, categories }: BlogProps) => {
                 <title>prime properties | {blog.title}</title>
                 <link rel="shortcut icon" href="/icons/logo.svg" type="image/x-icon" />
             </Head>
-            <main className="lg:px-60 py-20 flex justify-between">
+            <main className="xl:px-60 lg:px-40 md:px-12 py-20 flex justify-between">
                 <div className="flex flex-col space-y-6 w-[65%]">
                     <h1 className="text-2xl font-semibold text-gray-primary">{blog.title}</h1>
                     <div className="flex items-center space-x-3 text-[#7B7B7B] text-sm">

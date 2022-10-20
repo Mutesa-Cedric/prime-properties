@@ -7,7 +7,7 @@ const KnowMore = () => {
         <div className='relative h-96 w-80'>
           <Image src='/images/about-1.png' layout='fill' objectFit='cover' />
         </div>
-        <div className="absolute top-40 left-32 h-72 w-72">
+        <div className="absolute top-40 left-32 h-72 xl:w-72 md:w-64">
           <Image src='/images/about-2.png' layout='fill' objectFit='cover' />
         </div>
       </div>

@@ -25,7 +25,7 @@ const Pricing = ({ plans }: AppData) => {
                 <title>Prime Properties | Our Agents</title>
                 <link rel="shortcut icon" href="/icons/logo.svg" type="image/x-icon" />
             </Head>
-            <main className='grid grid-cols-3 gap-x-6 py-28 lg:px-60'>
+            <main className='grid xl:grid-cols-3 grid-cols-2 gap-6 py-28 xl:px-60 lg:px-40 md:px-12'>
                 {
                     plans.map((plan, i) => {
                         return <PlanComponent {...plan} key={i} />

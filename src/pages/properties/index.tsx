@@ -17,14 +17,14 @@ export async function getStaticProps() {
 
 const Index = ({ properties }: AppData) => {
   return (
-    <div className="w-full lg:px-60">
+    <div className="w-full xl:px-60 lg:px-40 md:px-12">
       <Head>
         <title>Prime Properties | Properties</title>
         <link rel="shortcut icon" href="/icons/logo.svg" type="image/x-icon" />
       </Head>
       <main className="flex flex-col w-full space-y-6 py-16">
         <PropertySearch />
-        <div className="grid grid-cols-1 py-8 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full">
+        <div className="grid grid-cols-2 py-8 lg:grid-cols-3 gap-6 w-full">
           {
             properties.map((property, i) => (
               <PropertyCard {...property} key={i} />

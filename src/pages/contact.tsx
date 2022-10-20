@@ -36,7 +36,7 @@ export default function ContactPage() {
                 <title>Prime Properties | Contact us</title>
                 <link rel="shortcut icon" href="/icons/logo.svg" type="image/x-icon" />
             </Head>
-            <main className='lg:px-60 py-20 flex flex-col space-y-5'>
+            <main className='xl:px-60 lg:px-40 md:px-12 py-20 flex flex-col space-y-5'>
                 <div className="flex flex-col space-y-5">
                     <div className='space-y-2'>
                         <p className='text-xl font-medium'>Get In Touch</p>

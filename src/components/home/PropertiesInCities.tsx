@@ -18,7 +18,7 @@ interface CityProps {
 const City = ({ city, i }: CityProps) => {
     const imageProps = useNextSanityImage(sanityClient, city.banner);
     return (
-        <div className="group flex items-center justify-center relative bg-[#465F78] blend-n-multiply bg-cover bg-center bg-no-repeat bg-blend-multiply cursor-pointer"
+        <div className="group flex items-center justify-center relative bg-[#465F78] blend-n-multiply bg-cover bg-center bg-no-repeat bg-blend-multiply cursor-pointer overflow-hidden"
             style={{
                 backgroundImage: `linear-gradient(#a8b5c2,#a8b5c2),url(${imageProps.src})`,
                 height: i === 3 ? `34.5vh` : `${imageProps.height - 50}px`,
@@ -38,10 +38,10 @@ const City = ({ city, i }: CityProps) => {
 
 const PropertiesInCities = ({ cities }: CitiesProps) => {
     return (
-        <div className=" h-auto w-full bg-bg-1 lg:px-60 py-12 space-y-12">
-            <div className="flex flex-col space-y-2">
+        <div className=" h-auto w-full bg-bg-1 xl:px-60 lg:px-40 md:px-12 py-12 space-y-12">
+            <div className="flex flex-col space-y-2 md:items-center xl:items-start">
                 <h2 className="text-heading-1 font-semibold text-3xl">Find Properties In These Cities</h2>
-                <p className="text-gray-primary/75  max-w-xl text-start text-base">There are many variations of passages of Lorem Ipsum available but the this in majority have suffered alteration in some</p>
+                <p className="text-gray-primary/75  max-w-xl text-start text-base md:text-center xl:text-left">There are many variations of passages of Lorem Ipsum available but the this in majority have suffered alteration in some</p>
             </div>
 
             <div className="relative w-full flex flex-col space-y-3">

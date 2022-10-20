@@ -47,7 +47,7 @@ const socials: { name: string, href: string, Icon: string }[] = [
 
 const SubscribeToNewsLetter = () => {
     return (
-        <div className="absolute bg-primary-light shadow-md p-12 flex items-center w-[68%] -top-28">
+        <div className="absolute bg-primary-light shadow-md xl:p-12 md:p-4  flex items-center xl:w-[68%] lg:w-[80%] md:w-[90%] xl:-top-28 md:-top-20">
             <div className="text-white flex flex-col w-full space-y-5">
                 <h2 className="text-2xl font-medium">Subscribe to get daily updates.</h2>
                 <div className="relative w-full">

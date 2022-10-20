@@ -28,7 +28,7 @@ const Gallery = ({ propertyImages }: GalleryProps) => {
                 <title>Prime Properties | Properties</title>
                 <link rel="shortcut icon" href="/icons/logo.svg" type="image/x-icon" />
             </Head>
-            <main className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 lg:px-60 py-20">
+            <main className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 xl:px-60 lg:px-40 md:px-12 py-20">
                 {
                     propertyImages.map((img, i) => (
                         <div key={i} className="relative w-full h-72 group flex items-center justify-center cursor-pointer">

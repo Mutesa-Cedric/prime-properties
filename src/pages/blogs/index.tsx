@@ -23,7 +23,7 @@ const BlogsPage = ({ blogs }: AppData) => {
                 <title>Prime Properties | Blog Articles</title>
                 <link rel="shortcut icon" href="/icons/logo.svg" type="image/x-icon" />
             </Head>
-            <main className="lg:px-60 py-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            <main className="xl:px-60 lg:px-40 md:px-12 py-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
                 {
                     blogs.map((blog, i) => (
                         <BlogComponent blog={blog} key={i} />

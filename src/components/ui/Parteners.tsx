@@ -24,7 +24,7 @@ const parteners:Partener[]=[
 
 export const Parteners = () => {
   return (
-    <div className='flex w-full items-center py-16 px-60 justify-between'>
+    <div className='flex w-full items-center py-16 xl:px-60 lg:px-40 md:px-12 justify-between'>
     {
         parteners.map((partener, index) => (
             <div key={index} className="flex flex-col space-y-1 items-center">  
