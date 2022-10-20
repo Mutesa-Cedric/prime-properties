@@ -2,6 +2,7 @@ import Head from "next/head";
 import React from "react";
 import { Contact } from "../@types/types";
 import Image from "next/image";
+import { useForm, SubmitHandler } from "react-hook-form";
 import Map from "../components/ui/Map"
 const contacts: Contact[] = [
     {
@@ -29,7 +30,22 @@ const contacts: Contact[] = [
     }
 ]
 
+type Inputs = {
+    fullName: string;
+    email: string;
+    subject: string;
+    message: string;
+}
+
+
+
 export default function ContactPage() {
+    const { register, handleSubmit, watch, formState: { errors } } = useForm<Inputs>();
+
+    const onSubmit: SubmitHandler<Inputs> = async data => {
+        console.log(data)
+    };
+
     return (
         <div>
             <Head>
@@ -48,12 +64,13 @@ export default function ContactPage() {
 
                 </div>
                 <div className="flex space-x-10">
-                    <form className='flex flex-col p-6 border-[#D3DEE8] border w-2/3 space-y-6 justify-center'>
+                    <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col p-6 border-[#D3DEE8] border w-2/3 space-y-6 justify-center'>
                         <div className='flex flex-col space-y-4'>
                             <div className='flex items-center w-full space-x-5'>
                                 <div className='input-wrapper contact-form'>
                                     <label htmlFor="fullname">Full Name</label>
-                                    <input type="text" name="fullname" id="fullname" placeholder="Type Full Name" />
+                                    <input type="text" name="fullname" id="fullname" placeholder="Type Full Name"
+                                     />
                                 </div>
                                 <div className='input-wrapper contact-form'>
                                     <label htmlFor="email">Email</label>
@@ -77,7 +94,7 @@ export default function ContactPage() {
                     <div className="flex flex-col space-y-5 border border-[#D3DEE8] rounded-sm p-5">
                         {
                             contacts.map((contact, i) => (
-                                <div className={i!==contacts.length-1?"flex flex-col items-center py-4 space-y-3 border-b-2":"flex flex-col items-center py-4 space-y-3"} key={i}>
+                                <div className={i !== contacts.length - 1 ? "flex flex-col items-center py-4 space-y-3 border-b-2" : "flex flex-col items-center py-4 space-y-3"} key={i}>
                                     <div className="rounded-full w-12 flex items-center justify-center h-12 bg-primary-light">
                                         <Image src={contact.icon} height={20} width={20} />
                                     </div>

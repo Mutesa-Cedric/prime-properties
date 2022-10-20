@@ -39,12 +39,17 @@ export const navLinks: NavLink[] = [
         href: '/agencies'
     },
     {
+        title: 'Pricing',
+        href: '/pricing'
+    },
+    {
         title: "FAQ",
         href: '/faq'
     },
     {
-        title: 'Pricing',
-        href: '/pricing'
+        title: 'Gallery',
+        href: '/gallery'
     },
+   
 
 ]

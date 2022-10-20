@@ -1,13 +1,13 @@
-import React,{useState,useEffect} from 'react'
+import React, { useState } from 'react'
 import { Agent } from '../../@types/types';
 import AgentComponent from './Agent';
 
 
-interface AgentsProps{
-    agents:Agent[]
+interface AgentsProps {
+    agents: Agent[]
 }
 
-const AgentsSlider = ({agents}:AgentsProps) => {
+const AgentsSlider = ({ agents }: AgentsProps) => {
     const [activeAgents, setActiveAgents] = useState({
         start: 0,
         end: 3
