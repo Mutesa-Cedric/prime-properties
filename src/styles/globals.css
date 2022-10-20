@@ -40,7 +40,7 @@
     @apply text-[#7B7B7B]/75 text-sm;
   }
   .login-with-button {
-    @apply text-white py-3 rounded-[2px] px-12;
+    @apply text-white py-3 w-full rounded-[2px] px-12;
   }
   .submit-button {
     @apply text-center w-full py-2 text-white bg-primary-light text-lg rounded-[2px];

@@ -12,11 +12,11 @@ import LatestPropertiesForSale from '../components/home/LatestPropertiesForSale'
 import PropertiesInCities from '../components/home/PropertiesInCities';
 import RecentlyAddedProperties from '../components/home/RecentlyAddedProperties';
 import { blogsQuery, citiesQuery, propertiesQuery, testimonialsQuery } from '../utils/queries';
-
+import useAuth from "../hooks/useAuth";
 
 const Home = ({ properties, testimonials, blogs, cities }: AppData) => {
   const propertiesForSale = properties.filter(property => property.status === "forSale")
-  // console.log(user);
+  const {user}=useAuth();  
   return (
     <div className="text-xl flex items-center justify-center h-full w-full">
       <Head>

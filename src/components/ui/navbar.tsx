@@ -40,7 +40,7 @@ const navLinks: NavLink[] = [
 
 ]
 function Navbar() {
-    const { user } = useAuth();
+    const { user, logout } = useAuth();
     const [dropDownMenu, setShowDropDownMenu] = useRecoilState(showDropDownMenu)
     return (
         <div className="flex relative flex-col w-full h-auto">
@@ -62,9 +62,15 @@ function Navbar() {
                 </div>
                 {
                     user ? (
-                        <div className='rounded-full h-8 w-8'>
-                            {user.photoURL ? <Image src={user.photoURL} height={40} width={40} className='rounded-full' /> : <Image src="/icons/user_icon.svg" height={40} width={40} />}
+                        <div className="flex space-x-6 items-center">
+                            <div className='rounded-full h-8 w-8'>
+                                {user.photoURL ? <Image src={user.photoURL} height={60} width={60} className='rounded-full' /> : <Image src="/icons/user_icon.svg" height={40} width={40} />}
+                            </div>
+                            <button onClick={logout} className="bg-white text-red-500 border border-red-500 rounded py-1 px-6 text-red-500 hover:bg-red-400  hover:text-white hover:border-red-400 transition duration-200">
+                                Logout
+                            </button>
                         </div>
+
                     ) : (
                         <div className='flex items-center space-x-2'>
                             <Image src="/icons/user_icon.svg" height={30} width={30} />

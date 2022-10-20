@@ -8,6 +8,6 @@ module.exports = {
     SANITY_PROJECT_ID: process.env.SANITY_PROJECT_ID,
   },
   images: {
-    domains: ['cdn.sanity.io']
+    domains: ['cdn.sanity.io','lh3.googleusercontent.com']
   }
 }
