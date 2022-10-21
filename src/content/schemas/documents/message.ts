@@ -5,7 +5,7 @@ export default {
     preview: {
         select: {
             title: "fullName",
-            subTitle: "subject",
+            subtitle: "subject",
         }
     },
     fields: [

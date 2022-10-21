@@ -6,8 +6,10 @@ import { AuthProvider } from '../hooks/useAuth';
 import InnerPageLayout from '../layouts/InnerPageLayout'
 import { RecoilRoot } from "recoil";
 import Router from "next/router";
+import 'react-toastify/dist/ReactToastify.css';
 import NProgress from 'nprogress'; //nprogress module
 import '../styles/nprogress.css' //styles of nprogress
+import { ToastContainer } from 'react-toastify';
 
 NProgress.configure({
   showSpinner: false,
@@ -37,6 +39,7 @@ function MyApp({ Component, pageProps }: MyAppProps) {
       {/* <DataProvider> */}
       <AuthProvider>
         <MainLayout isHome={Component.isHome || false}>
+          <ToastContainer/>
           {
             Component.innerPage ?
               <InnerPageLayout pageTitle={Component.title!}>

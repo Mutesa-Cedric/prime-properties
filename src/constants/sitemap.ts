@@ -22,13 +22,14 @@ export const navLinks: NavLink[] = [
         href: "/agents"
 
     },
-    {
-        title: "Testimonails",
-        href: "/testimonials"
-    },
+
     {
         title: "Contact",
         href: "/contact"
+    },
+    {
+        title: "Testimonails",
+        href: "/testimonials"
     },
     {
         title: "Blogs",
@@ -50,6 +51,6 @@ export const navLinks: NavLink[] = [
         title: 'Gallery',
         href: '/gallery'
     },
-   
+
 
 ]

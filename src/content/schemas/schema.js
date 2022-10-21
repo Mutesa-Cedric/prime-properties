@@ -17,6 +17,7 @@ import plan from "./documents/plan";
 import blogCategory from "./documents/blogCategory";
 import agency from "./documents/agency";
 import city from "./documents/city";
+import message from "./documents/message";
 
 // object imports
 import propertyFeature from "./objects/propertyFeature";
@@ -37,6 +38,7 @@ export default createSchema({
     blogCategory,
     collection,
     service,
+    message,
     testimonial,
     plan,
     faq,

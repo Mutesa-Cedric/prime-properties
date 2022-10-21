@@ -30,8 +30,6 @@ const Banner: React.FC<BannerProps> = ({ title, bgImage }) => {
         </div>
       </div>
     </Fade>
-
-
   )
 }
 
