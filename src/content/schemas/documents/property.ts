@@ -134,6 +134,14 @@ export default {
                 "please provide a slug"
             )
         },
-
-    ]
+        {
+            name: "likedBy",
+            title: "Liked By",
+            type: "array",
+            of: [{ type: "string" }]
+        }
+    ],
+    initialValue: {
+        likedBy: []
+    }
 }

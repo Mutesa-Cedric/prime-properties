@@ -16,6 +16,7 @@ export async function getStaticProps() {
 }
 
 const Index = ({ properties }: AppData) => {
+
   return (
     <div className="w-full xl:px-60 lg:px-40 md:px-12">
       <Head>

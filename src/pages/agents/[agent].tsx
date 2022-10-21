@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import sanityClient from "../../lib/sanity";
 import { Agent } from '../../@types/types';
 import Head from 'next/head';
 import Image from 'next/image';
 import FooterBanner from '../../components/ui/FooterBanner';
-
-
+import useAuth from "../../hooks/useAuth";
+import { toast } from "react-toastify";
 
 interface AgentProps {
   agent: Agent;
@@ -40,10 +40,18 @@ export async function getStaticProps({ params }: any) {
 
 
 const ViewAgent = ({ agent }: AgentProps) => {
+  const { user } = useAuth();
   const [isLiked, setIsLiked] = useState<boolean>(false);
   const toggleIsLiked = () => {
-    setIsLiked(prevState => !prevState);
+    user ? setIsLiked(!isLiked) : toast.error("You must be logged in to like an agent");
   }
+
+  useEffect(() => {
+    if (user) {
+      agent.likedBy?.includes(user.uid) ? setIsLiked(true) : setIsLiked(false);
+    }
+  }, [user]);
+
   return (
     <div className='w-full flex items-center justify-center flex-col'>
       <Head>
@@ -74,7 +82,12 @@ const ViewAgent = ({ agent }: AgentProps) => {
               </div>
             </div>
             <div className='absolute top-2 right-2 p-2 bg-[#EEF7FF] rounded-full flex items-center justify-center cursor-pointer' onClick={toggleIsLiked}>
-              <Image src={'/icons/heart_icon.svg'} width={20} height={20} />
+              {
+                !isLiked ?
+                  <Image src={'/icons/heart_icon.svg'} width={20} height={20} />
+                  :
+                  <Image src={'/icons/heart_icon_filled.svg'} width={20} height={20} />
+              }
             </div>
           </div>
           <div className='flex flex-col space-y-4'>

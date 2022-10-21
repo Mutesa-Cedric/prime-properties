@@ -11,6 +11,7 @@ import {
 } from "firebase/auth";
 import { auth, googleProvider, facebookProvider } from "../lib/firebase";
 import { useRouter } from "next/router"
+import { toast } from 'react-toastify';
 
 // types
 interface AuthProviderProps {
@@ -172,7 +173,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
       setLoading(true);
       await signOut(auth).then(() => {
         setUser(null);
-        router.push('/login');
+        toast.success("Logged out successfully");
       }).catch(err => {
         setError(err.message);
       }).finally(() => {

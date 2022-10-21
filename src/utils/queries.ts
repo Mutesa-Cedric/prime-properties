@@ -45,3 +45,13 @@ export const faqsQuery = `*[_type=="faq"]{
 }`;
 
 export const citiesQuery = `*[_type=="city"] | order(_createdAt asc)`;
+
+export const favouritePropertiesQuery = (userId: string): string => {
+  return `
+      *[_type=="property"&& '${userId}' in likedBy[]]{
+        ...,
+        "slug": slug.current,
+        "bannerImage":bannerImage.asset->url
+    }
+  `
+}

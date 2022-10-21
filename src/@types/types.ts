@@ -83,6 +83,7 @@ export interface Property {
     slug: string;
     status: string;
     videos: Video[];
+    likedBy: string[] | null;
 }
 
 export type SocialMedia = {
@@ -101,6 +102,7 @@ export interface Agent {
     about: string;
     socialMedia: SocialMedia[];
     slug: string;
+    likedBy:string[] | null;
 }
 
 export interface Service {

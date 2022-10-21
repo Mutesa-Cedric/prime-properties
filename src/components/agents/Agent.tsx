@@ -13,7 +13,7 @@ const socialMediaIcons = {
   pinterest: "/icons/pinterest_icon.svg"
 }
 
-function AgentComponent({ name, profileImage, slug, socialMedia, role }: Agent) {
+function AgentComponent({ name, profileImage, slug, socialMedia, role, likedBy }: Agent) {
   const imageProps = useNextSanityImage(
     sanityClient,
     profileImage
