@@ -1,3 +1,4 @@
+// @ts-nocheck
 export default {
     name: "agent",
     title: "Agent",

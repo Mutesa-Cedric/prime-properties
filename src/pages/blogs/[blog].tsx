@@ -88,12 +88,11 @@ const ViewBlog = ({ blog, content, categories }: BlogProps) => {
                 .commit()
                 .then(() => {
                     // reload the route
-                    window.location.reload();
                     toast.success("Your Message was recieved", {
                         position: toast.POSITION.TOP_RIGHT,
                         autoClose: 2000
                     });
-
+                    window.location.reload();
                     reset({
                         commentedBy: '',
                         email: '',

@@ -1,3 +1,4 @@
+// @ts-nocheck
 export default {
     name: "blogCategory",
     title: "Blog Category",

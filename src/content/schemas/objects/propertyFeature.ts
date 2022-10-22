@@ -1,3 +1,4 @@
+// @ts-nocheck
 export default {
     name:"propertyFeature",
     title:"Property Feature",

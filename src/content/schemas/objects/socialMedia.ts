@@ -1,3 +1,4 @@
+// @ts-nocheck
 export default {
     name: "socialMedia",
     title: "Social Media",

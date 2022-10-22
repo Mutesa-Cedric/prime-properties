@@ -1,3 +1,4 @@
+// @ts-nocheck
 export default{
     name:"service",
     title:"Service",
