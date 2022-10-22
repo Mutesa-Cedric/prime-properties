@@ -16,7 +16,7 @@ const Agents = ({ agents }: AppData) => {
             <main className="xl:w-3/5 md:w-full lg:w-4/5  md:px-12 lg:px-0 min-h-[70vh] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 py-20 ">
                 {
                     agents.map(agent => (
-                        <AgentComponent {...agent} key={agent._key} />
+                        <AgentComponent {...agent} key={agent._id} />
                     ))
                 }
             </main>
