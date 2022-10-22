@@ -5,15 +5,30 @@ import { useNextSanityImage } from "next-sanity-image";
 import sanityClient from "../../lib/sanity";
 
 const CommentComponent = ({ commentedBy, profileImage, replies, body }: Comment) => {
-    const imageProps = useNextSanityImage(
+    const [imgSrc, setImgSrc] = React.useState<string | null>(null);
+    let imageProps = useNextSanityImage(
         sanityClient,
-        profileImage
-    )
+        profileImage!
+    );
+
+    React.useEffect(() => {
+        if (profileImage) {
+            setImgSrc(imageProps.src);
+        } else {
+            setImgSrc(null);
+        }
+    }, [])
+    
     return (
         <div className="flex flex-col space-x-12 w-full">
             <div className="flex space-x-4 pb-4 border-b-2 border-[#D3DEE8]">
                 <div className="relative h-12 w-12 rounded-full bg-gray-400">
-                    <Image src={imageProps.src} layout="fill" objectFit="cover" className="rounded-full" />
+                    {
+                        imgSrc ?
+                            <Image src={imgSrc} layout="fill" objectFit="cover" className="rounded-full" />
+                            :
+                            <div className="h-full w-full rounded-full bg-gray-400" />
+                    }
                 </div>
                 <div className="flex flex-col space-y-2 justify-between w-full">
                     <div className="flex w-full items-center justify-between">

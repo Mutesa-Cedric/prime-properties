@@ -66,7 +66,7 @@ export default function ContactPage() {
             toast.error('An error occured', {
                 position: toast.POSITION.TOP_RIGHT,
                 autoClose: 2000
-            })
+            })  
         }).finally(() => {
             setLoading(false);
         })

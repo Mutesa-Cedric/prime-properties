@@ -6,7 +6,6 @@ export default {
         select: {
             title: "name",
             media: "profileImage",
-            subtitle: ""
         }
     },
     fields: [
@@ -85,6 +84,12 @@ export default {
             validation: Rule => Rule.required().warning(
                 "please provide a slug"
             )
+        },
+        {
+            name:"comments",
+            title:"Comments",
+            type:"array",
+            of:[{type:"comment"}]
         }
     ]
 }

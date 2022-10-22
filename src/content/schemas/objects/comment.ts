@@ -13,7 +13,11 @@ export default {
             name: "profileImage",
             title: "Profile Image",
             type: "image",
-            validation: rule => rule.required()
+        },
+        {
+            name:"email",
+            title:"Email",
+            type:"string",
         },
         {
             name: "body",

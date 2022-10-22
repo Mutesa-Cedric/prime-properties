@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { toast } from "react-toastify";
 import useAuth from "../../hooks/useAuth";
-
+import sanityClient from "../../lib/sanity";
 
 interface FeatureProps {
     i: number;
@@ -22,18 +22,29 @@ export const PropertyFeature = ({ feature: { name, value, icon }, i }: FeaturePr
 }
 
 const PropertyCard = ({
-    name, price, bannerImage, address, features, status, slug, likedBy
+    name, price, bannerImage, address, features, status, slug, likedBy, _id
 }: Property) => {
 
     const { user } = useAuth();
     const [isLiked, setIsLiked] = useState<boolean>(false);
+    const updateLikes = async () => {
+        // update sanity
+        await sanityClient.patch(_id).set({
+            likedBy: isLiked ? likedBy!.filter((id: string) => id !== user!.uid) : [...likedBy || [], user!.uid]
+        }).commit();
+        // update state
+        setIsLiked(!isLiked);
+    }
+
     const toggleIsLiked = () => {
-        user ? setIsLiked(!isLiked) : toast.error("You must be logged in to add this property to favourites!");
+        user ? updateLikes() : toast.error("You must be logged in to add this property to favourites!");
     }
 
     useEffect(() => {
         if (user) {
             likedBy?.includes(user.uid) ? setIsLiked(true) : setIsLiked(false);
+        } else {
+            setIsLiked(false)
         }
     }, [user])
     return (
@@ -51,7 +62,12 @@ const PropertyCard = ({
                                 <div className="h-3 w-3 rounded-full bg-[#15F26E]"></div>
                             )
                         }
-                        <p className="text-sm text-gray-primary/75">{status}</p>
+                        <p className="text-sm text-gray-primary/75">
+                            {status === "forSale" && 'For Sale'}
+                            {status === "forRent" && 'For Rent'}
+                            {status === "sold" && 'Sold'}
+                            {status === "rented" && 'Rented'}
+                        </p>
                     </div>
                     <div className="flex p-1 items-center justify-center bg-white rounded-full cursor-pointer" onClick={toggleIsLiked}>
                         {

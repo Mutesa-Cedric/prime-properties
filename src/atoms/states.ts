@@ -6,17 +6,12 @@ export const showDropDownMenu = atom<boolean>({
     default: false,
 });
 
-export const data = atom<AppData>({
-    key: "data",
-    default: {
-        properties: [],
-        blogs: [],
-        agents: [],
-        agencies: [],
-        services: [],
-        plans: [],
-        testimonials: [],
-        faqs: [],
-        cities: [],
-    }
-})
+export const currentImage = atom<string | null>({
+    key: "currentImage",
+    default: null,
+});
+
+export const showImageModal = atom<boolean>({
+    key: "showImageModal",
+    default: false,
+});

@@ -73,6 +73,7 @@ export type Video = {
 }
 
 export interface Property {
+    _id:string;
     name: string;
     price: number;
     overview: string;
@@ -92,7 +93,7 @@ export type SocialMedia = {
 }
 
 export interface Agent {
-    _key: string;
+    _id:string;
     name: string;
     profileImage: string;
     role: string;
@@ -102,7 +103,8 @@ export interface Agent {
     about: string;
     socialMedia: SocialMedia[];
     slug: string;
-    likedBy:string[] | null;
+    likedBy: string[] | null;
+    comments: Comment[]|null;
 }
 
 export interface Service {
@@ -127,7 +129,7 @@ export type Admin = {
 
 export interface Comment {
     commentedBy: string;
-    profileImage: string;
+    profileImage?: string;
     body: string;
     _id: string;
     replies?: Comment[]
@@ -139,6 +141,7 @@ export interface BlogCategory {
 }
 
 export interface Blog {
+    _id: string;
     title: string;
     category: {
         title: string,

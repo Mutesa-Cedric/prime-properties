@@ -20,7 +20,6 @@ export default {
                 {title:"Skype",value:"skype"},
                 {title:"Twitter",value:"twitter"},
                 {title:"Pinterest",value:"pinterest"},
-
                ]
             },
             description: "name of social media",
