@@ -31,9 +31,14 @@ const PropertyCard = ({
         // update sanity
         await sanityClient.patch(_id).set({
             likedBy: isLiked ? likedBy!.filter((id: string) => id !== user!.uid) : [...likedBy || [], user!.uid]
-        }).commit();
+        }).commit()
+            .then(() => {
+                setIsLiked(!isLiked);
+                toast.success("Your favourites have been updated");
+            }).catch((err) => {
+                toast.error("Something went wrong");
+            })
         // update state
-        setIsLiked(!isLiked);
     }
 
     const toggleIsLiked = () => {

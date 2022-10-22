@@ -27,7 +27,7 @@ const CommentComponent = ({ commentedBy, profileImage, replies, body }: Comment)
                         imgSrc ?
                             <Image src={imgSrc} layout="fill" objectFit="cover" className="rounded-full" />
                             :
-                            <div className="h-full w-full rounded-full bg-gray-400" />
+                            <Image src={'/icons/person.png'} layout="fill" objectFit="cover" className="rounded-full bg-gray-100" />
                     }
                 </div>
                 <div className="flex flex-col space-y-2 justify-between w-full">

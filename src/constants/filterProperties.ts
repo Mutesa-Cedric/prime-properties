@@ -23,24 +23,20 @@ export const filterProperties: FilterProperty[] = [
         ]
     },
     {
-        title: "Looking For",
+        title: "Property Size",
         options: [
             {
-                label: "Appartment",
-                value: "appartment"
+                label: "Large",
+                value: "large"
             },
             {
-                label: "Family House",
-                value: "familyHouse"
+                label: "Medium",
+                value: "medium"
             },
             {
-                label: "Town House",
-                value: "townHouse"
+                label: "Small",
+                value: "small"
             },
-            {
-                label: "Modern Villa",
-                value: "modernVilla"
-            }
         ]
     },
 

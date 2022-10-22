@@ -113,7 +113,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
   // login
 
   // 1.email
-  const loginWithEmail = async (email: string, password: string) => {
+  const loginWithEmail = async (email: string, password: string, fallbackUrl?: string) => {
     try {
       setLoading(true);
       const userCredential: UserCredential = await signInWithEmailAndPassword(
@@ -123,7 +123,8 @@ export function AuthProvider({ children }: AuthProviderProps) {
       );
       setUser(userCredential.user);
       setLoading(false);
-      router.push('/')
+      fallbackUrl ? router.push(`/${fallbackUrl}`) :
+        router.push('/')
     } catch (error: any) {
       setError(error.message);
       setLoading(false);
