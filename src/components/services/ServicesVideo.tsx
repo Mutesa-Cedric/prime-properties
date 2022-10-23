@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/alt-text */
+
 import React from 'react'
 import { Video } from '../../@types/types'
 import Image from "next/image";

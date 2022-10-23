@@ -85,7 +85,7 @@ const Faq = ({ faqs }: FaqProps) => {
                         }
                     </div>
                     <div className="p-4 rounded-md bg-[#EEF7FF] text-sm">
-                        if you can't find your question please
+                        if you can&apos;t find your question please
                         <Link href={'/contact'}>
                             <p className="text-primary-light underline cursor-pointer">Contact us</p>
                         </Link>

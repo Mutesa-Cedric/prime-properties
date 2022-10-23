@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image"
 import { City } from "../../@types/types";
 import { useNextSanityImage } from "next-sanity-image";
 import sanityClient from "../../lib/sanity";

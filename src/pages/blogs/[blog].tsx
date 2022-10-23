@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import Head from "next/head";
 import React from "react";
 import Image from "next/image";
@@ -70,42 +71,42 @@ const ViewBlog = ({ blog, content, categories }: BlogProps) => {
 
 
     const onSubmit: SubmitHandler<Inputs> = async data => {
-      
-            setLoading(true);
-            await sanityClient
-                .patch(blog._id)
-                .set({
-                    comments: [
-                        ...blog.comments || [],
-                        {
-                            commentedBy: data.commentedBy,
-                            email: data.email,
-                            body: data.body,
-                            // profileImage: null
-                        }
-                    ]
+
+        setLoading(true);
+        await sanityClient
+            .patch(blog._id)
+            .set({
+                comments: [
+                    ...blog.comments || [],
+                    {
+                        commentedBy: data.commentedBy,
+                        email: data.email,
+                        body: data.body,
+                        // profileImage: null
+                    }
+                ]
+            })
+            .commit()
+            .then(() => {
+                // reload the route
+                toast.success("Your Message was recieved", {
+                    position: toast.POSITION.TOP_RIGHT,
+                    autoClose: 2000
+                });
+                window.location.reload();
+                reset({
+                    commentedBy: '',
+                    email: '',
+                    body: ''
                 })
-                .commit()
-                .then(() => {
-                    // reload the route
-                    toast.success("Your Message was recieved", {
-                        position: toast.POSITION.TOP_RIGHT,
-                        autoClose: 2000
-                    });
-                    window.location.reload();
-                    reset({
-                        commentedBy: '',
-                        email: '',
-                        body: ''
-                    })
-                }).catch((err: any) => {
-                    toast.error('An error occured', {
-                        position: toast.POSITION.TOP_RIGHT,
-                        autoClose: 2000
-                    })
-                }).finally(() => {
-                    setLoading(false);
+            }).catch((err: any) => {
+                toast.error('An error occured', {
+                    position: toast.POSITION.TOP_RIGHT,
+                    autoClose: 2000
                 })
+            }).finally(() => {
+                setLoading(false);
+            })
     }
 
     React.useEffect(() => {
@@ -264,7 +265,7 @@ const ViewBlog = ({ blog, content, categories }: BlogProps) => {
                         <div className="space-y-3 flex flex-col">
                             {
                                 categories.map((category, i) => (
-                                    <Link href={`/${category.slug}`}>
+                                    <Link key={i} href={`/${category.slug}`}>
                                         <div key={i} className={category.title === blog.category.title ? "flex space-x-2 items-center text-primary-light cursor-pointer" : "hover:text-primary-light cursor-pointer flex space-x-2 items-center text-gray-primary"}>
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                                                 <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />

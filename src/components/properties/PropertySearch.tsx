@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/alt-text */
+
 import React from "react";
 import { filterProperties } from '../../constants/filterProperties'
 import SearchFilterProperty from '../ui/SearchFilterProperty'
