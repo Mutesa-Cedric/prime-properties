@@ -35,7 +35,7 @@ function Navbar() {
                             <div className='rounded-full h-8 w-8'>
                                 {user.photoURL ? <Image src={user.photoURL} height={60} width={60} className='rounded-full' alt="profile" /> : <Image src="/icons/user_icon.svg" height={40} width={40} alt="user" />}
                             </div>
-                            <button onClick={logout} className="bg-white text-red-500 border border-red-500 rounded py-1 px-6 text-red-500 hover:bg-red-400  hover:text-white hover:border-red-400 transition duration-200">
+                            <button onClick={logout} className="bg-white  border border-red-500 rounded py-1 px-6 text-red-500 hover:bg-red-400  hover:text-white hover:border-red-400 transition duration-200">
                                 Logout
                             </button>
                         </div>
@@ -66,8 +66,8 @@ function Navbar() {
                     </div>
                 </Link>
 
-                <div className='flex flex space-x-4 items-center'>
-                    <div className="hidden md:flex flex space-x-4 items-center">
+                <div className=' flex space-x-4 items-center'>
+                    <div className="hidden md:flex space-x-4 items-center">
                         {
                             navLinks.slice(0, 6).map((link, i) => (
                                 <Link href={link.href} key={i}>

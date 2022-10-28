@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image';
 import Link from 'next/link';
-
+import bannerImage from "../../../public/images/home_banner.png"
 
 const HomeBanner: React.FC = () => {
     return (
@@ -15,8 +15,8 @@ const HomeBanner: React.FC = () => {
                     </button>
                 </Link>
             </div>
-            <div className="relative h-full w-full bg-gray-300">
-                <Image src={'/images/home_banner.png'} layout="fill" objectFit="cover" alt="home banner" />
+            <div className="relative h-full w-full">
+                <Image src={bannerImage} placeholder="blur" layout="fill" objectFit="cover" alt="home banner" />
             </div>
         </div>
     )

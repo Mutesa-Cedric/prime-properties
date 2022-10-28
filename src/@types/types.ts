@@ -1,7 +1,7 @@
 
 interface FilterPropertyOption {
-    label: string;
-    value: string;
+    label: string | number;
+    value: string | number;
 }
 
 export interface FilterProperty {
@@ -73,7 +73,7 @@ export type Video = {
 }
 
 export interface Property {
-    _id:string;
+    _id: string;
     name: string;
     price: number;
     overview: string;
@@ -93,7 +93,7 @@ export type SocialMedia = {
 }
 
 export interface Agent {
-    _id:string;
+    _id: string;
     name: string;
     profileImage: string;
     role: string;
@@ -104,7 +104,7 @@ export interface Agent {
     socialMedia: SocialMedia[];
     slug: string;
     likedBy: string[] | null;
-    comments: Comment[]|null;
+    comments: Comment[] | null;
 }
 
 export interface Service {

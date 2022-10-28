@@ -41,87 +41,115 @@ export const filterProperties: FilterProperty[] = [
     },
 
     {
-        title: "Looking For",
+        title: "Property Location",
         options: [
             {
-                label: "Appartment",
-                value: "appartment"
+                label: "Africa",
+                value: "africa"
             },
             {
-                label: "Family House",
-                value: "familyHouse"
+                label: "USA",
+                value: "usa"
             },
             {
-                label: "Town House",
-                value: "townHouse"
+                label: "Asia",
+                value: "asia"
             },
             {
-                label: "Modern Villa",
-                value: "modernVilla"
+                label: "Europe",
+                value: "europe"
             }
         ]
     },
     {
-        title: "Looking For",
+        title: "Property  Price",
         options: [
             {
-                label: "Appartment",
-                value: "appartment"
+                label: "Low(<$1000)",
+                value: "low"
             },
             {
-                label: "Family House",
-                value: "familyHouse"
+                label: "Medium ($1000-$30000)",
+                value: "medium"
             },
             {
-                label: "Town House",
-                value: "townHouse"
-            },
-            {
-                label: "Modern Villa",
-                value: "modernVilla"
+                label: "High(>$30000)",
+                value: "high"
             }
         ]
     },
     {
-        title: "Looking For",
+        title: "Total Rooms",
         options: [
             {
-                label: "Appartment",
-                value: "appartment"
+                label: "1",
+                value: "1"
             },
             {
-                label: "Family House",
-                value: "familyHouse"
+                label: "2",
+                value: "2"
             },
             {
-                label: "Town House",
-                value: "townHouse"
+                label: "3",
+                value: "3"
             },
             {
-                label: "Modern Villa",
-                value: "modernVilla"
+                label: "4",
+                value: "4"
+            },
+            {
+                label: "5",
+                value: "5"
+            },
+            {
+                label: "6",
+                value: "6"
+            },
+            {
+                label: "7",
+                value: "7"
+            },
+            {
+                label: "many",
+                value: "many"
             }
         ]
     },
 
     {
-        title: "Looking For",
+        title: "Total Baths",
         options: [
             {
-                label: "Appartment",
-                value: "appartment"
+                label: "1",
+                value: "1"
             },
             {
-                label: "Family House",
-                value: "familyHouse"
+                label: "2",
+                value: "2"
             },
             {
-                label: "Town House",
-                value: "townHouse"
+                label: "3",
+                value: "3"
             },
             {
-                label: "Modern Villa",
-                value: "modernVilla"
+                label: "4",
+                value: "4"
+            },
+            {
+                label: "5",
+                value: "5"
+            },
+            {
+                label: "6",
+                value: "6"
+            },
+            {
+                label: "7",
+                value: "7"
+            },
+            {
+                label: "many",
+                value: "many"
             }
         ]
     },

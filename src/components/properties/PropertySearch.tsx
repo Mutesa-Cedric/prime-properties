@@ -3,8 +3,15 @@
 import React from "react";
 import { filterProperties } from '../../constants/filterProperties'
 import SearchFilterProperty from '../ui/SearchFilterProperty'
-
+import { toast } from "react-toastify";
 export default function PropertySearch() {
+
+    const showModal = () => {
+        toast.error("This Feature is not available yet", {
+            position: "top-center",
+            autoClose: 4000,
+        });
+    }
     return (
         <div className='flex flex-col w-full bg-white space-y-6 sm:p-6 p-2  border rounded'>
             <div className='flex flex-col space-y-1'>
@@ -19,7 +26,7 @@ export default function PropertySearch() {
                         ))
                     }
                 </div>
-                <button className='text-white bg-primary-light px-12 py-[9px] text-sm w-max'>
+                <button onClick={showModal} className='text-white bg-primary-light px-12 py-[9px] text-sm w-max'>
                     Search
                 </button>
             </div>
