@@ -6,6 +6,11 @@ interface InnerPageLayoutProps {
     pageTitle: string
 }
 const InnerPageLayout: React.FC<InnerPageLayoutProps> = ({ children, pageTitle }) => {
+    const showMediaStyles = {
+        overflow: "hidden",
+        height: "100vh"
+    }
+    
     return (
         <div className="w-full">
             <Banner title={pageTitle} />

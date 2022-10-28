@@ -11,7 +11,13 @@ export const currentImage = atom<string | null>({
     default: null,
 });
 
-export const showImageModal = atom<boolean>({
-    key: "showImageModal",
+export const currentVideo = atom<string | null>({
+    key: "currentVideo",
+    default: null
+})
+
+
+export const showModal = atom<boolean>({
+    key: "showModal",
     default: false,
 });

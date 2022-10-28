@@ -1,8 +1,8 @@
 import React from 'react'
 import { useRecoilValue } from 'recoil'
-import { showImageModal } from '../atoms/states'
+import { showModal } from '../atoms/states'
 import Footer from '../components/ui/Footer'
-import ImageView from '../components/ui/ImageView'
+import MediaView from '../components/ui/MediaView'
 import Navbar from '../components/ui/navbar'
 import SmallDevicesNotSupported from '../components/ui/SmallDevicesNotSupported'
 
@@ -13,12 +13,15 @@ interface Props {
 }
 
 function MainLayout({ children, isHome }: Props) {
-  const showImg = useRecoilValue(showImageModal)
-  // console.log(showImg);
+  const showMedia = useRecoilValue(showModal)
+  const showMediaStyles = {
+    overflow: "hidden",
+    positition: "fixed",
+  }
   return (
-    <div >
+    <div style={showMedia ? showMediaStyles : {}}>
       {
-        showImg && <ImageView />
+        showMedia && <MediaView />
 
       }
       <div className="flex flex-col justify-between items-center min-h-screen">
