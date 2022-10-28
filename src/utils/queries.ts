@@ -55,3 +55,7 @@ export const favouritePropertiesQuery = (userId: string): string => {
     }
   `
 }
+
+export const propertyImagesQuery = `*[_type=="property"]{
+  "bannerImage":bannerImage.asset->url
+}`

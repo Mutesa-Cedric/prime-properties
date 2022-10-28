@@ -8,7 +8,7 @@ interface BlogProps {
 }
 const PropertyNews: React.FC<BlogProps> = ({ blogs }) => {
     return (
-        <div className="bg-[#F9FCFF] h-screen w-full xl:px-60 lg:px-40 md:px-12 md:mb-24 pt-20 flex flex-col  space-y-12">
+        <div className="bg-[#F9FCFF] md:h-screen pb-12 md:pb-0 w-full xl:px-60 lg:px-40 md:px-12 md:mb-24 pt-20 flex flex-col  space-y-12">
             <div className="flex w-full justify-between items-center">
                 <div className="flex flex-col space-y-4">
                     <h2 className="text-heading-1 font-semibold text-2xl ">Read Our Property News</h2>
@@ -20,7 +20,7 @@ const PropertyNews: React.FC<BlogProps> = ({ blogs }) => {
                     </button>
                 </Link>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-6 md:gap-y-0">
                 {
                     blogs.slice(0, 3).map((blog, i) => (
                         <BlogPreview key={i} {...blog} />

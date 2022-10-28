@@ -21,14 +21,14 @@ function MainLayout({ children, isHome }: Props) {
         showImg && <ImageView />
 
       }
-      <div className="hidden md:flex flex-col justify-between items-center min-h-screen">
+      <div className="flex flex-col justify-between items-center min-h-screen">
         <Navbar />
         {children}
         <Footer isHome={isHome} />
       </div>
-      <div className="flex md:hidden h-screen w-full">
+      {/* <div className="flex md:hidden h-screen w-full">
         <SmallDevicesNotSupported />
-      </div>
+      </div> */}
     </div>
   )
 }

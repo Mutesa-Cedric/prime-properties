@@ -30,6 +30,7 @@ const AgenciesPage = ({ agencies }: AppData) => {
                 setSelectedAgencies(null) :
                 setSelectedAgencies(filteredAgencies)
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [searchTerm]);
     return (
         <div className='w-full'>
@@ -44,7 +45,7 @@ const AgenciesPage = ({ agencies }: AppData) => {
                             onChange={(e) => setSearchTerm(e.target.value)}
                             type="text" className='outline-none p-2 placeholder:text-gray-primary/75' placeholder='Search Agency' />
                         <div className='absolute top-3.5 left-2'>
-                            <Image src={'/icons/search_icon.svg'} width={16} height={16} />
+                            <Image src={'/icons/search_icon.svg'} width={16} height={16} alt="search" />
                         </div>
                     </div>
                     <div className='flex items-center space-x-3'>

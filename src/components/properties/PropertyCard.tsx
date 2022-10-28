@@ -55,7 +55,7 @@ const PropertyCard = ({
         }
     }, [user])
     return (
-        <div className="flex flex-col space-y-3 shadow-md border border-white hover:shadow-xl  rounded xl:w-[21.4vw] xl: h-[50vh]">
+        <div className="flex  flex-col space-y-3 shadow-md border border-white hover:shadow-xl  rounded xl:w-[21.4vw] xl: h-[50vh]">
             <div className="relative w-full h-48">
                 <Link href={`/${slug}`}>
                     <Image src={bannerImage} layout="fill" objectFit="cover" className="cursor-pointer" />

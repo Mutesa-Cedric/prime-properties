@@ -6,7 +6,7 @@ import SearchFilterProperty from '../ui/SearchFilterProperty'
 
 export default function PropertySearch() {
     return (
-        <div className='flex flex-col w-full bg-white space-y-6 p-6 rounded-sm border rounded'>
+        <div className='flex flex-col w-full bg-white space-y-6 sm:p-6 p-2  border rounded'>
             <div className='flex flex-col space-y-1'>
                 <p className='font-semibold text-[20px]'>Search Your Properties</p>
                 <div className='h-[3px] bg-primary-light w-12 rounded-2xl'></div>

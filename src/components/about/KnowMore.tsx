@@ -4,22 +4,22 @@ import React from 'react'
 import Image from "next/image"
 const KnowMore = () => {
   return (
-    <div className='w-full pb-24 flex  flex-col md:flex-row md:space-x-4 space-x-0 md:space-y-0 space-y-6  justify-between'>
+    <div className='w-full md:pb-24  flex  flex-col md:flex-row md:space-x-4 space-x-0 md:space-y-0 md:space-y-6 space-y-12  justify-between'>
       <div className="relative ">
-        <div className='relative h-96 w-80'>
+        <div className='relative h-96 md:w-80'>
           <Image src='/images/about-1.png' layout='fill' objectFit='cover' />
         </div>
-        <div className="absolute top-40 left-32 h-72 xl:w-72 md:w-64">
+        <div className="absolute md:top-40 bottom-0 md:left-32 right-0 h-72 xl:w-72 md:w-64 w-60">
           <Image src='/images/about-2.png' layout='fill' objectFit='cover' />
         </div>
       </div>
-      <div className="flex flex-col space-y-6 w-2/4 ">
+      <div className="flex flex-col space-y-6 md:w-2/4 ">
         <div className='flex space-x-3'>
           <div className='relative'>
               <div className='bg-[#D3DEE8] h-6 w-6'></div>
               <div className='bg-primary-light h-6 w-6 top-1 left-1 absolute'></div>
           </div>
-          <p>Know more about us</p>
+          <p className="text-xl">Know more about us</p>
         </div>
         <h3 className='text-gray-primary text-2xl font-medium'>Are You Looking Best Property Near You? Contact Us</h3>
         <div className='flex flex-col space-y-4 text-gray-primary/75'>

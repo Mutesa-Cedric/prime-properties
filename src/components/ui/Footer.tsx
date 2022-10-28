@@ -8,7 +8,7 @@ const navigation = {
   importantLinks: [
     { name: "Explore Properties", href: "/properties" },
     { name: "Our Services", href: "/services" },
-    { name: "Privacy", href: "/privacy" },
+    { name: "Gallery", href: "/gallery" },
     { name: "Contact Us", href: "/contact" },
     { name: "Blogs", href: "/blogs" },
     { name: "FAQ", href: "/faq" },
@@ -31,7 +31,7 @@ const navigation = {
 
 export default function Footer({ isHome }: { isHome: boolean }) {
   return (
-    <footer  className={isHome ? "bg-primary-dark w-full xl:px-60 lg:px-40 md:px-12 xl:pt-20 lg:pt-28 md:pt-36 relative" : "bg-primary-dark w-full xl:px-60 lg:px-40 md:px-12"} aria-labelledby="footer-heading">
+    <footer  className={isHome ? "bg-primary-dark w-full xl:px-60 lg:px-40 md:px-12 xl:pt-20 lg:pt-28 md:pt-36 pt-12 relative" : "bg-primary-dark w-full xl:px-60 lg:px-40 md:px-12"} aria-labelledby="footer-heading">
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>
@@ -85,7 +85,7 @@ export default function Footer({ isHome }: { isHome: boolean }) {
               <h3 className="text-base font-medium text-white ">Follow Instagram</h3>
               <ul role="list" className="mt-4 grid grid-cols-3 gap-2">
                 {navigation.followInstagram.map((item, i) => (
-                  <div className="xl:w-24 md:w-36 xl:h-24 md:h-36 relative" key={i}>
+                  <div className="xl:w-24 md:w-36 xl:h-24 md:h-36 h-28 w-32 relative" key={i}>
                     <Image objectFit="cover" key={i} src={item} layout="fill" />
                   </div>
                 ))}

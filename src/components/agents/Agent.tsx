@@ -22,8 +22,8 @@ function AgentComponent({ name, profileImage, slug, socialMedia, role, likedBy }
   return (
     <Link href={`/${slug}`}>
       <div className="py-8 flex flex-col items-center space-y-2 border border-[#D3DEE8]  shadow-sm hover:border-primary-light cursor-pointer rounded-[4px]">
-        <div className='h-16 w-16 relative rounded-full'>
-          <Image {...imageProps} objectFit='cover' layout='fill' className="rounded-full" />
+        <div className='h-16 w-16  relative rounded-full'>
+          <Image {...imageProps} objectFit='cover' layout='fill' className="rounded-full" alt="agent" />
         </div>
         <h2 className='font-semibold text-base'>{name}</h2>
         <p className='text-sm text-[#7B7B7B]'>{role}</p>

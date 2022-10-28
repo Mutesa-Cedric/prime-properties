@@ -17,7 +17,7 @@ const GalleryImages = ({ propertyImages }: Props) => {
             <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6'>
                 {
                     propertyImages.slice(0, 6).map((img, i) => (
-                        <Image key={i} src={img.bannerImage} height={270} width={350} />
+                        <Image key={i} src={img.bannerImage} height={270} width={350} alt="property" />
                     ))
                 }
 

@@ -21,7 +21,7 @@ const achievements: Achievement[] = [
 ]
 const WhyChooseUs = () => {
     return (
-        <div className="w-full xl:h-[42vh] lg:h-[50vh] md:h-[60vh] bg-cover bg-no-repeat bg-center relative flex items-center justify-center"
+        <div className="w-full xl:h-[42vh] lg:h-[50vh] md:h-[60vh]  pt-4 md:pt-0 bg-cover bg-no-repeat bg-center relative flex items-center justify-center"
             style={{ backgroundImage: `url(/images/why-choose-us.png)` }}>
             <div className="flex flex-col pb-20 space-y-3 text-white items-center">
                 <h2 className="font-semibold text-2xl">Why Choose Us</h2>
@@ -32,10 +32,10 @@ const WhyChooseUs = () => {
                     achievements.map((achievement, i) => {
                         return <div key={i} className={i < 2 ? "flex flex-col items-center space-y-2 h-full w-full border-r-2" : "flex flex-col items-center space-y-2 h-full w-full"}>
                             <div className="p-3 bg-[#EEF7FF]">
-                                <Image src={achievement.icon} width={30} height={20} />
+                                <Image src={achievement.icon} width={30} height={20} alt={achievement.description} />
                             </div>
-                            <h2 className="text-lg font-semibold text-heading-2">{achievement.title}</h2>
-                            <p className="text-sm text-gray-primary/50 text-center ">There are many variations of passages of Lorem Ipsum available but the majority.</p>
+                            <h2 className="text-xl md:text-lg font-semibold text-heading-2 text-center">{achievement.title}</h2>
+                            <p className="hidden md:flex text-sm text-gray-primary/50 text-center ">There are many variations of passages of Lorem Ipsum available but the majority.</p>
                         </div>
                     })
                 }

@@ -20,12 +20,12 @@ export async function getStaticProps() {
 
 const Pricing = ({ plans }: AppData) => {
     return (
-        <div className='w-full'>
+        <div className='w-full '>
             <Head>
                 <title>Prime Properties | Our Agents</title>
                 <link rel="shortcut icon" href="/icons/logo.svg" type="image/x-icon" />
             </Head>
-            <main className='grid xl:grid-cols-3 grid-cols-2 gap-6 py-28 xl:px-60 lg:px-40 md:px-12'>
+            <main className='grid  xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 py-28 xl:px-60 lg:px-40 md:px-12 px-4'>
                 {
                     plans.map((plan, i) => {
                         return <PlanComponent {...plan} key={i} />

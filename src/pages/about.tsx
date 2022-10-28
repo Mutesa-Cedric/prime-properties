@@ -11,22 +11,14 @@ import ServicesVideo from "../components/services/ServicesVideo";
 import TestimonialSlider from "../components/ui/TestimonialSlider";
 import TrustedPartners from "../components/ui/TrustedPartners";
 import sanityClient from "../lib/sanity";
-
+import { agentsQuery, propertyImagesQuery, testimonialsQuery } from "../utils/queries";
 
 export async function getStaticProps() {
-    const agents = await sanityClient.fetch(`*[_type=="agent"]{
-        ...,
-        "slug":slug.current
-    }`);
+    const agents = await sanityClient.fetch(agentsQuery);
 
-    const testimonials = await sanityClient.fetch(`*[_type=="testimonial"]{
-        ...,
-        "profileImage":profileImage.asset->url
-    }`);
+    const testimonials = await sanityClient.fetch(testimonialsQuery);
 
-    const propertyImages = await sanityClient.fetch(`*[_type=="property"]{
-        "bannerImage":bannerImage.asset->url
-    }`);
+    const propertyImages = await sanityClient.fetch(propertyImagesQuery);
 
     return {
         props: {
@@ -40,7 +32,7 @@ export async function getStaticProps() {
 interface AboutPageProps {
     agents: Agent[];
     testimonials: Testimonial[];
-    propertyImages: {bannerImage:string}[];
+    propertyImages: { bannerImage: string }[];
 }
 const AboutPage = ({ agents, testimonials, propertyImages }: AboutPageProps) => {
     return (
@@ -50,13 +42,13 @@ const AboutPage = ({ agents, testimonials, propertyImages }: AboutPageProps) => 
                 <link rel="shortcut icon" href="/icons/logo.svg" type="image/x-icon" />
             </Head>
             <main className="flex flex-col  pb-12 pt-24 space-y-12">
-                <div className="flex flex-col relative xl:px-60 lg:px-40 md:px-12 space-y-12">
+                <div className="flex flex-col relative xl:px-60 lg:px-40 md:px-12 px-4 space-y-12">
                     <KnowMore />
                     <MissionVision />
                     <ServicesVideo />
                     <AgentsSlider agents={agents} />
                 </div>
-                <TrustedPartners/>
+                <TrustedPartners />
                 <SomeFacts />
                 <GalleryImages propertyImages={propertyImages} />
                 <Certificates />
