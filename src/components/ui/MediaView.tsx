@@ -15,7 +15,7 @@ const MediaView = () => {
   const modalRef = useRef<HTMLDivElement | null>(null);
 
   const onClickOutside = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    if (!modalRef.current!.contains(e.target as Node)) {
+    if (modalRef.current!.contains(e.target as Node)) {
       setShowModal(false);
       setImage(null);
       setVideo(null)

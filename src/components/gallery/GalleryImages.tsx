@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from "next/image";
 import Link from 'next/link';
+import GalleryImage from './GalleryImage';
 
 interface Props {
     propertyImages: {
@@ -14,10 +15,10 @@ const GalleryImages = ({ propertyImages }: Props) => {
                 <h2 className="text-2xl font-medium text-gray-primary">Our Gallery Images</h2>
                 <p className='text-center max-w-lg text-gray-primary/50 text-base'>There are many variations of passages of Lorem Ipsum available but the this in majority have suffered alteration in some</p>
             </div>
-            <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6'>
+            <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full'>
                 {
                     propertyImages.slice(0, 6).map((img, i) => (
-                        <Image key={i} src={img.bannerImage} height={270} width={350} alt="property" />
+                        <GalleryImage key={i} bannerImage={img.bannerImage} />
                     ))
                 }
 
