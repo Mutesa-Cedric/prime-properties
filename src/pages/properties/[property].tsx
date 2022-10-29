@@ -4,8 +4,7 @@ import { Property } from '../../@types/types';
 import Head from 'next/head';
 import Image from "next/image";
 import Map from '../../components/ui/Map';
-import useAuth from "../../hooks/useAuth";
-
+import Video from "../../components/ui/Video";
 
 export async function getStaticPaths() {
   const properties = await sanityClient.fetch(`*[_type=="property"]{
@@ -56,7 +55,7 @@ function PropertyDetails({ property }: PropertyProps) {
       <main className="w-full flex flex-col space-y-10 py-28">
         <div className="flex flex-col space-y-4 border-b-2 pb-4 relative">
           <div className="w-full h-[55vh] relative">
-            <Image src={property.bannerImage} layout="fill" objectFit="cover" />
+            <Image src={property.bannerImage} layout="fill" objectFit="cover" alt={"Property Banner"} />
           </div>
           <div className="w-full flex items-center justify-between text-xl font-medium">
             <p>{property.name}</p>
@@ -73,7 +72,7 @@ function PropertyDetails({ property }: PropertyProps) {
             {
               property.features.map((feature, i) => (
                 <div key={i} className="flex items-center border-2 space-x-2 py-5 px-16 justify-center  text-gray-primary font-medium">
-                  <Image src={`/icons/${feature.icon}.svg`} width={25} height={25} />
+                  <Image src={`/icons/${feature.icon}.svg`} width={25} height={25} alt="feature" />
                   <p>{feature.value}</p>
                   <p>{feature.name}</p>
                 </div>
@@ -86,7 +85,7 @@ function PropertyDetails({ property }: PropertyProps) {
           <div className="grid grid-cols-3 gap-8">
             {
               property.gallery.map((image, i) => (
-                <Image src={image.image} key={i} width={90} height={60} layout="responsive" />
+                <Image src={image.image} key={i} width={90} height={60} layout="responsive" alt={`gallery image ${i + 1}`} />
               ))
             }
           </div>
@@ -96,10 +95,7 @@ function PropertyDetails({ property }: PropertyProps) {
           <div className="flex justify-between items-center space-x-16">
             {
               property.videos.map((video, i) => (
-                <div key={i} className="w-full relative h-72 bg-cover bg-center bg-no-repeat bg-blend-multiply flex items-center justify-center"
-                  style={{ backgroundImage: `linear-gradient(#51789D,#51789D),url(${video.banner})` }}>
-                  <Image src={'/icons/play_button.svg'} width={110} height={110} className="cursor-pointer" />
-                </div>
+                <Video key={i} {...video} />
               ))
             }
           </div>

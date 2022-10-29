@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import Head from "next/head";
 import FooterBanner from "../components/ui/FooterBanner";
 import sanityClient from "../lib/sanity";
-import { AppData, Service } from "../@types/types";
+import { AppData, Service, Video } from "../@types/types";
 import ServiceComponent from "../components/services/service";
-import ServicesVideo from "../components/services/ServicesVideo";
+import ServicesVideo from "../components/ui/Video";
 import AgentsSlider from "../components/agents/AgentsSlider";
 import { agentsQuery, servicesQuery } from "../utils/queries";
+import VideoComponent from "../components/ui/Video";
 
 
 export async function getStaticProps() {
@@ -22,6 +23,10 @@ export async function getStaticProps() {
     }
 }
 
+const video: Video = {
+    banner: "/images/video-banner.png",
+    url: "youtube.com/watch?v=4NRXx6U8ABQ&list=RDMM&index=3"
+}
 const Services = ({ services, agents }: AppData) => {
     return (
         <div className="w-full">
@@ -37,7 +42,7 @@ const Services = ({ services, agents }: AppData) => {
                         ))
                     }
                 </div>
-                <ServicesVideo />
+                <VideoComponent {...video} />
                 <AgentsSlider agents={agents} />
             </main>
             <FooterBanner />

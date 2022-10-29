@@ -6,19 +6,15 @@ import Image from "next/image";
 import { useRecoilState } from 'recoil';
 import { showModal } from '../../atoms/states';
 
-const video: Video = {
-    banner: "/images/video-banner.png",
-    url: "youtube.com/watch?v=4NRXx6U8ABQ&list=RDMM&index=3"
-}
 
-const ServicesVideo = () => {
+const Video = ({ banner, url }: Video) => {
     const [_modal, setShowModal] = useRecoilState(showModal)
     return (
         <div onClick={() => setShowModal(true)} className="w-full relative h-96 bg-cover bg-center bg-no-repeat bg-blend-multiply flex items-center justify-center"
-            style={{ backgroundImage: `linear-gradient(#51789D,#51789D),url(${video.banner})` }}>
+            style={{ backgroundImage: `linear-gradient(#51789D,#51789D),url(${banner})` }}>
             <Image src={'/icons/play_button.svg'} width={110} height={110} className="cursor-pointer" />
         </div>
     )
 }
 
-export default ServicesVideo
+export default Video

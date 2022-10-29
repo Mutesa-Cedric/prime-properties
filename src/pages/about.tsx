@@ -1,13 +1,13 @@
 import Head from "next/head";
 import React from "react";
-import { Agent, Testimonial } from "../@types/types";
+import { Agent, Testimonial, Video } from "../@types/types";
 import Certificates from "../components/about/Certificates";
 import KnowMore from "../components/about/KnowMore";
 import MissionVision from "../components/about/MissionVision";
 import SomeFacts from "../components/about/SomeFacts";
 import AgentsSlider from "../components/agents/AgentsSlider";
 import GalleryImages from "../components/gallery/GalleryImages";
-import ServicesVideo from "../components/services/ServicesVideo";
+import VideoComponent from "../components/ui/Video";
 import TestimonialSlider from "../components/ui/TestimonialSlider";
 import TrustedPartners from "../components/ui/TrustedPartners";
 import sanityClient from "../lib/sanity";
@@ -34,6 +34,12 @@ interface AboutPageProps {
     testimonials: Testimonial[];
     propertyImages: { bannerImage: string }[];
 }
+
+const video: Video = {
+    banner: "/images/video-banner.png",
+    url: "youtube.com/watch?v=4NRXx6U8ABQ&list=RDMM&index=3"
+}
+
 const AboutPage = ({ agents, testimonials, propertyImages }: AboutPageProps) => {
     return (
         <div className="w-full">
@@ -45,7 +51,7 @@ const AboutPage = ({ agents, testimonials, propertyImages }: AboutPageProps) => 
                 <div className="flex flex-col relative xl:px-60 lg:px-40 md:px-12 px-4 space-y-12">
                     <KnowMore />
                     <MissionVision />
-                    <ServicesVideo />
+                    <VideoComponent {...video} />
                     <AgentsSlider agents={agents} />
                 </div>
                 <TrustedPartners />
